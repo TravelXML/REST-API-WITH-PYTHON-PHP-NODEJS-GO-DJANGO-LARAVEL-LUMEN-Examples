@@ -1,5 +1,4 @@
-# REST-API-CURD-PHP-PDO-JWT-WITH-UNIT-TESTING-EXAMPLES
-#### Rest API with CURD, PHP PDO, UNIT Testing, JWT, EXAMPLES ####
+#Rest API with CURD, PHP PDO, UNIT Testing, JWT, EXAMPLES#
 
 Create a RESTful web service for a Library. The service must have the following API endpoints:
 

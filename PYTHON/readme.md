@@ -16,29 +16,29 @@ A Book entity has the following properties:
 
 # Implementation
   
-  >> create a project folder as 'rest-api'
+  #### create a project folder as 'rest-api'
   
        Go to project folder >> 'rest-api'
        
-  >> Setup virtualenv in this folder:
+  #### Setup virtualenv in this folder:
   
        pip3.8 install virtualenv
        virtualenv venv --python=python3.8
   
-  >> Activate Virtual Env
+  #### Activate Virtual Env
   
        venv\Scripts\activate.bat
        
-  >> Install Required Libraries  
+  #### Install Required Libraries  
   
       pip install Flask
       pip install Flask-JWT
       pip install Flask-RESTful
       pip install Flask-SQLALCHEMY
       
-  >> Download the code and drop to project folder 'rest-api'  
+  #### Download the code and drop to project folder 'rest-api'  
    
-  >> API is ready to run
+  #### API is ready to run
   
       python app.py     
      

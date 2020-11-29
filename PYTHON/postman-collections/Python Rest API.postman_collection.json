@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "cc4b0006-42be-4ace-8ef4-5c7f79653d34",
+		"name": "Python Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/stores",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"stores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/<name>",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/book/book",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"book",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/<name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\": 200,\r\n    \"store_id\":2,\r\n    \"author\":\"sapan mohanty\",\r\n    \"isbn\":\"WER3455\",\r\n    \"release_date\":\"2020-12-12\"}"
+				},
+				"url": {
+					"raw": "{{url}}/book/Kalinga",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"book",
+						"Kalinga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/store/<name>",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/store/Sapna Book Store",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"Sapna Book Store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/<name>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/book/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"book",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/book/<name> ",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/book/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"book",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/store/<name>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/store/milk2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"store",
+						"milk2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1300c11-4263-4930-aefd-9e5725d1aee3",
+						"exec": [
+							"pm.test(\"JWT Token Not Empty\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.globals.set(\"jwt_token\", jsonData.access_token);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"sapan\",\r\n\"password\":\"sapan1234\"}"
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"sapan\",\r\n\"password\":\"sapan1234\"}"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -46,7 +46,7 @@ A Book entity has the following properties:
   ![What All REST API end points](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/list-of-endpoints.png)
   
    #### How Request and Responses Look Like?
-  ![Request and Responses Look Like](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/get-books.png height="100")
+  ![Request and Responses Look Like](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/get-books.png)
   
     
   **Python Version: 3.8** <br/>

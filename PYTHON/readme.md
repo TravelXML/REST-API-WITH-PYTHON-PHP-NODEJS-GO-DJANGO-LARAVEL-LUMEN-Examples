@@ -43,7 +43,7 @@ A Book entity has the following properties:
       python app.py     
      
   
-  ![What All rest API end points](/images/list-of-endpoints.png)
+  ![What All rest API end points](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/list-of-endpoints.png)
   
   ![GitHub Logo](/images/list-of-endpoints.png)
    Format: ![Alt Text](url)

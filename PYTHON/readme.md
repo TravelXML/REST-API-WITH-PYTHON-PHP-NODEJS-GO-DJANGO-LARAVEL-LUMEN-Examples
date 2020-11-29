@@ -1,4 +1,4 @@
-## Rest API with CURD, Flask, Flask-JWT, Flask-RESTful, Flask-SQLALCHEMY, SQLLITE EXAMPLES
+## Rest API - CURD with Flask, Flask-JWT, Flask-RESTful, Flask-SQLALCHEMY, SQLLITE EXAMPLES
 
 Create a RESTful web service for a Library. The service must have the following API endpoints:
 
@@ -43,6 +43,7 @@ A Book entity has the following properties:
       python app.py     
      
   
+  [How rest API end point works?](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/screenshot/get-books.png)
   **Python Version: 3.8** <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>

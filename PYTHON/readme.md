@@ -43,7 +43,7 @@ A Book entity has the following properties:
       python app.py     
      
   <br/>
-  **Python Version: 3.8 <br/>
+  **Python Version: 3.8** <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>
   

@@ -43,7 +43,7 @@ A Book entity has the following properties:
       python app.py     
      
   
-  ![What All rest API end points?](/images/list-of-endpoints.png)
+  ![What All rest API end points](/images/list-of-endpoints.png)
   
   **Python Version: 3.8** <br/>
   

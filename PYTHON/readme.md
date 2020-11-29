@@ -43,10 +43,8 @@ A Book entity has the following properties:
       python app.py     
      
   
-  ![How rest API end point works?](/screenshot/get-books.png)
-  ![GitHub Logo](/screenshot/get-books.png)
-Format: ![Alt Text](url)
-
+  ![What All rest API end points?](/images/list-of-endpoints.png)
+  
   **Python Version: 3.8** <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>

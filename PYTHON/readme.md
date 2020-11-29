@@ -16,7 +16,7 @@ A Book entity has the following properties:
 
 # Implementation
   
-  #### create a project folder as 'rest-api'
+  #### Create a project folder as 'rest-api'
   
        Go to project folder >> 'rest-api'
        

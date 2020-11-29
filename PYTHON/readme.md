@@ -42,13 +42,10 @@ A Book entity has the following properties:
   
       python app.py     
      
+  #### Endpoint Lists
+  ![What All REST API end points](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/list-of-endpoints.png)
   
-  ![What All rest API end points](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/list-of-endpoints.png)
-  
-  ![GitHub Logo](/images/list-of-endpoints.png)
-   Format: ![Alt Text](url)
-
-  
+    
   **Python Version: 3.8** <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>

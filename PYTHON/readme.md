@@ -38,17 +38,20 @@ A Book entity has the following properties:
       
   #### Download the code and drop to project folder 'rest-api'  
    
-  #### API is ready to run
+  #### API is ready to RUN
   
       python app.py     
      
 
-  **Python Version: 3.8
-  **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' 
+  **Python Version: 3.8<br/>
+  
+  **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>
+  
   **Request :** All request should be JSON data, specifications are mentioned below<br/>
+  
   **Response :** JSON data<br/>
 
-Enjoy coding! :)
+Enjoy coding! :)<br/>
 
 #### For Support, you can reach me 
 -------------------------------

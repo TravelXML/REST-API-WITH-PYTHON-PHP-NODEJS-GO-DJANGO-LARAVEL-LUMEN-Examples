@@ -20,7 +20,7 @@ A Book entity has the following properties:
   
        Go to project folder >> 'rest-api'
        
-  #### Setup virtualenv in this folder:
+  #### Setup virtualenv in this project folder:
   
        pip3.8 install virtualenv
        virtualenv venv --python=python3.8
@@ -42,8 +42,8 @@ A Book entity has the following properties:
   
       python app.py     
      
-  <br/>
-  *Python Version: 3.8* <br/>
+  
+  **Python Version: 3.8** <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>
   

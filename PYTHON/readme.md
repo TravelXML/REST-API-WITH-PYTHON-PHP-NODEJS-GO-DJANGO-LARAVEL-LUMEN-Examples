@@ -36,14 +36,14 @@ A Book entity has the following properties:
       pip install Flask-RESTful
       pip install Flask-SQLALCHEMY
       
-  #### [Download](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/PYTHON/) the code and drop to project folder 'rest-api'  
+  #### [Download](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/tree/main/PYTHON) the code and drop to project folder 'rest-api'  
    
   #### API is ready to RUN
   
       python app.py     
      
   <br/>
-  **Python Version: 3.8** <br/>
+  *Python Version: 3.8* <br/>
   
   **Auth :** Auth Token will create after sucessive excution of endpoint '{{url}}/auth' <br/>
   

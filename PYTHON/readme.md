@@ -30,7 +30,7 @@ A Book entity has the following properties:
   
   #### Activate Virtual Environment
   
-       source env/bin/activate  - Mac / Linux 
+       source venv/bin/activate  - Mac / Linux 
        venv\Scripts\activate.bat - Windows
        
   #### Install Required Libraries  

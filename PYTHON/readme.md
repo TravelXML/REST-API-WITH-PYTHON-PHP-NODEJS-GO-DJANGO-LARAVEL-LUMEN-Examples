@@ -1,5 +1,8 @@
 ## Rest API - CURD with Flask, Flask-JWT, Flask-RESTful, Flask-SQLALCHEMY, SQLLITE EXAMPLES
 
+![REST API PYTHON FLASK JWT](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/get-books.png)
+
+
 Create a RESTful web service for a Library. The service must have the following API endpoints:
 
     (C)reate a new Book
@@ -25,9 +28,10 @@ A Book entity has the following properties:
        pip3.8 install virtualenv
        virtualenv venv --python=python3.8
   
-  #### Activate Virtual Env
+  #### Activate Virtual Environment
   
-       venv\Scripts\activate.bat
+       source env/bin/activate  - Mac / Linux 
+       venv\Scripts\activate.bat - Windows
        
   #### Install Required Libraries  
   

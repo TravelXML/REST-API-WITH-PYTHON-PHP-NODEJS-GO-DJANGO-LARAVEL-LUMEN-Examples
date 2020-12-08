@@ -79,10 +79,10 @@ A Book entity has the following properties:
    #### End Points
    
    1- Stores
-   ![Stores](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-books.png)
+   ![Stores](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-stores.png)
    
    2- Books
-   ![Books](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-stores.png)
+   ![Books](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-books.png)
     
     
    

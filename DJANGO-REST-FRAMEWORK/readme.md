@@ -64,6 +64,8 @@ A Book entity has the following properties:
       
    #### Go to localhost:8000 and you should see the Django welcome screen!
    
+   ![Django Server Look Like](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-local-server-up.png)
+   
    #### [Download](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/DJANGO-REST-FRAMEWORK) the code and drop in to project folder 'rest-api'  
    
    #### API is ready to RUN

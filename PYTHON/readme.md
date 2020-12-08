@@ -17,7 +17,7 @@ A Book entity has the following properties:
     ISBN (mandatory)
     Release Date
 
-# Implementation
+# Implementation(s)
   
   #### Create a project folder as 'rest-api'
   

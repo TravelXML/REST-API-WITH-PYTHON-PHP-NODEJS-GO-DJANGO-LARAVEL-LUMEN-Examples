@@ -1,6 +1,6 @@
 ## REST API - CURD with PYTHON, DJANGO, REST Framework
 
-![REST API PYTHON FLASK JWT](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/PYTHON/images/Build%20REST%20api.png)
+![REST API DJANGO REST FRAMEWORK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Django-REST-API.png)
 
 
 Create a RESTful web service for a Library. The service must have the following API endpoints:

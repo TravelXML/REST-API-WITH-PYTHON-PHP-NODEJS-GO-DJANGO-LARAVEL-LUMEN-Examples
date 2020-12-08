@@ -64,14 +64,11 @@ A Book entity has the following properties:
       
    #### Go to localhost:8000 and you should see the Django welcome screen!
    
+   #### [Download](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/DJANGO-REST-FRAMEWORK) the code and drop in to project folder 'rest-api'  
    
-   #### Download from github and replaced with msite folder of rest-api root folder
+   #### API is ready to RUN
       
-     $ cd ..
-    
-   Download the msite folder from github and replaced with msite folder of rest-api root folder, once you are done with it.
-    
-    cd msite
+     $ cd msite
    
    #### Ready to up server
    

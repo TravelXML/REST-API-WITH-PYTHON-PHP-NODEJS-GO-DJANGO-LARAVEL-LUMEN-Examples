@@ -76,6 +76,14 @@ A Book entity has the following properties:
    
     $ python3 manage.py runserver
     
+   #### End Points
+   
+   1- Stores
+   ![Stores](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-books.png)
+   
+   2- Books
+   ![Books](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/django-restframework-stores.png)
+    
     
    
    

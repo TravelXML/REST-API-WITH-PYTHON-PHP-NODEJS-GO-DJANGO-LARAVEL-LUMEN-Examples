@@ -14,7 +14,7 @@ A Book entity has the following properties:
     ISBN (mandatory)
     Release Date
 
-# Implementation
+# Implementation(s)
 
   Every serivce you call, needs to have the Auth & action and these are compulsory apart from the other parameters.<br/>
   **Auth :** Auth Token to send via request header for all requests [eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg]<br/>

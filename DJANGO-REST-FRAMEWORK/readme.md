@@ -95,10 +95,3 @@ A Book entity has the following properties:
   **Response :** JSON data<br/>
 
 Enjoy coding! :)<br/>
-
-#### For Support, you can reach me 
--------------------------------
-#### Skype: sapan.mohannty
-#### Twitter: https://twitter.com/htngapi
-#### Linkedin: https://www.linkedin.com/in/travel-technology-cto/
-

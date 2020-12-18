@@ -20,9 +20,9 @@ SOAP requires less plumbing code meaning low-level, infrastructural code that co
 
 #### How you would like to build?
 
-  * [REST API with PHP - OOPS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PHP)
+  * [REST API with PHP - OOPS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PHP-OOPS)
   * [REST API with PYTHON - FLASK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PYTHON)
-  * [REST API with PYTHON - DJANGO - RESTFRAMEWORK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/DJANGO-REST-FRAMEWORK)
+  * [REST API with PYTHON - DJANGO - RESTFRAMEWORK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PYTHON-DJANGO-REST-FRAMEWORK)
   * [REST API with GO - MUX](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-MUX)
   
   

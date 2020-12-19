@@ -45,7 +45,7 @@ All api endpoints are prefixed with `/api/v1` because in router we set like this
 	log.Fatalln(http.ListenAndServe(":8080", r))
 }
 ```
-You can restructure this according to your requirements.
+You can restructure all endpoints according to your requirements.
 
 ### To reach any endpoint use `baseurl:8080/api/v1/{endpoint}`
 

@@ -21,7 +21,7 @@ then server will run without any issues
 
 ![REST API GOlang](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-mux-1.png)
 
-## What all end points will available?
+## What all endpoints will available?
 
 
 The App has a few Endpoints

@@ -4,7 +4,7 @@
 
 This is a sample Book REST API which will showcase you, how to build REST API using golang & MUX.
 
-# What's MUX?
+## What's MUX?
 
 The name mux stands for "HTTP request multiplexer". Like the standard http.ServeMux, mux.Router matches incoming requests against a list of registered routes and calls a handler for the route that matches the URL or other conditions for more details ![Click Here](https://github.com/gorilla/mux)
 

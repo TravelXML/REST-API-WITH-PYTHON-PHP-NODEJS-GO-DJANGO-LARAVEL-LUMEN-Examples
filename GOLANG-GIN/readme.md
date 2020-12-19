@@ -1,5 +1,5 @@
 
-# Create REST API using GO, GIN Framework, GORM, MYSQL; REST API EXAMPLE with GO an GIN
+# Create REST API using GO, GIN Framework, GORM, MYSQL; REST API EXAMPLE with GO an GIN :fire:
 
 ![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
 
@@ -29,7 +29,7 @@ We will be performing the CRUD operation for Book with few fields.
  - Mysql Installation
  - You need to have basic knowledge of Go, to get started with the project that we are going to do.
  
-## If you know any programming language that should be fine as well, COOL?
+## Don't be disappointed :broken_heart: if you don't know GO, If you know any programming language that should be fine as well, COOL?
 
 ### Let’s Go!
 

@@ -3,11 +3,11 @@
 
 ![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
 
-## Why to Build a REST API with GO?![REST API with GO](https://raw.githubusercontent.com/gin-gonic/logo/master/color.png  =250x250)
+## Why to Build a REST API with GO?!<img align="right" width="159px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
 
 * Go * is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like * C++ *. Go is referred to be the fastest programming language that offers very high performance. 
 
-## What’s GIN? ![REST API with GIN Framework](https://raw.githubusercontent.com/gin-gonic/logo/master/color.png  =250x250)
+## What’s GIN? ![REST API with GIN Framework]<img align="right" width="159px" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
 
 Gin is one of the incredible frameworks of Go, which is lightweight and massively fast. The interesting feature of Gin is that it provides a custom version of HttpRouter which makes the API routes extremely faster, than that of other Go frameworks. It is claimed to be 40 times faster than another Go framework called Martini and of course, it provides a lot more benefits compared to other frameworks and other programming languages.
 Gin is just the microframework which does not provide you a lot of features as of other frameworks. It just provides you with necessary tools to build api, such as routing, validation, etc. Experts believe that Gin is best for long term investment, to grab proper advantage of its high performance and flexibility.

@@ -4,7 +4,7 @@
 
 ### This is a sample Book REST API which will showcase you, how to build REST API using golang & MUX.
 
-## What's MUX?
+## What's MUX? ![GO-MUX](https://camo.githubusercontent.com/a62a5e2040257dd8787001ffa5d95964d7bc77024aa2ba3d94e64ec1e151228e/68747470733a2f2f636c6f75642d63646e2e7175657374696f6e61626c652e73657276696365732f676f72696c6c612d69636f6e2d36342e706e67)
 
 The name mux stands for "HTTP request multiplexer". Like the standard http.ServeMux, mux.Router matches incoming requests against a list of registered routes and calls a handler for the route that matches the URL or other conditions for more details ![Click Here](https://github.com/gorilla/mux)
 

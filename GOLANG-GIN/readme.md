@@ -3,7 +3,7 @@
 
 ![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
 
-## Why to Build REST API with GO?!<img align="right" width="100px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
+## Why to Build REST API with GO?<img align="right" width="100px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
 
 **Go** is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like **C++**. Go is referred to be the fastest programming language that offers very high performance. 
 

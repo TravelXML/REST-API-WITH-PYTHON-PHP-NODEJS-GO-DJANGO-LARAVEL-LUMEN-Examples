@@ -310,7 +310,7 @@ func DeleteBook(book *Book, id string) (err error) {
 }
 
 ```
-## Setting up Server
+## Setting UP Server
 
 This is the starter function of our project. We connect mysql, auto migrate our modal and setup router from here. We have to create main.go in the root of the project.
 
@@ -349,7 +349,7 @@ If you encountered any of the problems during serving, first fix them because yo
 - POST book-store/book → Add new Book data
 - GET book-store/book/{id} → Retrieve the single Book data
 - PUT book-store/book/{id} → Update the Book data
-- DELETE book-store/book → Delete the Book data
+- DELETE book-store/book/{id} → Delete the Book data
 
 Now, Open up the endpoint testing tools you have; we will be using Postman which is simply awesome. Please make sure that data is inserted in JSON format through Postman because we are not working with form-data in this module.
 

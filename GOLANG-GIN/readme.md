@@ -5,7 +5,7 @@
 
 ## Why to Build a REST API with GO?
 
-Go is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like C++. Go is referred to be the fastest programming language that offers very high performance. 
+* Go * is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like * C++ *. Go is referred to be the fastest programming language that offers very high performance. 
 
 ## What’s GIN?
 

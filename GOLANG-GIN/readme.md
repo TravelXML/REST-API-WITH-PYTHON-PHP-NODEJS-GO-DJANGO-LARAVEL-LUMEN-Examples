@@ -45,7 +45,13 @@ This command creates the go.mod file while holding our external packages, if you
 
 ## Install Packages
 
-These are the external packages for the project: sql driver for mysql, gin and gorm. Enter the following command to install it in the project.
+These are the external packages for the project: sql driver for 
+- mysql
+- gin
+- gorm
+
+Enter the following command to install it in the project folder ( GO-GIN ).
+
 ```
 go get github.com/go-sql-driver/mysql
 go get github.com/gin-gonic/gin

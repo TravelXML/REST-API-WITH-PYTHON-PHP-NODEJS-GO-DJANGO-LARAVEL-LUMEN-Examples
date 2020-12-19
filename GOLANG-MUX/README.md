@@ -26,7 +26,22 @@ then server will run without any issues
 
 The App has a few Endpoints
 
-All api endpoints are prefixed with `/api/v1`
+All api endpoints are prefixed with `/api/v1` becuase in router we set like this, if you will open main.go file then on the below section you will find router section
+
+  func main() {
+	r := mux.NewRouter()
+	log.Println("bookdata api")
+	api := r.PathPrefix("/api/v1").Subrouter()
+	api.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(w, "api v1")
+	})
+	api.HandleFunc("/books/authors/{author}", searchByAuthor).Methods(http.MethodGet)
+	api.HandleFunc("/books/book-name/{bookName}", searchByBookName).Methods(http.MethodGet)
+	api.HandleFunc("/book/isbn/{isbn}", searchByISBN).Methods(http.MethodGet)
+	api.HandleFunc("/book/isbn/{isbn}", deleteByISBN).Methods(http.MethodDelete)
+	api.HandleFunc("/book", createBook).Methods(http.MethodPost)
+	log.Fatalln(http.ListenAndServe(":8080", r))
+}
 
 To reach any endpoint use `baseurl:8080/api/v1/{endpoint}`
 

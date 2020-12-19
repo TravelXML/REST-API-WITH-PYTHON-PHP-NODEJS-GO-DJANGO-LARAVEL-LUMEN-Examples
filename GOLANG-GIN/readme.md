@@ -16,7 +16,7 @@ Gin is just the microframework which does not provide you a lot of features as o
 We will be performing the CRUD operation for Book with few fields. 
 
 ## Prerequisites 
- - GO installation 
+ - GO Installation 
  - Mysql Installation
  - You need to have clear knowledge of Go, to get started with the project that we are going to do.
 
@@ -25,8 +25,10 @@ We will be performing the CRUD operation for Book with few fields.
 Wow it sounds cool with GO, isn’t it?
 
 ## Install Go
+
 You will find a lot of materials teaching you how to install Go in your machine. I believe that you have already installed Go in your machine because we are going to write the intermediate code for Go. Even if you have not installed it yet, you can install it now. I have a very helpful article for you to install Go on your environment.
 Whenever you have completed installation of Go or you have Go on your machine, please test whether it is working or not, by simply checking the version.
+
 ```
 go version
 ```
@@ -41,7 +43,7 @@ go mod init
 
 This command creates the go.mod file while holding our external packages, if you open it up later on.
 
-## Install packages
+## Install Packages
 
 These are the external packages for the project: sql driver for mysql, gin and gorm. Enter the following command to install it in the project.
 ```
@@ -294,6 +296,7 @@ go run main.go
 If you encountered any of the problems during serving, first fix them because you may have missed something in between.
 
 ## Endpoints
+
 ### These are the endpoints we will use to create, update, read and delete the book data.
 - GET book-store/book → Retrieves all the Book data
 - POST book-store/book → Add new Book data

@@ -393,3 +393,15 @@ Delete the book having Id=5.
 
 This is the very very simple rest api that we have built using Go, Gin, Gorm and Mysql. There is a lot more things you can do with Go. I will be in touch with you with some more articles related to Go in the coming days. 
 
+I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+

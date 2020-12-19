@@ -71,38 +71,47 @@ I have added the configuration details of mine and you have to add your own.
 ```
 //Config/Database.go package Config
 
+package Config
+
 import (
-"fmt"
-"github.com/jinzhu/gorm"
+	"fmt"
+
+	"github.com/jinzhu/gorm"
 )
-var DB *gorm.DB// DBConfig represents db configuration
+
+var DB *gorm.DB
+
+// DBConfig represents db configuration
 type DBConfig struct {
-Host     string
-Port     int
-Book     string
-DBName   string
-Password string
+	Host     string
+	Port     int
+	User     string
+	DBName   string
+	Password string
 }
+
 func BuildDBConfig() *DBConfig {
-dbConfig := DBConfig{
- Host:     "localhost",
- Port:     3306,
- Book:     "root",
- Password: "1234",
- DBName:   "first_go",
+	dbConfig := DBConfig{
+		Host:     "localhost",
+		Port:     3306,
+		User:     "root",
+		Password: "",
+		DBName:   "book-store",
+	}
+	return &dbConfig
 }
-return &dbConfig
-}
+
 func DbURL(dbConfig *DBConfig) string {
-return fmt.Sprintf(
- "%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local",
- dbConfig.Book,
- dbConfig.Password,
- dbConfig.Host,
- dbConfig.Port,
- dbConfig.DBName,
-)
+	return fmt.Sprintf(
+		"%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local",
+		dbConfig.User,
+		dbConfig.Password,
+		dbConfig.Host,
+		dbConfig.Port,
+		dbConfig.DBName,
+	)
 }
+
 ```
 
 ## Create Model
@@ -141,23 +150,28 @@ So, let’s create Routes.go file inside the Routes folder. We will see the impl
 ```
 //Routes/Routes.gopackage Routes
 
+package Routes
+
 import (
-"first-api/Controllers"
-"github.com/gin-gonic/gin"
+	"first-api/Controllers"
+
+	"github.com/gin-gonic/gin"
 )
+
 //SetupRouter ... Configure routes
 func SetupRouter() *gin.Engine {
-r := gin.Default()
-grp1 := r.Group("/book-api")
-{
- grp1.GET("book", Controllers.GetBooks)
- grp1.POST("book", Controllers.CreateBook)
- grp1.GET("book/:id", Controllers.GetBookByID)
- grp1.PUT("book/:id", Controllers.UpdateBook)
- grp1.DELETE("book/:id", Controllers.DeleteBook)
+	r := gin.Default()
+	grp1 := r.Group("/book-store")
+	{
+		grp1.GET("book", Controllers.GetBooks)
+		grp1.POST("book", Controllers.CreateBook)
+		grp1.GET("book/:id", Controllers.GetBookByID)
+		grp1.PUT("book/:id", Controllers.UpdateBook)
+		grp1.DELETE("book/:id", Controllers.DeleteBook)
+	}
+	return r
 }
-return r
-}
+
 ```
 
 
@@ -168,76 +182,81 @@ We have Book.go inside Models to interact with the database. We respond to the b
 ```
 //Controllers/Book.go package Controllers
 
+package Controllers
+
 import (
-"first-api/Models"
-"fmt"
-"net/http"
-"github.com/gin-gonic/gin"
+	"first-api/Models"
+	"fmt"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
+
 //GetBooks ... Get all books
 func GetBooks(c *gin.Context) {
-var book []Models.Book
-err := Models.GetAllBooks(&book)
-if err != nil {
- c.AbortWithStatus(http.StatusNotFound)
-} else {
- c.JSON(http.StatusOK, book)
-}
+	var book []Models.Book
+	err := Models.GetAllBooks(&book)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, book)
+	}
 }
 
 //CreateBook ... Create Book
 func CreateBook(c *gin.Context) {
-var book Models.Book
-c.BindJSON(&book)
-err := Models.CreateBook(&book)
-if err != nil {
- fmt.Println(err.Error())
- c.AbortWithStatus(http.StatusNotFound)
-} else {
- c.JSON(http.StatusOK, book)
-}
+	var book Models.Book
+	c.BindJSON(&book)
+	err := Models.CreateBook(&book)
+	if err != nil {
+		fmt.Println(err.Error())
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, book)
+	}
 }
 
 //GetBookByID ... Get the book by id
 func GetBookByID(c *gin.Context) {
-id := c.Params.ByName("id")
-var book Models.Book
-err := Models.GetBookByID(&book, id)
-if err != nil {
- c.AbortWithStatus(http.StatusNotFound)
-} else {
- c.JSON(http.StatusOK, book)
-}
+	id := c.Params.ByName("id")
+	var book Models.Book
+	err := Models.GetBookByID(&book, id)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, book)
+	}
 }
 
 //UpdateBook ... Update the book information
 func UpdateBook(c *gin.Context) {
-var book Models.Book
-id := c.Params.ByName("id")
-err := Models.GetBookByID(&book, id)
-if err != nil {
- c.JSON(http.StatusNotFound, book)
-}
-c.BindJSON(&book)
-err = Models.UpdateBook(&book, id)
-if err != nil {
- c.AbortWithStatus(http.StatusNotFound)
-} else {
- c.JSON(http.StatusOK, book)
-}
+	var book Models.Book
+	id := c.Params.ByName("id")
+	err := Models.GetBookByID(&book, id)
+	if err != nil {
+		c.JSON(http.StatusNotFound, book)
+	}
+	c.BindJSON(&book)
+	err = Models.UpdateBook(&book, id)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, book)
+	}
 }
 
 //DeleteBook ... Delete the book
 func DeleteBook(c *gin.Context) {
-var book Models.Book
-id := c.Params.ByName("id")
-err := Models.DeleteBook(&book, id)
-if err != nil {
- c.AbortWithStatus(http.StatusNotFound)
-} else {
- c.JSON(http.StatusOK, gin.H{"id" + id: "is deleted"})
+	var book Models.Book
+	id := c.Params.ByName("id")
+	err := Models.DeleteBook(&book, id)
+	if err != nil {
+		c.AbortWithStatus(http.StatusNotFound)
+	} else {
+		c.JSON(http.StatusOK, gin.H{"id" + id: "is deleted"})
+	}
 }
-}
+
 ```
 ## Handle Requests
 This is the crucial file which fetch data and interacts directly with our database. We create a Book.go file inside the Models folder to handle the database requests.
@@ -245,37 +264,52 @@ This is the crucial file which fetch data and interacts directly with our databa
 ```
 //Models/Book.go package Models
 
+package Models
+
 import (
-"first-api/Config"
-"fmt"_ "github.com/go-sql-driver/mysql"
-)//GetAllBooks Fetch all book data
+	"first-api/Config"
+	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+//GetAllBooks Fetch all book data
 func GetAllBooks(book *[]Book) (err error) {
-if err = Config.DB.Find(book).Error; err != nil {
- return err
+	if err = Config.DB.Find(book).Error; err != nil {
+		return err
+	}
+	return nil
 }
-return nil
-}//CreateBook ... Insert New data
+
+//CreateBook ... Insert New data
 func CreateBook(book *Book) (err error) {
-if err = Config.DB.Create(book).Error; err != nil {
- return err
+	if err = Config.DB.Create(book).Error; err != nil {
+		return err
+	}
+	return nil
 }
-return nil
-}//GetBookByID ... Fetch only one book by Id
+
+//GetBookByID ... Fetch only one book by Id
 func GetBookByID(book *Book, id string) (err error) {
-if err = Config.DB.Where("id = ?", id).First(book).Error; err != nil {
- return err
+	if err = Config.DB.Where("id = ?", id).First(book).Error; err != nil {
+		return err
+	}
+	return nil
 }
-return nil
-}//UpdateBook ... Update book
+
+//UpdateBook ... Update book
 func UpdateBook(book *Book, id string) (err error) {
-fmt.Println(book)
-Config.DB.Save(book)
-return nil
-}//DeleteBook ... Delete book
-func DeleteBook(book *Book, id string) (err error) {
-Config.DB.Where("id = ?", id).Delete(book)
-return nil
+	fmt.Println(book)
+	Config.DB.Save(book)
+	return nil
 }
+
+//DeleteBook ... Delete book
+func DeleteBook(book *Book, id string) (err error) {
+	Config.DB.Where("id = ?", id).Delete(book)
+	return nil
+}
+
 ```
 ## Setting up Server
 

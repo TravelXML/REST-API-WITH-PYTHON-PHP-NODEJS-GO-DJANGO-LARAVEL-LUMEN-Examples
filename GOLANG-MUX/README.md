@@ -26,7 +26,7 @@ then server will run without any issues
 
 The App has a few Endpoints
 
-All api endpoints are prefixed with `/api/v1` becuase in router we set like this, if you will open main.go file then on the below section you will find router section
+All api endpoints are prefixed with `/api/v1` because in router we set like this, if you will open main.go file then on the below section you will find router section
 
   
   ```
@@ -47,7 +47,7 @@ All api endpoints are prefixed with `/api/v1` becuase in router we set like this
 ```
 You can restructure this according to your requirements.
 
-To reach any endpoint use `baseurl:8080/api/v1/{endpoint}`
+### To reach any endpoint use `baseurl:8080/api/v1/{endpoint}`
 
 Get Books by Author: `/books/authors/{author}` 
 Optional query parameter for ratingAbove ratingBelow limit and skip
@@ -64,5 +64,5 @@ Delete Book by ISBN `/book/isbn/{isbn}`
 
 Create New Book `/book`
 
-I hope instructions are good to setup this project in your local, Enjoy Coding :+1:
+I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
 

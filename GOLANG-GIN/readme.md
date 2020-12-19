@@ -133,8 +133,7 @@ type Book struct {
 	Author       string    `json:"author"`
 	Description  string    `json:"description"`
 	Price        float64   `json:"price"`
-	Isbn         string    `json:"isbn"`
-	Release_date time.Time `json:"release_date"`
+	Isbn         string    `json:"isbn"`	
 }
 
 func (b *Book) TableName() string {

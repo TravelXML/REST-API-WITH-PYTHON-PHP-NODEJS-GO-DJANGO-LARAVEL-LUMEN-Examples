@@ -1,5 +1,5 @@
 
-# Create REST API using GO, GIN Framework, GORM, MYSQL, REST API EXAMPLE with GO an GIN
+# Create REST API using GO, GIN Framework, GORM, MYSQL; REST API EXAMPLE with GO an GIN
 
 ![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
 

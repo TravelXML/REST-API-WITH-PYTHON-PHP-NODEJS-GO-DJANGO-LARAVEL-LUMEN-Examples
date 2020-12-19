@@ -61,6 +61,8 @@ go get github.com/jinzhu/gorm
 ## Project Structure
 Certainly, we follow the MVC pattern for creating the API that is Model, View and Controller. But ‘V’ remains silent here because we are creating an API now. We have database configuration, model, routes, controller and of course our all time favorite Main file which is the starter of our project. I have the snapshot for creating the structure of the project.
 
+![REST API with GO and GIN Project Structures](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin1.png)
+
 
 ## Database Setup
 First of all, make sure you have mysql installed on the machine and some tools like phpmyadmin, mysql workbench or any other tools to use your database efficiently. 
@@ -340,6 +342,11 @@ Run the following command for starting your server.
 ```
 go run main.go
 ```
+
+it will successfully run.
+![REST API with GO and GIN Server UP](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin2.png)
+
+
 If you encountered any of the problems during serving, first fix them because you may have missed something in between.
 
 ## Endpoints
@@ -355,6 +362,7 @@ Now, Open up the endpoint testing tools you have; we will be using Postman which
 
 ## Create New Book
 Here, we will create two books simultaneously.
+![REST API with GO and GIN endpoint Book - Create](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin3.png)
 
 
 
@@ -362,20 +370,38 @@ Here, we will create two books simultaneously.
 ## Get ALL Books
 Get all the available books in our database.
 
+![REST API with GO and GIN endpoint Book - All](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin4.png)
+
+
 
 ## Get Book By ID
-Get the book information for the book having Id=1.
+Get the book information for the book having Id=5.
+
+![REST API with GO and GIN endpoint Book - By Id](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin5.png)
+
 
 
 ## Update The Book
-Update the book information for the book having Id=1.
+Update the book information for the book having Id=5.
+![REST API with GO and GIN endpoint Book - Update By Id](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin6.png)
 
 
 ## Delete The Book
-Delete the book having Id=2.
+Delete the book having Id=5.
+![REST API with GO and GIN endpoint Book - Delete By Id](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin7.png)
 
 
-This is the very very simple rest api that we have built using Go, Gin, Gorm and Mysql. There is a lot more things you can do with Go. I will be in touch with you with some more articles related to Go in the coming days. If you have any confusions related to the article, please let me know in the comments below or if you are having trouble with covering it all, then I have the full version of code also in my Github repository. See you in the next article!
-Stay tuned!
-Github Repository: https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-GIN
+This is the very very simple rest api that we have built using Go, Gin, Gorm and Mysql. There is a lot more things you can do with Go. I will be in touch with you with some more articles related to Go in the coming days. 
+
+I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
 

@@ -29,7 +29,7 @@ We will be performing the CRUD operation for Book with few fields.
  - Mysql Installation
  - You need to have basic knowledge of Go, to get started with the project that we are going to do.
  
-## Don't be disappointed :broken_heart: if you don't know GO, If you know any programming language that should be fine as well, COOL?
+Don't be disappointed :broken_heart: if you don't know GO, If you know any programming language that should be fine as well, COOL?
 
 ### Let’s Go!
 
@@ -363,11 +363,11 @@ If you encountered any of the problems during serving, first fix them because yo
 ## Endpoints
 
 ### These are the endpoints we will use to create, update, read and delete the book data.
-- GET book-store/book → Retrieves all the Book data
-- POST book-store/book → Add new Book data
-- GET book-store/book/{id} → Retrieve the single Book data
-- PUT book-store/book/{id} → Update the Book data
-- DELETE book-store/book/{id} → Delete the Book data
+- **GET** book-store/book → Retrieves all the Book data
+- **POST** book-store/book → Add new Book data
+- **GET** book-store/book/{id} → Retrieve the single Book data
+- **PUT** book-store/book/{id} → Update the Book data
+- **DELETE** book-store/book/{id} → Delete the Book data
 
 Now, Open up the endpoint testing tools you have; we will be using Postman which is simply awesome. Please make sure that data is inserted in JSON format through Postman because we are not working with form-data in this module.
 

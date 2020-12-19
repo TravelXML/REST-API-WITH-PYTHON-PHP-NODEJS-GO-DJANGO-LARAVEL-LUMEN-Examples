@@ -1,3 +1,8 @@
+
+# Create REST API using GO, GIN Framework, GORM, MYSQL, REST API EXAMPLE with GO an GIN
+
+![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
+
 ## Why to Build a REST API with GO?
 
 Go is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like C++. Go is referred to be the fastest programming language that offers very high performance. 

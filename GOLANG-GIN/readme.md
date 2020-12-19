@@ -115,7 +115,7 @@ Isbn
 Release_date
 We create a BookModel.go file inside our Models directory.
 
-
+```
 //Models/BookModel.gopackage Models
 
 type Book struct {
@@ -142,8 +142,10 @@ So, let’s create Routes.go file inside the Routes folder. We will see the impl
 //Routes/Routes.gopackage Routes
 
 import (
-"first-api/Controllers""github.com/gin-gonic/gin"
-)//SetupRouter ... Configure routes
+"first-api/Controllers"
+"github.com/gin-gonic/gin"
+)
+//SetupRouter ... Configure routes
 func SetupRouter() *gin.Engine {
 r := gin.Default()
 grp1 := r.Group("/book-api")
@@ -169,8 +171,10 @@ We have Book.go inside Models to interact with the database. We respond to the b
 import (
 "first-api/Models"
 "fmt"
-"net/http""github.com/gin-gonic/gin"
-)//GetBooks ... Get all books
+"net/http"
+"github.com/gin-gonic/gin"
+)
+//GetBooks ... Get all books
 func GetBooks(c *gin.Context) {
 var book []Models.Book
 err := Models.GetAllBooks(&book)
@@ -234,8 +238,11 @@ if err != nil {
  c.JSON(http.StatusOK, gin.H{"id" + id: "is deleted"})
 }
 }
-Handle Requests
+```
+## Handle Requests
 This is the crucial file which fetch data and interacts directly with our database. We create a Book.go file inside the Models folder to handle the database requests.
+
+```
 //Models/Book.go package Models
 
 import (
@@ -274,7 +281,8 @@ return nil
 
 This is the starter function of our project. We connect mysql, auto migrate our modal and setup router from here. We have to create main.go in the root of the project.
 
-```//main.gopackage main
+```
+//main.gopackage main
 
 import (
 "first-api/Config"

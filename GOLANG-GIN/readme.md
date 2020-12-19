@@ -27,7 +27,9 @@ We will be performing the CRUD operation for Book with few fields.
 ## Prerequisites 
  - GO Installation 
  - Mysql Installation
- - You need to have clear knowledge of Go, to get started with the project that we are going to do.
+ - You need to have basic knowledge of Go, to get started with the project that we are going to do.
+ 
+## If you know any programming language that should be fine as well, COOL?
 
 ### Let’s Go!
 

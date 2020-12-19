@@ -2,7 +2,7 @@
 
 ![REST API With GO and MUX](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Build-REST-API-USING-GO-MUX.png)
 
-This is a sample Book REST API which will showcase you, how to build REST API using golang & MUX.
+###This is a sample Book REST API which will showcase you, how to build REST API using golang & MUX.
 
 ## What's MUX?
 
@@ -11,7 +11,7 @@ The name mux stands for "HTTP request multiplexer". Like the standard http.Serve
 
 ## How to Run Locally?
 
-Download the script to your local project folder from repositories then from the root of the project folder run the below command.
+Download the script to your local project folder from ![repository](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-MUX) then from the root of the project folder run the below command.
 
 ```
 go run .

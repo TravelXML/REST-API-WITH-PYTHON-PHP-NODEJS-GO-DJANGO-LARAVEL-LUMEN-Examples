@@ -7,7 +7,7 @@ Go is the trending programming language currently. Go is very simple but offers 
 Gin is one of the incredible frameworks of Go, which is lightweight and massively fast. The interesting feature of Gin is that it provides a custom version of HttpRouter which makes the API routes extremely faster, than that of other Go frameworks. It is claimed to be 40 times faster than another Go framework called Martini and of course, it provides a lot more benefits compared to other frameworks and other programming languages.
 Gin is just the microframework which does not provide you a lot of features as of other frameworks. It just provides you with necessary tools to build api, such as routing, validation, etc. Experts believe that Gin is best for long term investment, to grab proper advantage of its high performance and flexibility.
 
-## We will be creating a very simple API using 
+## We will be creating a very simple REST API using 
  - Go Programming Language
  - Gin Framework
  - Gorm Package

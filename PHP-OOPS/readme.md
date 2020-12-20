@@ -28,7 +28,7 @@ If you want to play around with JWT token the here is your [play ground](https:/
     
 ### All test will perform using POSTMAN
 
-## Prerequisites
+## Prerequisites 
 
     - PHP Installation
     - Mysql Installation

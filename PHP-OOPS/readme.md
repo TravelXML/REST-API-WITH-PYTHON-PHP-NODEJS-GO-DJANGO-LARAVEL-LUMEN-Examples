@@ -182,11 +182,11 @@ All Requests and responses are JSON data
 
 ### What all Endpoints are available for test?
 
-    - Sign-in for auth token - `'sign_in'`
-    - (C)reate a new Book - `'create_book'`
-    - (R)ead existing Books - `'read_book'`
-    - (U)pdate an existing Book - `'update_book'`
-    - (D)elete an existing Book - `'delete_book'`
+    - Sign-in for auth token - 'sign_in'
+    - (C)reate a new Book - 'create_book'
+    - (R)ead existing Books - 'read_book'
+    - (U)pdate an existing Book - 'update_book'
+    - (D)elete an existing Book - 'delete_book'
     
 ### Open Your POSTMAN
 

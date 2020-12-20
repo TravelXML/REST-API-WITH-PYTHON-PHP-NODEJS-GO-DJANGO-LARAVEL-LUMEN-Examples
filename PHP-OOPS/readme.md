@@ -41,7 +41,7 @@ All test will perform using POSTMAN
     - Composer Installation
     - Local Apache Server UP
     
-Rather than any individual installations you can use package installer which is really handy, [XAMPP](https://www.apachefriends.org/index.html) and [WAMP](https://www.wampserver.com/en/) for windows, Lamp for linux.
+Rather than any individual installations you can use package installer which is really handy, like [XAMPP](https://www.apachefriends.org/index.html) and [WAMP](https://www.wampserver.com/en/) for windows, Lamp for linux.
     
 You should have knowledge of PHP OOPS, to get started with the project that we are going to do.
 

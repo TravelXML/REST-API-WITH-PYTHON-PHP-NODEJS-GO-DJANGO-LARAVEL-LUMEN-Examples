@@ -10,6 +10,10 @@ JWT stand for JSON Web Tokens, are an open, industry standard RFC 7519 method fo
 
 If you want to play around with JWT token the here is your [play ground](https://jwt.io/)
 
+### HOW JWT token look like
+
+![JWT token with PHP REST API](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-1.png)
+
 # We will be creating a very simple REST API using
 
     - PHP Programming Language with Object Oriented Concept
@@ -119,6 +123,8 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
 #### Now Your API endpoint is Ready For Test, If you want to understand about the implementation then go through the below section otherwise you can skip the below one. 
 
 ## Files and Folders
+
+![PHP REST API Files and Folders](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-2.png)
   - **config**  
     - Database.php - file about database connectivity
     - DatabaseImport.sql - sql import data - migration
@@ -157,12 +163,31 @@ All Requests and responses are JSON data
  - Create a Collection - `PHP REST API`
  - Single endpoint for all operation - `http://localhost/bookstore/`
  - Method Always `POST`
- - Auth Required for all requests apart of signin
+ - Auth Required for all requests apart of sign-in
  
 ### Lets test?
 
-- Signin
-Auth Token to send via request header for all requests 
+- Signin - fetch Auth Token for all requests, it need to send via header
+
+![PHP REST API Pass JWT token Via Request Header](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-3.png)
+
+- Get Token Id on Sucessful Sign-in
+![PHP REST API get JWT token for sign in](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-4.png)
+
+- Create Book
+![PHP REST API - Create Book](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-5.png)
+
+- Read Book
+![PHP REST API - Read Book](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-6.png)
+
+- Read Book By Id
+![PHP REST API - Read Book By Id](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-7.png)
+
+- Update Book
+![PHP REST API - Update Book](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-8.png)
+
+- Delete Book
+![PHP REST API - Delete Book](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-10.png)
  
 
 

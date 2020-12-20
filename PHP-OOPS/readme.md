@@ -1,4 +1,4 @@
-# Rest API with PHP - OOPS, CURD, PDO, UNIT Testing, JWT, EXAMPLES
+# REST API with PHP - OOPS, PDO, UNIT Testing, JWT, CURD, EXAMPLES
 
 ### What's REST API or RESTFUL API?
 

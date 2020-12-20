@@ -142,7 +142,7 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
   
 #### Basic testing done for all functions like create, update, read & delete book
 
-This can be extend with more functionalities like input and output validation & parameters matching and sign-in proccess as well. 
+This can be extend with more functionalities like input and output validation & parameters matching and sign-in proccess as well.  Please consider this as task, complete the task and share it.
 
 All this test conducted using HTTP_Request2 PEAR library.
 

@@ -174,7 +174,7 @@ This can be extend with more functionalities like input and output validation & 
 
 All this test conducted using HTTP_Request2 PEAR library.
 
-For more details you visit: https://pear.php.net/manual/en/package.http.http-request2.config.php
+Regarding HTTP_Request2 you can visit: https://pear.php.net/manual/en/package.http.http-request2.config.php
 
 ### Ready to test, let's goahead with testing using POSTMAN
 

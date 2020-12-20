@@ -21,10 +21,10 @@ If you want to play around with JWT token the here is your [play ground](https:/
 
 ### Create a RESTful web service for a Library. The service must have the following API endpoints:
 
-    - **(C)reate** a new Book
-    - **(R)ead** existing Books
-    - **(U)pdate** an existing Book
-    - **(D)elete** an existing Book
+    - (C)reate a new Book
+    - (R)ead existing Books
+    - (U)pdate an existing Book
+    - (D)elete an existing Book
     
 ### All test will perform using POSTMAN
 
@@ -116,7 +116,7 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
 
 ```
 
-### Now Your API endpoint is Ready For Test, If you want to understand about the implementation then go through the below section otherwise you can skip the below one. 
+#### Now Your API endpoint is Ready For Test, If you want to understand about the implementation then go through the below section otherwise you can skip the below one. 
 
 ## Files and Folders
   - **config**  
@@ -132,7 +132,7 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
   - **index.php** - ping point
   - **readme.txt** - instructions
   
-## Basic testing done for all functions like create, update, read & delete book
+#### Basic testing done for all functions like create, update, read & delete book
 
 This can be extend with more functionalities like input and output validation & parameters matching and sign-in proccess as well. 
 
@@ -140,17 +140,17 @@ All this test conducted using HTTP_Request2 PEAR library.
 
 For more details you visit: https://pear.php.net/manual/en/package.http.http-request2.config.php
 
-## Ready to test, let's goahead with testing using POSTMAN
+### Ready to test, let's goahead with testing using POSTMAN
 
 All Requests and responses are JSON data
 
 ### What all Endpoints are available for test?
 
-    - **Sign-in** for auth token - `'sign_in'`
-    - **(C)reate** a new Book - `'create_book'`
-    - **(R)ead** existing Books - `'read_book'`
-    - **(U)pdate** an existing Book - `'update_book'`
-    - **(D)elete** an existing Book - `'delete_book'`
+    - Sign-in for auth token - `'sign_in'`
+    - (C)reate a new Book - `'create_book'`
+    - (R)ead existing Books - `'read_book'`
+    - (U)pdate an existing Book - `'update_book'`
+    - (D)elete an existing Book - `'delete_book'`
     
 ### Open Your POSTMAN
 
@@ -162,19 +162,14 @@ All Requests and responses are JSON data
 ### Lets test?
 
 - Signin
+Auth Token to send via request header for all requests 
  
 
 
 
 
 
-  Every serivce you call, needs to have the Auth & action and these are compulsory apart from the other parameters.<br/>
-  **Auth :** Auth Token to send via request header for all requests [eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg]<br/>
-  **Request :** All request should be POST JSON data, specifications are mentioned below<br/>
-  **Response :** JSON data<br/>
-
-
-#### For Support, you can reach me 
+### For Support, you can reach me 
 -------------------------------
 #### Skype: sapan.mohannty
 #### Twitter: https://twitter.com/htngapi

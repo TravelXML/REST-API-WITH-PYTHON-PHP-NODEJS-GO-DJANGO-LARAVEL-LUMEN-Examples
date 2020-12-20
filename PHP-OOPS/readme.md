@@ -10,7 +10,7 @@ JWT stand for JSON Web Tokens, are an open, industry standard RFC 7519 method fo
 
 If you want to play around with JWT token the here is your [play ground](https://jwt.io/)
 
-### HOW JWT token look like
+### HOW JWT Token look like?
 
 ![JWT token with PHP REST API](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-1.png)
 
@@ -23,14 +23,16 @@ If you want to play around with JWT token the here is your [play ground](https:/
     - Unit Tetsing
     
 
-### Create a RESTful web service for a Library. The service must have the following API endpoints:
+### Create a RESTful web service for a Library. 
+
+The service must have the following API endpoints:
 
     - (C)reate a new Book
     - (R)ead existing Books
     - (U)pdate an existing Book
     - (D)elete an existing Book
     
-### All test will perform using POSTMAN
+All test will perform using POSTMAN
 
 ## Prerequisites 
 
@@ -171,7 +173,7 @@ All Requests and responses are JSON data
 
 ![PHP REST API Pass JWT token Via Request Header](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-3.png)
 
-- Get Token Id on Sucessful Sign-in
+- Get Token Id on Sucessful Sign-in and pass to all other requests via their header
 ![PHP REST API get JWT token for sign in](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-4.png)
 
 - Create Book

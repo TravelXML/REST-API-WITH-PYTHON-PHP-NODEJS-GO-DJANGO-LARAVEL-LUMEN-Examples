@@ -14,30 +14,30 @@ If you want to play around with JWT token the here is your [play ground](https:/
 
 ![JWT token with PHP REST API](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-1.png)
 
-JWT Token has three part these are 
+JWT Token has three parts these are 
 
-    - 1 header: ALGORITHM & TOKEN TYPE, identifies which algorithm is used to generate the signature, HS256 indicates that this token is signed using HMAC-SHA256. Typical cryptographic algorithms used are HMAC with SHA-256 (HS256) and RSA signature with SHA-256 (RS256). JWA (JSON Web Algorithms)
-            header = {
-                        "typ": "JWT",
-                        "alg": "HS256"
-                     }
-    - 2 payload: Data, contains a set of claims. The JWT specification defines seven Registered Claim Names which are the standard fields commonly included in tokens.[1] Custom claims are usually also included, depending on the purpose of the token.              
+- 1 header: ALGORITHM & TOKEN TYPE, identifies which algorithm is used to generate the signature, HS256 indicates that this token is signed using HMAC-SHA256. Typical cryptographic algorithms used are HMAC with SHA-256 (HS256) and RSA signature with SHA-256 (RS256). JWA (JSON Web Algorithms)
+        header = {
+                    "typ": "JWT",
+                    "alg": "HS256"
+                 }
+- 2 payload: Data, contains a set of claims. The JWT specification defines seven Registered Claim Names which are the standard fields commonly included in tokens.[1] Custom claims are usually also included, depending on the purpose of the token.              
 
-            payload = {
-                        "id": 1,
-                        "user_name": "sapan",
-                        "email": "ctoattraveltech@gmail.com"
-                      } 
-    - 3 signature: VERIFY SIGNATURE, securely validates the token. The signature is calculated by encoding the header and payload using Base64url Encoding and concatenating the two together with a period separator. That string is then run through the cryptographic algorithm specified in the header, in this case HMAC-SHA256. The Base64url Encoding is similar to base64, but uses different non-alphanumeric characters and omits padding.               
+        payload = {
+                    "id": 1,
+                    "user_name": "sapan",
+                    "email": "ctoattraveltech@gmail.com"
+                  } 
+- 3 signature: VERIFY SIGNATURE, securely validates the token. The signature is calculated by encoding the header and payload using Base64url Encoding and concatenating the two together with a period separator. That string is then run through the cryptographic algorithm specified in the header, in this case HMAC-SHA256. The Base64url Encoding is similar to base64, but uses different non-alphanumeric characters and omits padding.               
 
-            signature = HMACSHA256(
-                                    base64UrlEncode(header) + "." +
-                                    base64UrlEncode(payload),
-                                  )   
+        signature = HMACSHA256(
+                                base64UrlEncode(header) + "." +
+                                base64UrlEncode(payload),
+                              )   
 
-    const token = base64urlEncoding(header) + '.' + base64urlEncoding(payload) + '.' + base64urlEncoding(signature)     
+const token = base64urlEncoding(header) + '.' + base64urlEncoding(payload) + '.' + base64urlEncoding(signature)     
 
-    final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg`                      
+final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg`                      
 
 
 # We will be creating a very simple REST API using

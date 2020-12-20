@@ -1,10 +1,10 @@
 # Rest API with CURD, PHP PDO, UNIT Testing, JWT, EXAMPLES
 
-## What's REST API or RESTFUL API?
+### What's REST API or RESTFUL API?
 
 REST is acronym for REpresentational State Transfer. RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and alter data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources. [For More Details](https://en.wikipedia.org/wiki/Representational_state_transfer)
 
-## What's JWT?
+### What's JWT?
 
 JWT stand for JSON Web Tokens, are an open, industry standard RFC 7519 method for representing claims securely between two parties. For details [Click Here](https://en.wikipedia.org/wiki/JSON_Web_Token)
 
@@ -42,7 +42,7 @@ JWT Token has three parts these are
 final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg`                      
 
 
-# We will be creating a very simple REST API using
+### We will be creating a very simple REST API using
 
     - PHP Programming Language with Object Oriented Concept
     - PDO Library
@@ -62,7 +62,7 @@ The service must have the following API endpoints:
     
 All test will perform using POSTMAN
 
-## Prerequisites 
+### Prerequisites 
 
     - PHP Installation
     - Mysql Installation
@@ -77,7 +77,7 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
 
 **Let’s Go!**
 
-## How to Start?
+### How to Start?
 
 - Create Project folder 'bookstore'
 - Download Script from Github Repository to your project folder
@@ -150,9 +150,9 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
 
 ```
 
-#### Now Your API endpoint is Ready For Test, If you want to understand about the implementation then go through the below section otherwise you can skip the below one. 
+#### Wow, Now Your API endpoint is Ready For Test, If you want to understand about the implementation then go through the below section otherwise you can skip the below one. 
 
-## Files and Folders
+### Files and Folders
 
 ![PHP REST API Files and Folders](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-2.png)
   - **config**  
@@ -220,6 +220,17 @@ All Requests and responses are JSON data
 ![PHP REST API - Delete Book](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-10.png)
  
 
+I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
 
 
 

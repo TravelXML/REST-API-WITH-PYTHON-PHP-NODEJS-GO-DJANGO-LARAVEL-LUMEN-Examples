@@ -1,15 +1,19 @@
 
-# Create REST API using GO, GIN Framework, GORM, MYSQL; REST API EXAMPLE with GO an GIN
+# Create REST API using GO, GIN Framework, GORM, MYSQL; REST API EXAMPLE with GO an GIN :fire:
 
 ![Build REST API with GO and GIN Frameworks](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/GO_GIN_MAiN.png)
 
-## Why to Build a REST API with GO?![REST API with GO](https://raw.githubusercontent.com/gin-gonic/logo/master/color.png  =250x250)
+## Why to Build REST API with GO?<img align="right" width="100px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
 
-* Go * is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like * C++ *. Go is referred to be the fastest programming language that offers very high performance. 
+**Go** is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like **C++**. Go is referred to be the fastest programming language that offers very high performance. 
 
-## What’s GIN? ![REST API with GIN Framework](https://raw.githubusercontent.com/gin-gonic/logo/master/color.png  =250x250)
+## What’s GIN? <img align="right" width="100px" src="https://raw.githubusercontent.com/gin-gonic/logo/master/color.png">
 
-Gin is one of the incredible frameworks of Go, which is lightweight and massively fast. The interesting feature of Gin is that it provides a custom version of HttpRouter which makes the API routes extremely faster, than that of other Go frameworks. It is claimed to be 40 times faster than another Go framework called Martini and of course, it provides a lot more benefits compared to other frameworks and other programming languages.
+
+**Gin** is one of the incredible frameworks of Go, which is lightweight and massively fast. The interesting feature of Gin is that it provides a custom version of HttpRouter which makes the API routes extremely faster, than that of other Go frameworks. It is claimed to be 40 times faster than another Go framework called Martini and of course, it provides a lot more benefits compared to other frameworks and other programming languages.
+
+It features a martini-like API with performance that is up to 40 times faster thanks to [httprouter](https://github.com/julienschmidt/httprouter). If you need performance and good productivity, you will love Gin.
+
 Gin is just the microframework which does not provide you a lot of features as of other frameworks. It just provides you with necessary tools to build api, such as routing, validation, etc. Experts believe that Gin is best for long term investment, to grab proper advantage of its high performance and flexibility.
 
 ## We will be creating a very simple REST API using 
@@ -23,7 +27,9 @@ We will be performing the CRUD operation for Book with few fields.
 ## Prerequisites 
  - GO Installation 
  - Mysql Installation
- - You need to have clear knowledge of Go, to get started with the project that we are going to do.
+ - You need to have basic knowledge of Go, to get started with the project that we are going to do.
+ 
+Don't be disappointed :broken_heart: if you don't know GO, If you know any programming language that should be fine as well, COOL?
 
 ### Let’s Go!
 
@@ -357,11 +363,11 @@ If you encountered any of the problems during serving, first fix them because yo
 ## Endpoints
 
 ### These are the endpoints we will use to create, update, read and delete the book data.
-- GET book-store/book → Retrieves all the Book data
-- POST book-store/book → Add new Book data
-- GET book-store/book/{id} → Retrieve the single Book data
-- PUT book-store/book/{id} → Update the Book data
-- DELETE book-store/book/{id} → Delete the Book data
+- **GET** book-store/book → Retrieves all the Book data
+- **POST** book-store/book → Add new Book data
+- **GET** book-store/book/{id} → Retrieve the single Book data
+- **PUT** book-store/book/{id} → Update the Book data
+- **DELETE** book-store/book/{id} → Delete the Book data
 
 Now, Open up the endpoint testing tools you have; we will be using Postman which is simply awesome. Please make sure that data is inserted in JSON format through Postman because we are not working with form-data in this module.
 

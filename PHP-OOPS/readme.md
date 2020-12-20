@@ -17,6 +17,7 @@ If you want to play around with JWT token the here is your [play ground](https:/
 JWT Token has three parts these are 
 
 - **1 header: ALGORITHM & TOKEN TYPE**, identifies which algorithm is used to generate the signature, HS256 indicates that this token is signed using HMAC-SHA256. Typical cryptographic algorithms used are HMAC with SHA-256 (HS256) and RSA signature with SHA-256 (RS256). JWA (JSON Web Algorithms)
+        
         header = {
                     "typ": "JWT",
                     "alg": "HS256"
@@ -35,7 +36,8 @@ JWT Token has three parts these are
                                 base64UrlEncode(payload),
                               )   
 
-**const token = base64urlEncoding(header) + '.' + base64urlEncoding(payload) + '.' + base64urlEncoding(signature)**     
+
+        const token = base64urlEncoding(header) + '.' + base64urlEncoding(payload) + '.' + base64urlEncoding(signature)    
 
 final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uYW1lIjoic2FwYW4iLCJlbWFpbCI6ImN0b2F0dHJhdmVsdGVjaEBnbWFpbC5jb20ifQ.YuuHvX8IdNFugj0_1xiEbZ9f54PAnaExO9Xv_rjB4Rg`                      
 

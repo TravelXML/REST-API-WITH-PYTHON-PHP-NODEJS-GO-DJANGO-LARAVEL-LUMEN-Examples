@@ -402,7 +402,7 @@ Delete the book having Id=5.
 ![REST API with GO and GIN endpoint Book - Delete By Id](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/go-gin7.png)
 
 
-This is the very very simple rest api that we have built using Go, Gin, Gorm and Mysql. There is a lot more things you can do with Go. I will be in touch with you with some more articles related to Go in the coming days. 
+This is the very very simple rest api that we have built using Go, Gin, Gorm and Mysql. There is a lot more things you can do with Go, Spend some time and play with code.
 
 I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
 

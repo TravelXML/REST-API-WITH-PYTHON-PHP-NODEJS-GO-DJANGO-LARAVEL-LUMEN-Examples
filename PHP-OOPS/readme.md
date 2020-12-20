@@ -51,7 +51,7 @@ final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uY
     - Unit Tetsing
     
 
-### Create a RESTful web service for a Library. 
+### Create a RESTful web service for a Book. 
 
 The service must have the following API endpoints:
 

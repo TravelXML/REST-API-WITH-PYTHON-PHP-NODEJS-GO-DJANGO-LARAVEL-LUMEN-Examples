@@ -36,15 +36,16 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `users` */
 
-insert  into `users`(`user_id`,`user_name`,`email`) values 
+insert  into `users`(`user_id`,`user_name`,`email`,`password`) values 
 
-(1,'sapan','ctoattraveltech@gmail.com'),
+(1,'sapan','ctoattraveltech@gmail.com','c1bdcee164660e8bcf4eabbc2ad9d470'),
 
-(2,'akram','akram@shoppinpal.com ');
+(2,'akram','akram@shoppinpal.com','c1bdcee164660e8bcf4eabbc2ad9d470');
 
 

@@ -208,6 +208,10 @@ class BookStoreApi
             return JWT::encode($userArray, $this->key);
         }
 
+        function getJwtToken(){
+
+        }
+
         /**
          * @Desc it takes request & build JSON response
          */
@@ -248,6 +252,34 @@ class BookStoreApi
             $results = array( );
             switch ($this->WhatToDo)
             {
+                case 'sign_in': // sign in and return jwt token for valid user
+                    $this->email = isset( $this->requestDetails['email'] ) ?trim($this->requestDetails['email']):'';
+                    $this->psd = isset( $this->requestDetails['password'] ) ?trim($this->requestDetails['password']):'';
+                    $this->validateApiP('email@|@not_blank,psd@|@not_blank');
+                    $query = 'SELECT user_name FROM users WHERE email = "'.$this->email.'" AND password = "'.md5($this->psd).'"';
+                    $stmt = $this->db->prepare($query); 
+                    try {
+                        $stmt->execute(); 
+                        if ($data = $stmt->fetch()) {                            
+                           // echo $data['user_name'] . '<br>';
+                            $success = 1;
+                            $userArray =['id' => 1, 'user_name'=> $data['user_name'], 'email' => $this->email]; // just hardcoded for now .. it can be pull from users table as well
+                            $token = JWT::encode($userArray, $this->key);
+                            $displayMessage = ['message' => 'Sign-in Successfully', 'auth_token' => $token];
+                        } else {
+                            $success = 0;
+                            $displayMessage = ['message' => 'Invalid User'];
+                        }                       
+
+                    } catch (PDOException $e) {
+                        $success = 0;                        
+                        $displayMessage = ['message' => 'db error'];                        
+                    } 
+                    $results['success'] = $success;
+                    $results['data'] = $displayMessage;
+                    $this->ResponseJson( $results );  
+
+
                 case 'create_book':  // create a book              
 
                     $this->author = isset( $this->requestDetails['author_name'] ) ?$this->requestDetails['author_name']:'';
@@ -364,7 +396,6 @@ class BookStoreApi
                     array_push($booksArr, $bookItem);
                 }
                     $results['success'] = $success;
-
                     $results['data'] = (count($booksArr)>0)?$booksArr:['message' => 'invalid id'];
                     $this->ResponseJson( $results );
                 break;
@@ -372,20 +403,12 @@ class BookStoreApi
                 case 'delete_book': // delete a book
                     $this->id = isset( $this->requestDetails['id'] ) ?$this->requestDetails['id']:'';
                     $this->validateApiP('id@|@int');
-                    $query = 'DELETE FROM books WHERE book_id = :id AND user_id = :user_id';
+                    $query = 'DELETE FROM books WHERE book_id = '.$this->id.' AND user_id ='.$this->userId;
                     $stmt = $this->db->prepare($query);
-                    $stmt->bindParam(':id', $this->id);
-                    $stmt->bindParam(':user_id', $this->userId);
                     try {
-                        $stmt->execute();
-                        if ($stmt->rowCount()) {
-                            $success = 1;
-                            $displayMessage = ['message' => 'book deleted successfully'];
-                       } else{
-                            $success = 0;
-                            $displayMessage = ['message' => 'invalid id'];                
-
-                       }
+                        $stmt->execute();                        
+                        $success = 1;
+                        $displayMessage = ['message' => 'book deleted successfully'];                     
 
                     } catch (PDOException $e) {
                         //var_dump($e);
@@ -395,10 +418,7 @@ class BookStoreApi
                     $results['success'] = $success;
                     $results['data'] = $displayMessage;
                     $this->ResponseJson( $results );
-
-
                 break;
-
             }
 
         }

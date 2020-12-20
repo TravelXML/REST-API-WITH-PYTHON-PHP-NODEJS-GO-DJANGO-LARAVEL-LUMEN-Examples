@@ -129,15 +129,15 @@ Don't be disappointed 💔 if you don't know PHP, If you know any programming la
 ![PHP REST API Files and Folders](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-2.png)
   - **config**  
     - Database.php - file about database connectivity
-    - DatabaseImport.sql - sql import data - migration
+    - DatabaseImport.sql - sql import data - for migration
   - **test**
-    - `CreateBook.php` - test create book functionality
-    - `ReadBook.php` - test read book functionality
-    - `DeleteBook.php` - test delte book functionality
-    - `UpdateBokk.php` - test update book functionality
-    - `ReadBookSingle.php` - read book by id functionality
-  - **book.class.php** - controller, router
-  - **index.php** - ping point
+    - `CreateBook.php` - for test to create book functionality
+    - `ReadBook.php` - for test to read book functionality
+    - `DeleteBook.php` - for test to delte book functionality
+    - `UpdateBokk.php` - for test to update book functionality
+    - `ReadBookSingle.php` - for test to read book by id functionality
+  - **book.class.php** - for controller, router
+  - **index.php** - for ping or endpoint
   - **readme.txt** - instructions
   
 #### Basic testing done for all functions like create, update, read & delete book

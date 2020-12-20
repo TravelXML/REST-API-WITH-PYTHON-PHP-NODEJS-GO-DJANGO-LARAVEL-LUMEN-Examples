@@ -232,13 +232,3 @@ Skype: sapan.mohannty
 Twitter: https://twitter.com/htngapi
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
-
-
-
-
-### For Support, you can reach me 
--------------------------------
-#### Skype: sapan.mohannty
-#### Twitter: https://twitter.com/htngapi
-#### Linkedin: https://www.linkedin.com/in/travel-technology-cto/
-

@@ -542,6 +542,17 @@ Here deleting property, which has propety_id:1, it has been passed over paramete
 
 ## Conclusion
 
-Now we have learned how to Build any RESTful API with Laravel using Laravel Passport. The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
-I hope this gives you a clarity what can be improved on for your existing project and what to implements on new ones. Please feel free to explore the codebase of this application by downloading it here on GitHub.
-For more information about Laravel and Laravel Passport, don't hesitate to visit the [official documentation](https://laravel.com/docs/8.x/).
+Now we have learned how to [Build any RESTful API with Laravel using Laravel Passport](https://apige.medium.com/laravel-api-tutorial-build-a-secure-rest-api-in-php-using-laravel-passport-oauth2-0-f74d1f78c01a). The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
+
+I hope instructions are good to set up this project in your local and gives you a clarity what can be improved on for your existing project and what to implements on new ones, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+

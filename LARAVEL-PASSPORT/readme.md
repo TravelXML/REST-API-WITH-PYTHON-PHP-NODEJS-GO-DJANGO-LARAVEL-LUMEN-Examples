@@ -1,6 +1,7 @@
 # Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
 
-RESTful APIs are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
+[RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
+
 Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
 
 ## Prerequisites
@@ -26,7 +27,7 @@ Don't be disappointed if you don't know PHP, If you know any programming languag
 
 ## Let's Start?
 
-To begin, you can either use Composer or Laravel installer to quickly scaffold a new Laravel application on your computer. Follow the instructions here on Laravel's official website to set up the Laravel installer. 
+To begin, you can either use Composer or Laravel installer to quickly scaffold a new Laravel application on your computer. Follow the instructions here on [Laravel's official website to set up the Laravel installer](https://laravel.com/docs/8.x/). 
 Once you are done, run the following command:
 
     // move into the project
@@ -479,7 +480,7 @@ To view the entire list of the routes created for this application, run the foll
     
 ![php artisan route:list](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/laravel-2.png)    
     
-You will see similar contents as shown below:
+You will see similar contents as shown above:
 
 ## Run the Application
 
@@ -487,7 +488,7 @@ Now, test all the logic implemented so far by running the application with:
 
     $ php artisan serve
     
-We will use Postman for the remainder of this tutorial to test the endpoints. Download it here if you don't have it installed on your machine.
+We will use Postman for the remainder of this tutorial to test the endpoints. [Download it here if you don't have it installed on your machine](https://www.postman.com/).
 
 ## Register User
 

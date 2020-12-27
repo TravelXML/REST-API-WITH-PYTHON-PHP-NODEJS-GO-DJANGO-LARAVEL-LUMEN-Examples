@@ -1,7 +1,7 @@
 # Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
 
+[RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 
-RESTful APIs are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
 
 ## Prerequisites
@@ -25,8 +25,9 @@ To demonstrate how to build a secure Laravel API with passport token, we'll buil
 To Build this REST API, we will install Laravel Passport and generate an access token for each user after authentication. This will allow such users to have access to some of the secured endpoints.
 Don't be disappointed if you don't know PHP, If you know any programming language that should be fine as well, COOL?
 
-## Getting Started
-To begin, you can either use Composer or Laravel installer to quickly scaffold a new Laravel application on your computer. Follow the instructions here on Laravel's official website to set up the Laravel installer. 
+## Let's Start?
+
+To begin, you can either use Composer or Laravel installer to quickly scaffold a new Laravel application on your computer. Follow the instructions here on [Laravel's official website to set up the Laravel installer](https://laravel.com/docs/8.x/). 
 Once you are done, run the following command:
 
     // move into the project
@@ -44,9 +45,11 @@ You can move into the newly created folder and run the application using the in 
     $ php artisan serve
     
 Navigate to http://127.0.0.1:8000 from your browser to view the welcome page:
+![Larvel Server Up Now](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/laravel-1.png)
 Laravel Server Up Now
 
 ## Create a Database and Connect to It
+
 Now that Laravel is installed and running, the next step is to create a connection to your database. First, ensure that you have created a database and then update the values of the following variables within the .env file:
 - DB_DATABASE
 - DB_USERNAME
@@ -74,11 +77,8 @@ Immediately after the installation process from the preceding command is finishe
     
     
     // app/User.php
-
     <?php
-
     namespace App;
-
     ...
     use Laravel\Passport\HasApiTokens; // include this
 
@@ -94,15 +94,11 @@ Now, to register the routes necessary to issue and revoke access tokens (persona
 
 
     // app/Providers/AuthServiceProvider.php
-
     <?php
-
     namespace App\Providers;
-
     use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
     use Illuminate\Support\Facades\Gate;
     use Laravel\Passport\Passport; // add this 
-
     class AuthServiceProvider extends ServiceProvider
     {
         /**
@@ -154,6 +150,7 @@ to authenticate any incoming API requests, open the config/auth configuration fi
 
             ...
         ];
+
 ## Create a Migration File for the Property
 
 Every new installation of Laravel comes with a pre-generated User model and migration file. This is useful for maintaining a standard database structure for your database. Open the app/User.php  file and ensure that it is similar to this:
@@ -298,6 +295,7 @@ Run the migration command again to update the database with the newly created ta
     $ php artisan migrate
 
 Now that the database is updated, we will proceed to create controllers for the application. We will also create a couple of endpoints that will handle registration, login, and creating the details of a CEO as explained earlier.
+
 ## Create Controllers
 
 Controllers accept incoming HTTP requests and redirect them to the appropriate action or methods to process such requests and return the appropriate response. Since we are building an API, most of the responses will be in JSON format. This is mostly considered the standard format for RESTful APIs.
@@ -346,6 +344,7 @@ The register method  above handled the registration process for users of our app
 Lastly, the login method ensures that the appropriate credentials are inputted before authenticating a user. If authenticated successfully, an accessToken is  generated to uniquely identify the logged in user and send a JSON  response. Any subsequent HTTP requests sent to a secured or protected  route will require that the generated accessToken be passed  as an Authorization header for the process to be successful. Otherwise,  the user will receive an unauthenticated response.
 
 ## Creating the Property Controller
+
 Here, you will use the same artisan command to automatically create a new controller. This time around we will create an API resource controller.  Laravel resource controllers are controllers that handle all HTTP  requests for a particular Model. In this case, we want to create a  controller that will handle all requests for the Property model, which include creating, reading, updating, and deleting. To achieve this, run the following command:
 
     $ php artisan make:controller API/PropertyController --api --model=Property
@@ -366,114 +365,67 @@ Navigate to `app/Http/Controllers/API/PropertyController.php` and update its con
       *
       * @return \Illuminate\Http\Response
       */
-      public function index()
-      {
-      $propertys = Property::all();
-      return response([ 'propertys' => PropertyResource::collection($propertys), 'message' => 'Retrieved successfully'], 200);
-      }
-
-
+          public function index()
+          {
+              $propertys = Property::all();
+              return response([ 'propertys' => PropertyResource::collection($propertys), 'message' => 'Retrieved successfully'], 200);
+          }
       /**
-
-
       * Store a newly created resource in storage.
       *
       * @param  \Illuminate\Http\Request  $request
       * @return \Illuminate\Http\Response
       */
-      public function store(Request $request)
-      {
-      $data = $request->all();
-
-
-      $validator = Validator::make($data, [
-
-
-      'name' => 'required|max:255',
-      'year' => 'required|max:255',
-      'company_headquarters' => 'required|max:255',
-      'what_company_does' => 'required'
-      ]);
-
-
-      if($validator->fails()){
-
-
-      return response(['error' => $validator->errors(), 'Validation Error']);
-      }
-
-
-      $property = Property::create($data);
-
-
-
-
-      return response([ 'property' => new PropertyResource($property), 'message' => 'Created successfully'], 200);
-
-
-      }
-
-
+          public function store(Request $request)
+          {
+          $data = $request->all();
+          $validator = Validator::make($data, [
+                  'name' => 'required|max:255',
+                  'year' => 'required|max:255',
+                  'company_headquarters' => 'required|max:255',
+                  'what_company_does' => 'required'
+                ]);
+          if($validator->fails()){
+            return response(['error' => $validator->errors(), 'Validation Error']);
+          }
+            $property = Property::create($data);
+            return response([ 'property' => new PropertyResource($property), 'message' => 'Created successfully'], 200);
+          }
       /**
-
-
       * Display the specified resource.
       *
       * @param  \App\Property  $property
       * @return \Illuminate\Http\Response
       */
-      public function show(Property $property)
-      {
-      return response([ 'property' => new PropertyResource($property), 'message' => 'Retrieved successfully'], 200);
-
-
-      }
-
-
-
+          public function show(Property $property)
+          {
+            return response([ 'property' => new PropertyResource($property), 'message' => 'Retrieved successfully'], 200);
+          }
 
       /**
-
-
       * Update the specified resource in storage.
       *
       * @param  \Illuminate\Http\Request  $request
       * @param  \App\Property  $property
       * @return \Illuminate\Http\Response
       */
-      public function update(Request $request, Property $property)
-      {
-
-
-      $property->update($request->all());
-
-
-
-
-      return response([ 'property' => new PropertyResource($property), 'message' => 'Retrieved successfully'], 200);
-
-
-      }
-
-
+          public function update(Request $request, Property $property)
+          {
+              $property->update($request->all());
+              return response([ 'property' => new PropertyResource($property), 'message' => 'Retrieved successfully'], 200);
+          }
       /**
-
-
       * Remove the specified resource from storage.
       *
       * @param \App\Property $property
       * @return \Illuminate\Http\Response
       * @throws \Exception
       */
-      public function destroy(Property $property)
-      {
-      $property->delete();
-
-
-      return response(['message' => 'Deleted']);
-
-
-      }
+          public function destroy(Property $property)
+          {
+              $property->delete();
+              return response(['message' => 'Deleted']);
+          }
       }
       
 A quick view at the code snippet above shows that we created five different methods; each housing logic to carry out a particular function. 
@@ -515,6 +467,7 @@ The parent::toArray($request) inside the toArray() method will automatically con
 Gain a deeper understanding of the benefits offered by Eloquent resources here.
 
 ## Update Routes File
+
 To complete the set up of the endpoints for the methods created within our controllers, update the routes.php file with the following contents:
   
     Route::post('/register', 'Api\AuthController@register');
@@ -525,7 +478,9 @@ To view the entire list of the routes created for this application, run the foll
     
     $ php artisan route:list
     
-You will see similar contents as shown below:
+![php artisan route:list](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/laravel-2.png)    
+    
+You will see similar contents as shown above:
 
 ## Run the Application
 
@@ -533,35 +488,53 @@ Now, test all the logic implemented so far by running the application with:
 
     $ php artisan serve
     
-We will use Postman for the remainder of this tutorial to test the endpoints. Download it here if you don't have it installed on your machine.
-
-## Register user
-To register a user, send a POST HTTP request to this endpoint http://127.0.0.1:8000/api/register and input the appropriate details as shown here:
+We will use Postman for the remainder of this tutorial to test the endpoints. [Download it here if you don't have it installed on your machine](https://www.postman.com/).
 
 ## Register User
+
+To register a user, send a POST HTTP request to this endpoint http://127.0.0.1:8000/api/register and input the appropriate details as shown here:
+
+![Laravel API Register user](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Register.png)  
+
+## Register User Keys
+
 Now, your details might not be similar to this, but here is what the key and value of your requests should look like:
+![Laravel API Register User Keys](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Register-keys.png) 
 
 ## Login
+
 Once the registration is successful, you can proceed to http://127.0.0.1:8000/api/login and enter your details to get authenticated:
+![Laravel API Login](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Login.png)
 
 Now, assuming that you used the same key and value specified in the previous section, your request should be similar to this:
+![Laravel API Login](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/login-keys.png)
 
-## Add Bearer token
+## Add Bearer Token
 
 After the login, copy the value of the access_token from the response and click on the Authorization tab and select Bearer Token from the dropdown and paste the value of the access_token copied earlier:
+![Laravel API Bearer Token](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/token.png)
 
 ## Create Property
 
 Create a new Property by sending a POST HTTP request to this endpoint http://127.0.0.1:8000/api/property as shown  below:
 
+![Laravel API Create Property](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Property-create.png)
+
 ## Fetch the list of Properties
+
 Fetch the list of Properties created so far, send a GET HTTP request to this endpoint http://127.0.0.1:8000/api/property as shown  below:
+![Laravel API Fetch the list of Properties](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/property-fetch.png)
 
 ## Update Property
+
 Update the details of a particular property by sending a PATCH HTTP request to this URL http://127.0.0.1:8000/api/property/1:
+![Laravel API Update Property](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/property-update.png)
 
 ## Delete Property
+
 Delete the details of a particular property by sending a DELETE HTTP request to this URL http://127.0.0.1:8000/api/property/1 :
+
+![Laravel API Delete Property](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/property-delete.png)
 
 Here deleting property, which has propety_id:1, it has been passed over parameter
 
@@ -569,4 +542,4 @@ Here deleting property, which has propety_id:1, it has been passed over paramete
 
 Now we have learned how to Build any RESTful API with Laravel using Laravel Passport. The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
 I hope this gives you a clarity what can be improved on for your existing project and what to implements on new ones. Please feel free to explore the codebase of this application by downloading it here on GitHub.
-For more information about Laravel and Laravel Passport, don't hesitate to visit the official documentation.
+For more information about Laravel and Laravel Passport, don't hesitate to visit the [official documentation](https://laravel.com/docs/8.x/).

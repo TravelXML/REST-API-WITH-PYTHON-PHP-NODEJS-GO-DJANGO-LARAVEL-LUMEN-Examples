@@ -32,7 +32,9 @@ SOAP requires less plumbing code meaning low-level, infrastructural code that co
 Skype: sapan.mohannty
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+
 Twitter: https://twitter.com/htngapi
+
 Medium: https://apige.medium.com/
 
 

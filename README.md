@@ -33,8 +33,8 @@ Skype: sapan.mohannty
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
 
-Twitter: https://twitter.com/htngapi
-
 Medium: https://apige.medium.com/
+
+Twitter: https://twitter.com/htngapi
 
 

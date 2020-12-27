@@ -13,7 +13,7 @@ RESTful web services are stateless. A REST-based implementation is simple compar
 
 SOAP requires less plumbing code meaning low-level, infrastructural code that connects main code modules together than REST services design. The Web Services Description Language describes a common set of rules to define the messages, bindings, operations and location of the service. SOAP web services are useful for asynchronous processing and invocation.
 
-## You are JUST 3 minutes away to create REST API, what YOU are waiting for? Lets START..
+## You are JUST 5 minutes away to create REST API, what YOU are waiting for? Lets START..
 
 #### How you would like to build?
 

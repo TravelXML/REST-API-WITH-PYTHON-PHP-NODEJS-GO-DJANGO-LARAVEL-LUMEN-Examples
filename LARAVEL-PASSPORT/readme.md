@@ -1,17 +1,17 @@
-#Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
+# Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
 
 
 RESTful APIs are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
 
-##Prerequisites
+## Prerequisites
 - Knowledge of PHP OOPS
 - Basic knowledge of building applications with Laravel will be of help in this tutorial
 - Ensure that you have installed Composer globally to manage dependencies
 - Ensure Mysql Server is Up
 - Postman or similar type of application ( REST Client, HTTPie ..) will be needed to test our endpoints
 
-##How to Start?
+## How to Start?
 To demonstrate how to build a secure Laravel API with passport token, we'll build an API that will be used to create a list of properties. This application will list the following about each Property:
 - Property Name
 - Address
@@ -25,7 +25,7 @@ To demonstrate how to build a secure Laravel API with passport token, we'll buil
 To Build this REST API, we will install Laravel Passport and generate an access token for each user after authentication. This will allow such users to have access to some of the secured endpoints.
 Don't be disappointed if you don't know PHP, If you know any programming language that should be fine as well, COOL?
 
-##Getting Started
+## Getting Started
 To begin, you can either use Composer or Laravel installer to quickly scaffold a new Laravel application on your computer. Follow the instructions here on Laravel's official website to set up the Laravel installer. 
 Once you are done, run the following command:
 
@@ -46,7 +46,7 @@ You can move into the newly created folder and run the application using the in 
 Navigate to http://127.0.0.1:8000 from your browser to view the welcome page:
 Laravel Server Up Now
 
-##Create a Database and Connect to It
+## Create a Database and Connect to It
 Now that Laravel is installed and running, the next step is to create a connection to your database. First, ensure that you have created a database and then update the values of the following variables within the .env file:
 - DB_DATABASE
 - DB_USERNAME
@@ -54,15 +54,19 @@ Now that Laravel is installed and running, the next step is to create a connecti
 
 The database is all set, but before we start building our API, we need to install and configure Laravel Passport.
 
-##Install And Configure Laravel Passport
+## Install And Configure Laravel Passport
 
 Laravel Passport provides a full 0Auth2 server implementation for Laravel applications. With it, you can easily generate a personal access token to uniquely identify a currently authenticated user. This token will then be attached to every request allowing each user access protected routes. To begin, stop the application from running by hitting CTRL + C on your computer's keyboard and install Laravel Passport using Composer as shown here:
     
     
     $ composer require laravel/passport
-    Once the installation is complete, a new migration file containing the tables needed to store clients and access tokens will have been generated for your application. Run the following command to migrate your database:
+    
+    //Once the installation is complete, a new migration file containing the tables needed to store clients and access tokens will have been generated for your application. Run the following command to migrate your database:
+    
     $ php artisan migrate
-    Next, to create the encryption keys needed to generate secured access tokens, run the command below:
+    
+    //Next, to create the encryption keys needed to generate secured access tokens, run the command below:
+    
     $ php artisan passport:install
     
     
@@ -89,7 +93,7 @@ One of the benefits of this trait is the access to a few helper methods that you
 Now, to register the routes necessary to issue and revoke access tokens (personal and client), you will call the Passport::routes method within the boot method of your AuthServiceProvider. To do this, open the app/Providers/AuthServiceProvider file and update its content as shown below:
 
 
-// app/Providers/AuthServiceProvider.php
+    // app/Providers/AuthServiceProvider.php
 
     <?php
 
@@ -127,112 +131,114 @@ Now, to register the routes necessary to issue and revoke access tokens (persona
 After registering Passport::routes(), Laravel Passport is almost ready to handle all authentication and authorization processes within your application.
 Finally, for your application to be ready to use Passport's TokenGuard
 to authenticate any incoming API requests, open the config/auth configuration file and set the  driver option of the api authentication guard to passport:
-// config/auth
+        
+        // config/auth
 
-<?php
+        <?php
 
-return [
-    ...
+        return [
+            ...
 
-    'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
+            'guards' => [
+                'web' => [
+                    'driver' => 'session',
+                    'provider' => 'users',
+                ],
 
-        'api' => [
-            'driver' => 'passport', // set this to passport
-            'provider' => 'users',
-            'hash' => false,
-        ],
-    ],
+                'api' => [
+                    'driver' => 'passport', // set this to passport
+                    'provider' => 'users',
+                    'hash' => false,
+                ],
+            ],
 
-    ...
-];
-##Create a Migration File for the Property
+            ...
+        ];
+## Create a Migration File for the Property
 
 Every new installation of Laravel comes with a pre-generated User model and migration file. This is useful for maintaining a standard database structure for your database. Open the app/User.php  file and ensure that it is similar to this:
-// app/User.php
 
-<?php
+        // app/User.php
 
-namespace App;
+        <?php
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
+        namespace App;
 
-class User extends Authenticatable
-{
-    use Notifiable, HasApiTokens;
+        use Illuminate\Contracts\Auth\MustVerifyEmail;
+        use Illuminate\Foundation\Auth\User as Authenticatable;
+        use Illuminate\Notifications\Notifiable;
+        use Laravel\Passport\HasApiTokens;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+        class User extends Authenticatable
+        {
+            use Notifiable, HasApiTokens;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+            /**
+             * The attributes that are mass assignable.
+             *
+             * @var array
+             */
+            protected $fillable = [
+                'name', 'email', 'password',
+            ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-}
+            /**
+             * The attributes that should be hidden for arrays.
+             *
+             * @var array
+             */
+            protected $hidden = [
+                'password', 'remember_token',
+            ];
+
+            /**
+             * The attributes that should be cast to native types.
+             *
+             * @var array
+             */
+            protected $casts = [
+                'email_verified_at' => 'datetime',
+            ];
+        }
 
 Also for the user migration file in database/migrations/***_create_users_table.php:
 
-<?php
+        <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+        use Illuminate\Database\Migrations\Migration;
+        use Illuminate\Database\Schema\Blueprint;
+        use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
-    }
+        class CreateUsersTable extends Migration
+        {
+            /**
+             * Run the migrations.
+             *
+             * @return void
+             */
+            public function up()
+            {
+                Schema::create('users', function (Blueprint $table) {
+                    $table->id();
+                    $table->string('name');
+                    $table->string('email')->unique();
+                    $table->timestamp('email_verified_at')->nullable();
+                    $table->string('password');
+                    $table->rememberToken();
+                    $table->timestamps();
+                });
+            }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('users');
-    }
-}
+            /**
+             * Reverse the migrations.
+             *
+             * @return void
+             */
+            public function down()
+            {
+                Schema::dropIfExists('users');
+            }
+        }
 
 The fields specified in the file above will suffice for the credentials required from the users of our application, hence there will be no need to modify it.
 Next, we will use the artisan command to create a model instance and generate a database migration file for the Property table:
@@ -289,10 +295,10 @@ Now open the app/Property.php file and use the following content for it:
 Here, we specified the attributes that should be mass assignable, as all Eloquent models protect against mass-assignment by default.
 Run the migration command again to update the database with the newly created table and fields using the following command:
 
-  $ php artisan migrate
+    $ php artisan migrate
 
 Now that the database is updated, we will proceed to create controllers for the application. We will also create a couple of endpoints that will handle registration, login, and creating the details of a CEO as explained earlier.
-##Create Controllers
+## Create Controllers
 
 Controllers accept incoming HTTP requests and redirect them to the appropriate action or methods to process such requests and return the appropriate response. Since we are building an API, most of the responses will be in JSON format. This is mostly considered the standard format for RESTful APIs.
 Authentication controller
@@ -336,14 +342,16 @@ This will create a new API folder within app/Http/Controllers and then creates a
     }
     
 The register method  above handled the registration process for users of our application. To  handle validation and ensure that all the required fields for  registration are filled, we used Laravel's validation method. This validator will ensure that the name, email, password and password_confirmation fields are required and return the appropriate feedback.
+
 Lastly, the login method ensures that the appropriate credentials are inputted before authenticating a user. If authenticated successfully, an accessToken is  generated to uniquely identify the logged in user and send a JSON  response. Any subsequent HTTP requests sent to a secured or protected  route will require that the generated accessToken be passed  as an Authorization header for the process to be successful. Otherwise,  the user will receive an unauthenticated response.
-Creating the Property Controller
+
+## Creating the Property Controller
 Here, you will use the same artisan command to automatically create a new controller. This time around we will create an API resource controller.  Laravel resource controllers are controllers that handle all HTTP  requests for a particular Model. In this case, we want to create a  controller that will handle all requests for the Property model, which include creating, reading, updating, and deleting. To achieve this, run the following command:
 
     $ php artisan make:controller API/PropertyController --api --model=Property
 
 The command above will generate an API resource controller that does not include the create and edit view since we are only building APIs. 
-Navigate to app/Http/Controllers/API/PropertyController.php and update its contents as shown below:
+Navigate to `app/Http/Controllers/API/PropertyController.php` and update its contents as shown below:
 
       namespace App\Http\Controllers\API;
       use App\Property;
@@ -480,13 +488,14 @@ Some methods require a specific model ID to uniquely verify an item such as show
 Once in place, Laravel will help to inject the instance Property into our methods and return a 404 status  code if not found. This makes it very easy to use the instance of the  model directly, without necessarily running a query to retrieve the  model that corresponds to that ID.
 You can read more about implicit route model binding here on the official documentation of Laravel.
 
-##Create a Resource
+##  Create a Resource
 
 Laravel Eloquent resources allow you to convert your models and collections into JSON format. It works as a data transformation layer between the database and the controllers. This helps provide a uniform interface that can be used wherever you need it within your application. Let's create one for our CEO model by using the following command:
 
     $ php artisan make:resource PropertyResource
 
 This will create a new resource file named PropertyResource.php within the app/Http/Resources directory. Go ahead and open the newly created file. The content will look like this:
+                
     <?php
     namespace App\Http\Resources;
     use Illuminate\Http\Resources\Json\JsonResource;
@@ -501,15 +510,16 @@ This will create a new resource file named PropertyResource.php within the app/H
       return parent::toArray($request);
      }
     }
+                
 The parent::toArray($request) inside the toArray() method will automatically convert all visible model attributes as part of the JSON response.
 Gain a deeper understanding of the benefits offered by Eloquent resources here.
 
-##Update Routes File
+## Update Routes File
 To complete the set up of the endpoints for the methods created within our controllers, update the routes.php file with the following contents:
-Route::post('/register', 'Api\AuthController@register');
-Route::post('/login', 'Api\AuthController@login');
-Route::apiResource('/property', 'Api\PropertyController')->middleware('auth:api');
-
+  
+    Route::post('/register', 'Api\AuthController@register');
+    Route::post('/login', 'Api\AuthController@login');
+    Route::apiResource('/property', 'Api\PropertyController')->middleware('auth:api');
 
 To view the entire list of the routes created for this application, run the following command from the terminal:
     
@@ -517,7 +527,7 @@ To view the entire list of the routes created for this application, run the foll
     
 You will see similar contents as shown below:
 
-##Run the Application
+## Run the Application
 
 Now, test all the logic implemented so far by running the application with:
 
@@ -525,37 +535,37 @@ Now, test all the logic implemented so far by running the application with:
     
 We will use Postman for the remainder of this tutorial to test the endpoints. Download it here if you don't have it installed on your machine.
 
-##Register user
+## Register user
 To register a user, send a POST HTTP request to this endpoint http://127.0.0.1:8000/api/register and input the appropriate details as shown here:
 
-##Register User
+## Register User
 Now, your details might not be similar to this, but here is what the key and value of your requests should look like:
 
-##Login
+## Login
 Once the registration is successful, you can proceed to http://127.0.0.1:8000/api/login and enter your details to get authenticated:
 
 Now, assuming that you used the same key and value specified in the previous section, your request should be similar to this:
 
-##Add Bearer token
+## Add Bearer token
 
 After the login, copy the value of the access_token from the response and click on the Authorization tab and select Bearer Token from the dropdown and paste the value of the access_token copied earlier:
 
-##Create Property
+## Create Property
 
 Create a new Property by sending a POST HTTP request to this endpoint http://127.0.0.1:8000/api/property as shown  below:
 
-##Fetch the list of Properties
+## Fetch the list of Properties
 Fetch the list of Properties created so far, send a GET HTTP request to this endpoint http://127.0.0.1:8000/api/property as shown  below:
 
-##Update Property
+## Update Property
 Update the details of a particular property by sending a PATCH HTTP request to this URL http://127.0.0.1:8000/api/property/1:
 
-##Delete Property
+## Delete Property
 Delete the details of a particular property by sending a DELETE HTTP request to this URL http://127.0.0.1:8000/api/property/1 :
 
 Here deleting property, which has propety_id:1, it has been passed over parameter
 
-##Conclusion
+## Conclusion
 
 Now we have learned how to Build any RESTful API with Laravel using Laravel Passport. The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
 I hope this gives you a clarity what can be improved on for your existing project and what to implements on new ones. Please feel free to explore the codebase of this application by downloading it here on GitHub.

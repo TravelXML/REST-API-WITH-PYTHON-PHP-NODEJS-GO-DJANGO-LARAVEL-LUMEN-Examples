@@ -1,5 +1,7 @@
 # Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
 
+![Laravel REST API with OAUTH2.0](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/BUILD-REST-API-laravel.jpg)
+
 [RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 
 Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.

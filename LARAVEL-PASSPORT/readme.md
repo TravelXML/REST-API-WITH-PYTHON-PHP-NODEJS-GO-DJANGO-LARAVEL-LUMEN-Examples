@@ -48,7 +48,7 @@ You can move into the newly created folder and run the application using the in 
     
 Navigate to http://127.0.0.1:8000 from your browser to view the welcome page:
 ![Larvel Server Up Now](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/laravel-1.png)
-Laravel Server Up Now
+Laravel Server is Up Now
 
 ## Create a Database and Connect to It
 

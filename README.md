@@ -30,7 +30,6 @@ Enjoy Coding!
 
 #### For Help, you can reach
 -------------------------------
-Skype: sapan.mohannty
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
 

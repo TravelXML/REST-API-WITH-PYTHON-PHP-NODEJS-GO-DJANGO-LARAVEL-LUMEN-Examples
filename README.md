@@ -11,7 +11,7 @@
 - **DELETE** − Removes a resource.
 - **POST** − Updates an existing resource or creates a new resource.
 
-But all who claims cannot be referred to as RESTful API. In order to be regarded as a RESTful API, your application must satisfy certain constraints or principles. Let's go into details about these principles.
+Your application must satisfy certain constraints or principles. Let's go into details about these principles.
 
 #### Principles of REST
 

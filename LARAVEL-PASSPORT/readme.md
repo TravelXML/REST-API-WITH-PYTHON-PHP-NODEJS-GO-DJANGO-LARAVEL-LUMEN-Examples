@@ -1,5 +1,7 @@
 # Laravel API Tutorial: Build a Secure REST API in PHP Using Laravel, Passport, oauth2.0
 
+![Laravel REST API with OAUTH2.0](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/BUILD-REST-API-laravel.jpg)
+
 [RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 
 Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
@@ -46,7 +48,7 @@ You can move into the newly created folder and run the application using the in 
     
 Navigate to http://127.0.0.1:8000 from your browser to view the welcome page:
 ![Larvel Server Up Now](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/laravel-1.png)
-Laravel Server Up Now
+Laravel Server is Up Now
 
 ## Create a Database and Connect to It
 
@@ -540,6 +542,17 @@ Here deleting property, which has propety_id:1, it has been passed over paramete
 
 ## Conclusion
 
-Now we have learned how to Build any RESTful API with Laravel using Laravel Passport. The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
-I hope this gives you a clarity what can be improved on for your existing project and what to implements on new ones. Please feel free to explore the codebase of this application by downloading it here on GitHub.
-For more information about Laravel and Laravel Passport, don't hesitate to visit the [official documentation](https://laravel.com/docs/8.x/).
+Now we have learned how to [Build any RESTful API with Laravel using Laravel Passport](https://apige.medium.com/laravel-api-tutorial-build-a-secure-rest-api-in-php-using-laravel-passport-oauth2-0-f74d1f78c01a). The example covers the basic CRUD operations ( create, read, update and delete ) those operations are required by most of applications.
+
+I hope instructions are good to set up this project in your local and gives you a clarity what can be improved on for your existing project and what to implements on new ones, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+

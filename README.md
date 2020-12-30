@@ -6,10 +6,10 @@
 REST is acronym for REpresentational State Transfer. RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and alter data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources. [For More Details](https://en.wikipedia.org/wiki/Representational_state_transfer)
 
 The main functions used in any REST-based architecture are:
-    - GET − Provides read-only access to a resource.
-    - PUT − Creates a new resource.
-    - DELETE − Removes a resource.
-    - POST − Updates an existing resource or creates a new resource.
+- GET − Provides read-only access to a resource.
+- PUT − Creates a new resource.
+- DELETE − Removes a resource.
+- POST − Updates an existing resource or creates a new resource.
 
 But all who claims cannot be referred to as RESTful API. In order to be regarded as a RESTful API, your application must satisfy certain constraints or principles. Let's go into details about these principles.
 

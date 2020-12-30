@@ -2,6 +2,10 @@
 
 ![REST API With GO and MUX](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Build-REST-API-USING-GO-MUX.png)
 
+## Why to Build REST API with GO?<img align="right" width="100px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
+
+**Go** is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like **C++**. Go is referred to be the fastest programming language that offers very high performance. 
+
 ### Let’s Go!
 
 Wow it sounds cool with GO, isn’t it?

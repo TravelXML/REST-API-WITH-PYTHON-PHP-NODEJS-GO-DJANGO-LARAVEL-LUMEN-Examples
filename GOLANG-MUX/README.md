@@ -10,7 +10,7 @@ Wow it sounds cool with GO, isn’t it?
 
 You will find a lot of materials teaching you how to install Go in your machine. I believe that you have already installed Go in your machine because we are going to write the intermediate code for Go. Even if you have not installed it yet, you can install it now. 
 
-How to Install Go?
+## How to Install Go?
 
 1 — Navigate to this URL: https://golang.org/doc/install
 

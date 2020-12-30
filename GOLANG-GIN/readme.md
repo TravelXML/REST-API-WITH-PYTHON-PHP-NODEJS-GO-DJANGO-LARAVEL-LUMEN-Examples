@@ -48,7 +48,7 @@ How to Install Go?
 ![Go Installation](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Go-installation.png)
 
 
-if you don’t see your operating system there? [Try one of the other downloads](https://golang.org/dl/).
+If you don’t see your operating system there? [Try one of the other downloads](https://golang.org/dl/).
 
 Run the installer file, whenever you have completed installation of Go or you have Go on your machine, please test whether it is working or not, by simply checking the version.
 

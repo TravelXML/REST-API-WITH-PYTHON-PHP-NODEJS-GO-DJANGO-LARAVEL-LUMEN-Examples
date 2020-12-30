@@ -3,7 +3,7 @@
 ### Create REST API with most trending technology - PHP, PYTHON, GO, NodeJS and Most trending frameworks Django, Laravel, Lumen, GIN
 #### What's REST API or RESTFUL API?
 
-REST is acronym for REpresentational State Transfer. RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and alter data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources. [For More Details](https://en.wikipedia.org/wiki/Representational_state_transfer)
+**REST is acronym for REpresentational State Transfer**. RESTful API is an architectural style for an **Application Program Interface (API)** that uses **HTTP requests** to access and alter data. That data can be used to **GET, PUT, POST and DELETE** data types, which refers to the **reading, updating, creating and deleting** of operations concerning resources. [For More Details](https://en.wikipedia.org/wiki/Representational_state_transfer)
 
 **The main functions used in any REST-based architecture are:**
 - **GET** − Provides read-only access to a resource.

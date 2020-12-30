@@ -32,10 +32,10 @@ There are six ground principles, below are the six guiding principles of REST:
 - **Cacheable:**
 In order to provide a better performance, the applications are often made cacheable. It is done by labeling the response from the server as cacheable or non-cacheable either implicitly or explicitly. If the response is defined as cacheable, then the client cache can reuse the response data for equivalent responses in the future. It also helps in preventing the reuse of the stale data.
     
-- **Layered system:**
+- **Layered System:**
 The layered system architecture allows an application to be more stable by limiting component behavior.  This architecture enables load balancing and provides shared caches for promoting scalability. The layered architecture also helps in enhancing the application’s security as components in each layer cannot interact beyond the next immediate layer they are in.
     
-- **Code on demand:** 
+- **Code on Demand:** 
     Code on Demand is an optional constraint and is used the least. It permits a clients code or applets to be downloaded and extended via the interface to be used within the application. In essence, it simplifies the clients by creating a smart application which doesn’t rely on its own code structure.
 
 Now that you know what is a REST API and what all you need to mind in order to deliver an efficient application, let’s dive deeper and see the process of building REST API using all trending technologies and Frameowrks.

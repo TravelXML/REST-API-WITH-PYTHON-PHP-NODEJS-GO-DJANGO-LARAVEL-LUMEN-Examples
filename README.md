@@ -1,4 +1,4 @@
-# REST API Tutorial: BUILD REST API and White-Label Services, Right Way to API Development, REST API EXAMPLES
+# REST API Tutorials: BUILD REST API and White-Label Services, Right Way to API Development, REST API EXAMPLES
 ![Build REST API Using Trending Technology](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/images/Build%20REST%20api.png)
 ### Create REST API with most trending technology - PHP, PYTHON, GO, NodeJS and Most trending frameworks - Django, Laravel, Lumen, GIN
 #### What's REST API or RESTFUL API?
@@ -53,8 +53,8 @@ SOAP requires less plumbing code meaning low-level, infrastructural code that co
 
 #### How you would like to build? 
 
-  * [REST API with PHP - OOPS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PHP-OOPS)
-  * [REST API with LARAVEL - PASSPORT](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/LARAVEL-PASSPORT)
+  * [REST API with LARAVEL - PASSPORT](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/LARAVEL-PASSPORT)  
+  * [REST API with PHP - OOPS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PHP-OOPS)  
   * [REST API with PYTHON - FLASK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PYTHON)
   * [REST API with PYTHON - DJANGO - RESTFRAMEWORK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/PYTHON-DJANGO-REST-FRAMEWORK)
   * [REST API with GO - MUX](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-MUX)  
@@ -62,7 +62,7 @@ SOAP requires less plumbing code meaning low-level, infrastructural code that co
   * [REST API with GO - GIN](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-GIN)
 
 
-**Very easy to create REST API, you can choose any of the above codebase according to your language and framework preference and follow instructions.**
+**Very easy to create REST API in couple of mins, you can choose any of the above codebase according to your language and framework preferences and follow instructions.**
 
 Happy Coding 👍
 

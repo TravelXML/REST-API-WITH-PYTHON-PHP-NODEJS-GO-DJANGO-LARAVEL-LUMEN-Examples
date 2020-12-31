@@ -4,7 +4,22 @@
 
 [RESTful APIs](https://en.wikipedia.org/wiki/Representational_state_transfer) are very vital when building back-end resources for a mobile application or using any of the modern JavaScript frameworks. If by chance you are unaware, an API is an interface or code in this case, that allows two software programs to communicate with each other. Notably, it does not maintain session state between requests, hence, you will need to use tokens to authenticate and authorize users of your application.
 
-Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately. This tutorial will teach you how to build and secure your Laravel back-end API using Laravel passport. When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
+## What's Laravel?
+
+[Laravel](https://laravel.com/) is an open-source PHP framework, which is robust and easy to understand. It follows a model-view-controller design pattern. Laravel reuses the existing components of different frameworks which helps in creating a web application. The web application thus designed is more structured and pragmatic.
+
+## What's Passport?
+
+[Laravel Passport](https://laravel.com/docs/8.x/passport#introduction) provides a full OAuth2 server implementation for your Laravel application in a matter of minutes. Passport is built on top of the League OAuth2 server.
+
+## What to choose Passport Or Sanctum For API Development?
+
+If your application absolutely needs to support OAuth2, **in-case API development you should use Laravel Passport**.
+
+However, if you are attempting to authenticate a single-page application, mobile application, or issue API tokens, you should use Laravel Sanctum. Laravel Sanctum does not support OAuth2; however, it provides a much simpler API authentication development experience.
+
+
+**Laravel makes building such a resource easy with a predefined provision for you to secure it appropriately**. This tutorial will teach you how to build and secure your Laravel back-end API using [Laravel passport](https://laravel.com/docs/8.x/passport). When we are finished, you will have learned how to secure your new Laravel API or provide an extra layer of security to existing ones.
 
 ## Prerequisites
 - Knowledge of PHP OOPS

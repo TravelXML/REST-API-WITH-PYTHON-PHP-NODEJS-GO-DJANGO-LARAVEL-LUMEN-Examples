@@ -2,6 +2,42 @@
 
 ![REST API With GO and MUX](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Build-REST-API-USING-GO-MUX.png)
 
+## Why to Build REST API with GO?<img align="right" width="100px" src="https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go.png">
+
+**Go** is the trending programming language currently. Go is very simple but offers similar performance to those low level languages like **C++**. Go is referred to be the fastest programming language that offers very high performance. 
+
+### Let’s Go!
+
+Wow it sounds cool with GO, isn’t it?
+
+## Install Go
+
+You will find a lot of materials teaching you how to install Go in your machine. I believe that you have already installed Go in your machine because we are going to write the intermediate code for Go. Even if you have not installed it yet, you can install it now. 
+
+## How to Install Go?
+
+1 — Navigate to this URL: https://golang.org/doc/install
+
+2 — You will find your operating system on the page.
+
+![Go Installation](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Go-installation.png)
+
+
+If you don’t see your operating system there? [Try one of the other downloads](https://golang.org/dl/).
+
+Run the installer file, whenever you have completed installation of Go or you have Go on your machine, please test whether it is working or not, by simply checking the version.
+
+3 — Run Below Command
+```
+go version
+```
+You will see similar screen shown in below:
+
+![Go Installation Version](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go-version.png)
+
+It will return GO installed Version, in my case it is  `go1.15.6`
+
+
 ### This is a sample Book REST API which will showcase you, how to build REST API using golang & MUX.
 
 ## What's MUX? ![GO-MUX](https://camo.githubusercontent.com/a62a5e2040257dd8787001ffa5d95964d7bc77024aa2ba3d94e64ec1e151228e/68747470733a2f2f636c6f75642d63646e2e7175657374696f6e61626c652e73657276696365732f676f72696c6c612d69636f6e2d36342e706e67)

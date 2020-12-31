@@ -56,12 +56,21 @@ Run the installer file, whenever you have completed installation of Go or you ha
 ```
 go version
 ```
+You will see similar screen shown in below:
+
+![Go Installation Version](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/go-version.png)
+
+It will return GO installed Version, in my case it is  `go1.15.6`
 
 ## Create New Project
 
 Create project folder GO-GIN, then download the script from Github and place into your local project folder then run below command
 
 ```
+// go to project folder
+cd GO-GIN
+
+// Run
 go mod init
 ```
 

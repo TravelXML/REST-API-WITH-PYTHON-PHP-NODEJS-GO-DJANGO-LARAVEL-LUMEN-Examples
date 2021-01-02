@@ -54,27 +54,33 @@ We will build Rest Apis for **creating, retrieving, updating & deleting Properti
 - We add configuration for MySQL database
 - Create Property model
 - Write the controller
-- Then we define routes for handling all CRUD operations:
+- Then we define routes for handling all CRUD operations
+- Finally, we’re gonna test the Rest Apis using Postman
+
+#### Defining The Routes
 
 **GET**	/properties	get all Properties
-**GET**	/property/42	get Property with id=42
-**POST**	/properties	add new Property
-**PUT**	/properties/42	update Property with id=42
-**DELETE**	/properties/42	remove Property with id=42
+
+**GET**	/property/42	get Property with id=2
+
+**POST** /properties	add new Property
+
+**PUT**	/properties/42	update Property with id=2
+
+**DELETE**	/properties/42	remove Property with id=2
+
 **DELETE**	/properties	remove all Properties
 
-Finally, we’re gonna test the Rest Apis using Postman.
 
-Our project structure will be like:
 
-## Create Node.js application
+## Create NodeJS REST API
 
 Open terminal/console, then create a folder for our application:
 
     $ mkdir NODEJS
     $ cd NODEJS
 
-Initialize the Node.js application with a package.json file:
+#### Initialize the Node.js application with a package.json file:
 
     npm init
 

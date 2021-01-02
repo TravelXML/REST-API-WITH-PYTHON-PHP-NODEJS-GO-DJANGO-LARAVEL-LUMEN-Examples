@@ -5,13 +5,9 @@
 Node.js renders such wonderful support to developers for the development of API. A real-time API which is dynamic can be built using node.js. Creating a two-way channel for IT solutions, node.js creates circulation in a data-friendly manner. Experts believe node.js is capable of working in multiple environments and that is the major contributor to its acceptance as a framework that supports the development of an effective and efficient API.
 
 Let us understand the advantages of node.js to build:
-- Speed: A key factor when using node.js is the speed that it renders to the API. Using a single thread, node.js all the related tasks are quickly performed. Going beyond speed it allows building an API that is scalable and secure too. The increased throughput of APIs built using node.js even makes the applications function at 20 times faster so that the engagement between the app and other software solutions is enhanced.
+- **Speed:** A key factor when using node.js is the speed that it renders to the API. Using a single thread, node.js all the related tasks are quickly performed. Going beyond speed it allows building an API that is scalable and secure too. The increased throughput of APIs built using node.js even makes the applications function at 20 times faster so that the engagement between the app and other software solutions is enhanced.
 
-- Sandardized development
-
-An API may function even at unprecedented infrastructures so before you build an API, you must know the standard processes across industries. With node.js, a developer does not need to worry about development process standards that will make an API functional across multiple interfaces. API frameworks are generally developed to standardize development processes according to the target industry or requirements.
-
-Using node.js will payback as your API and apps will gain traction for its integrational capabilities to conventional and standard tools.
+- **Sandardized development:** An API may function even at unprecedented infrastructures so before you build an API, you must know the standard processes across industries. With node.js, a developer does not need to worry about development process standards that will make an API functional across multiple interfaces. API frameworks are generally developed to standardize development processes according to the target industry or requirements. Using node.js will payback as your API and apps will gain traction for its integrational capabilities to conventional and standard tools.
 
 - **Vrsioning is easy:** An API is just like any program that will need versioning as it advances through the development cycle after testing. With node.js versioning and documentation is very easy. It allows changing of published APIs very easily so that your users always stay updated about what is new for them in the API. All this API version information can be stored in a URL which makes it easy for the developer to push warnings and updates to the end-user.
 

@@ -98,7 +98,8 @@ Open terminal/console, then create a folder for our application:
 
 Is this ok? (yes) yes
 
-Next, we need to install necessary modules: express, mysql and body-parser.
+Next, we need to install necessary modules: **express, mysql and body-parser**.
+
 Run the command:
 
 

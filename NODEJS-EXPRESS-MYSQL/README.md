@@ -132,7 +132,7 @@ The package.json file should look like this:
 
 ## Setup Express Web Server
 
-Now, in the root folder, we create a new file named server.js:
+Now, in the root folder, we create a new file named `server.js`:
 
     //server.js
     const express = require("express");
@@ -161,8 +161,11 @@ Now, in the root folder, we create a new file named server.js:
     
 ## What we doing here?
 – Import express and body-parser modules. Express is for building the Rest apis, and body-parser helps to parse the request and create the req.body object that we will need to access in our routes.
+
 – Create an Express app, then add body-parser middlewares using app.use() method.
+
 – Define a GET route which is simple for test.
+
 – Listen on port 3000 for incoming requests.
 
 Now we can run the app with command: 

@@ -61,17 +61,17 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 ## NodeJS API Routes
 
-**GET**	/properties	get all Properties
+**GET /properties**	- Get All Properties
 
-**GET**	/property/2	get Property with id=2
+**GET /property/2** - Get All Property with id=2
 
-**POST** /properties	add new Property
+**POST /properties** - Add New Property
 
-**PUT**	/properties/2	update Property with id=2
+**PUT /properties/2** - Update Property With id=2
 
-**DELETE**	/properties/2	remove Property with id=2
+**DELETE /properties/2** - Remove Property with id=2
 
-**DELETE**	/properties	remove all Properties
+**DELETE /properties** - Remove All Properties
 
 
 

@@ -176,6 +176,10 @@ Now we can run the app with command:
     
     node server.js.
     
+You will be seeing below screen:
+
+![Node JS REST API Server is UP](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/nodejs-server-up.png)
+
 Open your browser, enter the url [http://localhost:3000/](http://localhost:3000/), you will see:
 
 ![Node JS REST API Server](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-server-up-browser.png)

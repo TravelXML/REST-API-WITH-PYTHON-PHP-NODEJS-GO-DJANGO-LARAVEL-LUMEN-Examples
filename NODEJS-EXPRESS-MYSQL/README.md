@@ -595,40 +595,40 @@ Run our Node.js application with command:
 
   After creating some new property, we can check MySQL table:
   
-![Create New Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-2.png)
+![Create New Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-2.png)
 
 - **Retrieve All Properties** using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
-![Retrieve All Properties Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-3.png)
+![Retrieve All Properties Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-3.png)
 
 - **Retrieve Single Property by ID** using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
- ![Retrieve All Properties  - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-4.png)
+ ![Retrieve All Properties  - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-4.png)
 
 - **Update Property by ID** using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
- ![Update By PropertyId Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-5.png)
+ ![Update By PropertyId Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-5.png)
 
   Check `properties` table after a row was updated:
 
        SELECT * FROM properties  
- ![Update By PropertyId - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-6.png)      
+ ![Update By PropertyId - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-6.png)      
  
 
 
 - **Delete Property by ID** using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
- ![Delete Single Property - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-7.png)
+ ![Delete Single Property - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-7.png)
 
   Check `properties` table after a row was Deleted:
 
        SELECT * FROM properties
        
- ![Delete Single Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-8.png)       
+ ![Delete Single Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-8.png)       
 
 - **Delete All Proerties** using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
- ![Delete All Properties - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-9.png)
+ ![Delete All Properties - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-9.png)
 
   Check `properties` table after all row was updated:
 
        SELECT * FROM properties
- ![Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-10.png)      
+ ![Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-10.png)      
 
 
 ## what did we learn so far?

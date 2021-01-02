@@ -61,15 +61,15 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 ## NodeJS API Routes
 
+**POST /properties** - Create New Property
+
 **GET /properties**	- Get All Properties
 
-**GET /property/2** - Get All Property with id=2
+**GET /property/27** - Get Single Property with id=27
 
-**POST /properties** - Add New Property
+**PUT /properties/27** - Update Single Property With id=27
 
-**PUT /properties/2** - Update Property With id=2
-
-**DELETE /properties/2** - Remove Property with id=2
+**DELETE /properties/27** - Remove Single Property with id=27
 
 **DELETE /properties** - Remove All Properties
 
@@ -577,7 +577,52 @@ Run our Node.js application with command:
 
 Using Postman, we’re gonna test all the Apis above.
 
-.........
-.........
+1. Create a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+
+After creating some new property, we can check MySQL table:
+
+2. Retrieve all Properties using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+
+3. Retrieve Single Proerty by id using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+
+4. Update Proerty by id using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+
+Check `properties` table after a row was updated:
+
+       SELECT * FROM properties
+       
+ 
+
+
+5. Delete Proerty by id using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
+
+Check `properties` table after a row was Deleted:
+
+       SELECT * FROM properties
+       
+
+6. Delete All Proerties by id using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+
+Check `properties` table after all row was updated:
+
+       SELECT * FROM properties
+
+
+## Conclusion
+
+Today, we’ve learned how to create Node.js Rest Apis with an Express web server. We also know way to add configuration for MySQL database, create a model, write a controller and define routes for handling all CRUD operations.
+
+## Explore More
+
+- [Express.js Routing](http://expressjs.com/en/guide/routing.html)
+- [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)
+- [https://www.npmjs.com/package/body-parser](https://www.npmjs.com/package/body-parser)
+- [https://www.npmjs.com/package/mysql](https://www.npmjs.com/package/mysql)
+
+
+
+
+
+
 
 

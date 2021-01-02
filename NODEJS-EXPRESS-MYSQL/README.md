@@ -63,13 +63,13 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 **GET**	/properties	get all Properties
 
-**GET**	/property/42	get Property with id=2
+**GET**	/property/2	get Property with id=2
 
 **POST** /properties	add new Property
 
-**PUT**	/properties/42	update Property with id=2
+**PUT**	/properties/2	update Property with id=2
 
-**DELETE**	/properties/42	remove Property with id=2
+**DELETE**	/properties/2	remove Property with id=2
 
 **DELETE**	/properties	remove all Properties
 

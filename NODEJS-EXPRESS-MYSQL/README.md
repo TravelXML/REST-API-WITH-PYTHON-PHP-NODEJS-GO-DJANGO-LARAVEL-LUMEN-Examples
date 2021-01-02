@@ -40,22 +40,24 @@ To Build this REST API, we will install Nodejs and Express, this will allow user
 
 ## Prerequisites
 - Knowledge of NodeJS and Express
+- Install NodeJS and Express
 - Ensure Mysql Server is Up
-- Postman or similar type of application ( REST Client, HTTPie ..) will be needed to test our endpoints
+- Create Mysql Recquired Tables
+- Postman or Similar Type of Application ( REST Client, HTTPie ..) will be needed to test our endpoints
 
 
 ## Let's Start With NodeJS API?
 
-We will build Rest Apis for **creating, retrieving, updating & deleting  for Property Service**.
+We will build REST APIs for **creating, retrieving, updating & deleting  for Property Service**.
 
 #### Overview of Node JS API Implementation?
 
-- Start with an Express Web Server. 
-- We add configuration for MySQL database
-- Create Property model
-- Write the controller
-- Then we define routes for handling all CRUD operations
-- Finally, we’re gonna test the Rest Apis using Postman
+- Start With an Express Web Server. 
+- We Add Configuration for MySQL Database
+- Create Property Model
+- Write the Controller
+- Then We Define Routes for Handling all CRUD operations
+- Finally, we’re Gonna to test the Rest APIs using Postman
 
 #### Defining The Routes
 
@@ -155,6 +157,7 @@ Now, in the root folder, we create a new file named server.js:
     app.listen(PORT, () => {
       console.log(`Server is running on port ${PORT}.`);
     });
+    
 ## What we doing here?
 – import express and body-parser modules. Express is for building the Rest apis, and body-parser helps to parse the request and create the req.body object that we will need to access in our routes.
 – create an Express app, then add body-parser middlewares using app.use() method.
@@ -165,9 +168,9 @@ Now we can run the app with command:
     
     node server.js.
     
-Open your browser, enter the url http://localhost:3000/, you will see:
+Open your browser, enter the url [http://localhost:3000/](http://localhost:3000/), you will see:
 
-## Create MySQL table
+## Create MySQL Table
 
 Before connecting Node.js Application with MySQL, we need to create properties table in our local enviornment first.
 So run the SQL script below to create properties table:
@@ -206,7 +209,8 @@ We’re gonna have a separate folder for configuration. Let’s create config fo
 
 
 Now create a database connection that uses configuration above.
-The file for connection is `db.js`, we put it in app/models folder that will contain model in the next step.
+
+The file for connection is `db.js`, we put it in `app/models` folder that will contain model in the next step.
 
     // models/db.js
 
@@ -231,7 +235,7 @@ The file for connection is `db.js`, we put it in app/models folder that will con
     
 ## Create the Model
 
-In models folder, create a file called property.model.js. We’re gonna define constructor for Property object here, and use the database connection above to write CRUD functions:
+In models folder, create a file called `property.model.js`. We’re gonna define constructor for Property object here, and use the database connection above to write CRUD functions:
 
     (C)reate a New Property
     (U)pdate a Property By id
@@ -360,7 +364,7 @@ This is the content inside property.model.js:
 
     module.exports = Property;
 
-Property model is simple, it contains fields: 
+Property model is simple, it contains fields of: 
 
 - property_name 
 - address 

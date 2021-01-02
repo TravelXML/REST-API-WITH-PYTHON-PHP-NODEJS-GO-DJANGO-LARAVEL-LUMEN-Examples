@@ -575,35 +575,34 @@ Run our Node.js application with command:
     Successfully connected to the database.
 
 
-Using Postman, we’re gonna test all the Apis above.
+**Using Postman, we’re gonna test all the APIs above**.
 
-1. Create a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- Create a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
 
-After creating some new property, we can check MySQL table:
+  After creating some new property, we can check MySQL table:
 
-2. Retrieve all Properties using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- Retrieve all Properties using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
 
-3. Retrieve Single Proerty by id using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+- Retrieve Single Proerty by id using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
 
-4. Update Proerty by id using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+- Update Proerty by id using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
 
-Check `properties` table after a row was updated:
+  Check `properties` table after a row was updated:
 
-       SELECT * FROM properties
-       
+       SELECT * FROM properties  
  
 
 
-5. Delete Proerty by id using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
+- Delete Proerty by id using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
 
-Check `properties` table after a row was Deleted:
+  Check `properties` table after a row was Deleted:
 
        SELECT * FROM properties
        
 
-6. Delete All Proerties by id using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- Delete All Proerties by id using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
 
-Check `properties` table after all row was updated:
+  Check `properties` table after all row was updated:
 
        SELECT * FROM properties
 

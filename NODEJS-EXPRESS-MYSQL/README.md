@@ -130,7 +130,7 @@ The package.json file should look like this:
       }
     }
 
-## Setup Express web server
+## Setup Express Web Server
 
 Now, in the root folder, we create a new file named server.js:
 
@@ -197,7 +197,7 @@ So run the SQL script below to create properties table:
     ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
 
-## Configure & Connect to MySQL database
+## Configure & Connect to MySQL Database
 
 We’re gonna have a separate folder for configuration. Let’s create config folder in the app folder, under application root folder, then create `db.config.js` file inside that config folder with content like this:
 

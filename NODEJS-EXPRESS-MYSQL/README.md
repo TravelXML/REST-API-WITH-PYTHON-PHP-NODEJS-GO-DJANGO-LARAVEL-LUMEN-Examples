@@ -1,4 +1,4 @@
-# Nodejs API Tutorial: Express, MYSQL - NodeJS REST API Examples
+# Nodejs API Tutorial: Express, MYSQL - NodeJS REST API Examples
 ![Node JS REST API Using Express](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-Express-Mysql-REST-API.jpg)
 
 ## Why node.js for API development?
@@ -8,11 +8,11 @@ Node.js renders such wonderful support to developers for the development of API.
 **Let us understand the advantages of node.js to build:**
 - **Speed:** A key factor when using node.js is the speed that it renders to the API. Using a single thread, node.js all the related tasks are quickly performed. Going beyond speed it allows building an API that is scalable and secure too. The increased throughput of APIs built using node.js even makes the applications function at 20 times faster so that the engagement between the app and other software solutions is enhanced.
 
-- **Sandardized Development:** An API may function even at unprecedented infrastructures so before you build an API, you must know the standard processes across industries. With node.js, a developer does not need to worry about development process standards that will make an API functional across multiple interfaces. API frameworks are generally developed to standardize development processes according to the target industry or requirements. Using node.js will payback as your API and apps will gain traction for its integrational capabilities to conventional and standard tools.
+- **Standardized Development:** An API may function even at unprecedented infrastructures so before you build an API, you must know the standard processes across industries. With node.js, a developer does not need to worry about development process standards that will make an API functional across multiple interfaces. API frameworks are generally developed to standardize development processes according to the target industry or requirements. Using node.js will payback as your API and apps will gain traction for its integrational capabilities to conventional and standard tools.
 
-- **Vrsioning is Easy:** An API is just like any program that will need versioning as it advances through the development cycle after testing. With node.js versioning and documentation is very easy. It allows changing of published APIs very easily so that your users always stay updated about what is new for them in the API. All this API version information can be stored in a URL which makes it easy for the developer to push warnings and updates to the end-user.
+- **Versioning is Easy:** An API is just like any program that will need versioning as it advances through the development cycle after testing. With node.js versioning and documentation is very easy. It allows changing of published APIs very easily so that your users always stay updated about what is new for them in the API. All this API version information can be stored in a URL which makes it easy for the developer to push warnings and updates to the end-user.
 
-- **Pgination and Filtering Feature:** APIs that can deliver entire database content in a call is not liked by users and app owners as they consume lots of resources. A smart API will be the one that puts a limit on the items it displays and node.js allows this to happen. It controls the resource wastage and the performance of the app is upgraded.
+- **Pagination and Filtering Feature:** APIs that can deliver entire database content in a call is not liked by users and app owners as they consume lots of resources. A smart API will be the one that puts a limit on the items it displays and node.js allows this to happen. It controls the resource wastage and the performance of the app is upgraded.
 
 - **Ease of Development:** A developer may build lots of APIs based on the user application where it is expected to function with the infrastructure. With the uniformity, readability, and consistency it renders to the code, node.js allows developers to write APIs real quick. It makes transportation the data between the App and the user interface flow in an orchestrated manner. A user may require you to make changes that are related to the infrastructure at his end. With node.js as the documentation, versioning and changing the code becomes easy. Node.js suffices all the needs of the development of APIs in a scalable manner.
 
@@ -43,7 +43,7 @@ To Build this REST API, we will install Nodejs and Express, this will allow user
 - Knowledge of NodeJS and Express
 - Install NodeJS and Express
 - Ensure Mysql Server is Up
-- Create Mysql Recquired Tables
+- Create Mysql Required Tables
 - [Postman](https://www.postman.com/) or Similar Type of Application ( [REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo), [HTTPie](https://httpie.io/) ..) will be needed to test our endpoints
 
 
@@ -53,7 +53,7 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 #### Overview of Node JS API Implementation?
 
-- Start With an Express Web Server. 
+- Start With an Express Web Server.
 - We Add Configuration for MySQL Database
 - Create Property Model
 - Write the Controller
@@ -64,7 +64,7 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 **POST /properties** - Create New Property
 
-**GET /properties**	- Get All Properties
+**GET /properties**    - Get All Properties
 
 **GET /property/27** - Get Single Property with id=27
 
@@ -87,12 +87,12 @@ Open terminal/console, then create a folder for our application:
 
     npm init
 
-    name: (NODEJS) 
-    version: (1.0.0) 
+    name: (NODEJS)
+    version: (1.0.0)
     description: Node.js Restful CRUD API with Node.js, Express and MySQL
     entry point: (index.js) server.js
-    test command: 
-    git repository: 
+    test command:
+    git repository:
     keywords: nodejs, express, mysql, restapi
     author: Sapan Mohanty
     license: (ISC)
@@ -131,7 +131,7 @@ The package.json file should look like this:
       }
     }
     
-## Our Folder Structre Will be
+## Our Folder Structure Will be
 ![Node JS REST API File and Folder Structure](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-file-folder.png)
 
 ## Setup Express Web Server
@@ -163,17 +163,17 @@ Now, in the root folder, we create a new file named `server.js`:
       console.log(`Server is running on port ${PORT}.`);
     });
     
-## What we doing here?
+## What are we doing here?
 
 – Import express and body-parser modules. Express is for building the Rest apis, and body-parser helps to parse the request and create the req.body object that we will need to access in our routes.
 
 – Create an Express app, then add body-parser middlewares using `app.use()` method.
 
-– Define a GET route which is simple for test.
+– Define a GET route which is simple for testing.
 
 – Listen on port 3000 for incoming requests.
 
-Now we can run the app with command: 
+Now we can run the app with command:
     
     node server.js.
     
@@ -187,7 +187,7 @@ Open your browser, enter the url [http://localhost:3000/](http://localhost:3000/
 
 ## Create MySQL Table
 
-Before connecting Node.js Application with MySQL, we need to create properties table in our local enviornment first.
+Before connecting Node.js Application with MySQL, we need to create a properties table in our local environment first.
 So run the SQL script below to create properties table:
 
     USE `nodejs`;
@@ -225,7 +225,7 @@ We’re gonna have a separate folder for configuration. Let’s create config fo
 
 Now create a database connection that uses configuration above.
 
-The file for connection is `db.js`, we put it in `app/models` folder that will contain model in the next step.
+The file for connection is `db.js`, we put it in the `app/models` folder that will contain the model in the next step.
 
     // models/db.js
 
@@ -250,7 +250,7 @@ The file for connection is `db.js`, we put it in `app/models` folder that will c
     
 ## Create the Model
 
-In models folder, create a file called `property.model.js`. We’re gonna define constructor for Property object here, and use the database connection above to write CRUD functions:
+In the models folder, create a file called `property.model.js`. We’re gonna define constructor for Property object here, and use the database connection above to write CRUD functions:
 
     (C)reate a New Property
     (U)pdate a Property By id
@@ -379,17 +379,17 @@ This is the content inside `property.model.js`:
 
     module.exports = Property;
 
-Property model is simple, it contains fields of: 
+Property model is simple, it contains fields of:
 
-- property_name 
-- address 
+- property_name
+- address
 - city
 - country
 - minimum_price
 - maximum_price
-- ready_to_sell 
+- ready_to_sell
 
-We use database connection query() method to execute MySQL script: **INSERT, SELECT, UPDATE, DELETE**. You can find more details about mysql module at: https://www.npmjs.com/package/mysql.
+We use database connection query() method to execute MySQL script: **INSERT, SELECT, UPDATE, DELETE**. You can find more details about the mysql module at: https://www.npmjs.com/package/mysql.
 
 ## Let's Jump into Routes
 
@@ -400,7 +400,7 @@ These are routes we define:
     /properties: GET, POST, DELETE
     /properties/: propertyId: GET, PUT, DELETE
 
-Create a routes folder inside app folder, then create `property.routes.js` and copy paste the below code.
+Create a routes folder inside the app folder, then create `property.routes.js` and copy paste the below code.
     
     // routes/property.routes.php
 
@@ -438,7 +438,7 @@ We also need to include routes in server.js (right before app.listen()):
 
 ## Create the Controller
 
-Now we create a controllers folder inside app folder, then we have a file named `property.controller.js`. Our controller will be written inside this with CRUD functions:
+Now we create a controllers folder inside the app folder, then we have a file named `property.controller.js`. Our controller will be written inside this with CRUD functions:
 
 - create
 - findAll
@@ -568,7 +568,7 @@ Let’s implement these functions.
       });
     };
 
-**Delete All Property Objects from the database** - it's very risky execution to delete all records from Database so this operation doesn't require in most of the API implememtaion.
+**Delete All Property Objects from the database** - it's very risky to delete all records from Database so this operation isn't required in most of the API implementations.
     
     exports.deleteAll = (req, res) => {
       Property.removeAll((err, data) => {
@@ -583,7 +583,7 @@ Let’s implement these functions.
 
 ## Test the APIs
 
-Run our Node.js application with command: 
+Run our Node.js application with command:
 
     node server.js
 
@@ -601,7 +601,7 @@ Run our Node.js application with command:
   After creating some new property, we can check MySQL table:
 
        SELECT * FROM properties
-  
+ 
 ![Create New Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-2.png)
 
 - **Retrieve All Properties** using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
@@ -629,7 +629,7 @@ Run our Node.js application with command:
        
  ![Delete Single Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-8.png)       
 
-- **Delete All Proerties** using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- **Delete All Properties** using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
  ![Delete All Properties - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-9.png)
 
   Check `properties` table after all row was deleted:
@@ -642,7 +642,7 @@ Run our Node.js application with command:
 
 ## What did we learn so far?
 
-So far we’ve learned how to create Node.js REST APIs with an Express web server. We also know way to add configuration for MySQL database, create a model, write a controller, define routes for handling all CRUD operations and excute all test cases using POSTMAN.
+So far we’ve learned how to create Node.js REST APIs with an Express web server. We also know how to add configuration for MySQL database, create a model, write a controller, define routes for handling all CRUD operations and execute all test cases using POSTMAN.
 
 I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
 
@@ -663,4 +663,3 @@ Skype: sapan.mohannty
 Twitter: https://twitter.com/htngapi
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
-

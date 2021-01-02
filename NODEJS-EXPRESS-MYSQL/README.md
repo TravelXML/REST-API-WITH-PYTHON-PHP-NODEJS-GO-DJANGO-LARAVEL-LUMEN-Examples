@@ -21,7 +21,7 @@ Security must never be neglected. Adding features, like authentication controls,
 
 ## What's Express?
 
-**[Express](https://expressjs.com/)** is one of the most popular web frameworks for Node.js that supports routing, middleware, view system… This tutorial will guide you through the steps of building Node.js Restful CRUD API using Express and interacting with MySQL database.
+**[Express](https://expressjs.com/)** is one of the most popular web frameworks for [Node.js](https://nodejs.org/en/) that supports routing, middleware, view system… This tutorial will guide you through the steps of building **NodeJs Restful CRUD API** using [Express](https://expressjs.com/) and interacting with MySQL database.
 
 ## How to Build NodeJS API?
 
@@ -43,7 +43,7 @@ To Build this REST API, we will install Nodejs and Express, this will allow user
 - Install NodeJS and Express
 - Ensure Mysql Server is Up
 - Create Mysql Recquired Tables
-- Postman or Similar Type of Application ( REST Client, HTTPie ..) will be needed to test our endpoints
+- [Postman](https://www.postman.com/) or Similar Type of Application ( [REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo), [HTTPie](https://httpie.io/) ..) will be needed to test our endpoints
 
 
 ## Let's Start With NodeJS API?

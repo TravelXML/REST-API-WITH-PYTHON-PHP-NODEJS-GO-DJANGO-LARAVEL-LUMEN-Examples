@@ -395,7 +395,7 @@ These are routes we define:
     /properties: GET, POST, DELETE
     /properties/: propertyId: GET, PUT, DELETE
 
-Create a routes folder inside app folder, then create property.routes.js and copy paste the below code.
+Create a routes folder inside app folder, then create `property.routes.js` and copy paste the below code.
     
     // routes/property.routes.php
 
@@ -433,7 +433,7 @@ We also need to include routes in server.js (right before app.listen()):
 
 ## Create the Controller
 
-Now we create a controllers folder inside app folder, then we have a file named property.controller.js. Our controller will be written inside this with CRUD functions:
+Now we create a controllers folder inside app folder, then we have a file named `property.controller.js`. Our controller will be written inside this with CRUD functions:
 
 - create
 - findAll
@@ -645,11 +645,3 @@ Today, we’ve learned how to create Node.js Rest Apis with an Express web serve
 - [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)
 - [https://www.npmjs.com/package/body-parser](https://www.npmjs.com/package/body-parser)
 - [https://www.npmjs.com/package/mysql](https://www.npmjs.com/package/mysql)
-
-
-
-
-
-
-
-

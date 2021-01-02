@@ -588,7 +588,7 @@ Run our Node.js application with command:
     Successfully connected to the database.
 
 
-**Using Postman, we’re gonna test all the APIs above**.
+**Using Postman, we’re going to test all the APIs**.
 
 - **Create** a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
 ![Create New Property Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-1.png)
@@ -616,7 +616,7 @@ Run our Node.js application with command:
 - **Delete Property by ID** using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
  ![Delete Single Property - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-7.png)
 
-  Check `properties` table after a row was Deleted:
+  Check `properties` table after a row was deleted:
 
        SELECT * FROM properties
        
@@ -625,7 +625,7 @@ Run our Node.js application with command:
 - **Delete All Proerties** using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
  ![Delete All Properties - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-9.png)
 
-  Check `properties` table after all row was updated:
+  Check `properties` table after all row was deleted:
 
        SELECT * FROM properties
  ![Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-10.png)      

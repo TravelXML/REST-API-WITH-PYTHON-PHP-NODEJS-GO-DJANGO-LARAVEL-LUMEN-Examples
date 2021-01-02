@@ -59,7 +59,7 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 - Then We Define Routes for Handling all CRUD operations
 - Finally, we’re Gonna to test the Rest APIs using Postman
 
-#### Defining The Routes
+## NodeJS API Routes
 
 **GET**	/properties	get all Properties
 

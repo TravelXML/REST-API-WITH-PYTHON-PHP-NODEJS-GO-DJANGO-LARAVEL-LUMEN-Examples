@@ -23,12 +23,7 @@ Security must never be neglected. Adding features, like authentication controls,
 
 **[Express](https://expressjs.com/)** is one of the most popular web frameworks for Node.js that supports routing, middleware, view system… This tutorial will guide you through the steps of building Node.js Restful CRUD API using Express and interacting with MySQL database.
 
-## Prerequisites
-- Knowledge of NodeJS and Express
-- Ensure Mysql Server is Up
-- Postman or similar type of application ( REST Client, HTTPie ..) will be needed to test our endpoints
-
-## How to Start?
+## How to Build NodeJS API?
 
 To demonstrate how to build a NodeJS API with Express and Mysql, we'll build an API that will be used to create a list of properties. This application will list the following about each Property:
 
@@ -43,11 +38,23 @@ To demonstrate how to build a NodeJS API with Express and Mysql, we'll build an 
 
 To Build this REST API, we will install Nodejs and Express, this will allow users to have access to some of the endpoints. Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL?
 
-## Let's Start?
+## Prerequisites
+- Knowledge of NodeJS and Express
+- Ensure Mysql Server is Up
+- Postman or similar type of application ( REST Client, HTTPie ..) will be needed to test our endpoints
 
-We will build Rest Apis for creating, retrieving, updating & deleting Properties.
 
-First, we start with an Express web server. Next, we add configuration for MySQL database, create Property model, write the controller. Then we define routes for handling all CRUD operations:
+## Let's Start With NodeJS API?
+
+We will build Rest Apis for **creating, retrieving, updating & deleting Properties**.
+
+#### Overview of Node JS API Implementation?
+
+- Start with an Express Web Server. 
+- We add configuration for MySQL database
+- Create Property model
+- Write the controller
+- Then we define routes for handling all CRUD operations:
 
 **GET**	/properties	get all Properties
 **GET**	/property/42	get Property with id=42

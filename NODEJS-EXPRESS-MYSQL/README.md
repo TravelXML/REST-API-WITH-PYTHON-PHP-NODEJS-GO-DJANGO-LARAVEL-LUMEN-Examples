@@ -640,9 +640,13 @@ Run our Node.js application with command:
  Now there are no rows in properties table:
 
 
-## what did we learn so far?
+## What did we learn so far?
 
-Today, we’ve learned how to create Node.js Rest Apis with an Express web server. We also know way to add configuration for MySQL database, create a model, write a controller and define routes for handling all CRUD operations.
+So far we’ve learned how to create Node.js REST APIs with an Express web server. We also know way to add configuration for MySQL database, create a model, write a controller, define routes for handling all CRUD operations and excute all test cases using POSTMAN.
+
+I hope instructions are good to set up this project in your local, Enjoy Coding :+1:
+
+![Back to HOME](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples)
 
 ## Explore More
 
@@ -650,3 +654,13 @@ Today, we’ve learned how to create Node.js Rest Apis with an Express web serve
 - [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express)
 - [https://www.npmjs.com/package/body-parser](https://www.npmjs.com/package/body-parser)
 - [https://www.npmjs.com/package/mysql](https://www.npmjs.com/package/mysql)
+
+
+#### For Help, you can reach
+-------------------------------
+Skype: sapan.mohannty
+
+Twitter: https://twitter.com/htngapi
+
+Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+

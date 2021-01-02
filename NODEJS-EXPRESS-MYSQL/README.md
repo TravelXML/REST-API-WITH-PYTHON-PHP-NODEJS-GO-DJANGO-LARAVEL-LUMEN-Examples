@@ -46,7 +46,7 @@ To Build this REST API, we will install Nodejs and Express, this will allow user
 
 ## Let's Start With NodeJS API?
 
-We will build Rest Apis for **creating, retrieving, updating & deleting Properties**.
+We will build Rest Apis for **creating, retrieving, updating & deleting  for Property Service**.
 
 #### Overview of Node JS API Implementation?
 

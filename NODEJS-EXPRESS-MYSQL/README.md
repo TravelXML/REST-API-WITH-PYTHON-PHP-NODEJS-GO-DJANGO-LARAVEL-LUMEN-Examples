@@ -129,6 +129,9 @@ The package.json file should look like this:
         "mysql": "^2.18.1"
       }
     }
+    
+## Our Folder Structre Will be
+[Node JS REST API File and Folder Structure](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-file-folder.png)
 
 ## Setup Express Web Server
 
@@ -173,6 +176,8 @@ Now we can run the app with command:
     node server.js.
     
 Open your browser, enter the url [http://localhost:3000/](http://localhost:3000/), you will see:
+
+[Node JS REST API Server](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-server-up-browser.png)
 
 ## Create MySQL Table
 
@@ -437,7 +442,9 @@ Now we create a controllers folder inside app folder, then we have a file named 
 - deleteAll
       
 Let’s implement these functions.
-Create a new object
+
+**Create New Property object**
+
 
     const Property = require("../models/property.model.js");
 
@@ -462,9 +469,9 @@ Create a new object
         ready_to_sell:req.body.ready_to_sell
       });
 
-      console.log(req.body);
+      
+**Save Property Object in to the database**
 
-      // Save Property in the database
       Property.create(property, (err, data) => {
         if (err)
           res.status(500).send({
@@ -475,7 +482,8 @@ Create a new object
       });
     };
 
-    // Retrieve all Properties from the database.
+**Retrieve all Property Objects from the database.**
+
     exports.findAll = (req, res) => {
       Property.getAll((err, data) => {
         if (err)
@@ -487,7 +495,8 @@ Create a new object
       });
     };
 
-    // Find a single Property with a propertyId
+**Find a Property Object with a propertyId ( id )**
+
     exports.findOne = (req, res) => {
       Property.findById(req.params.propertyId, (err, data) => {
         if (err) {
@@ -504,7 +513,8 @@ Create a new object
       });
     };
 
-    // Update a Property identified by the propertyId in the request
+**Update a Property Object by the propertyId in the request**
+
     exports.update = (req, res) => {
       // Validate Request
       if (!req.body) {
@@ -534,7 +544,8 @@ Create a new object
       );
     };
 
-    // Delete a Property with the specified propertyId in the request
+**Delete a Property Object with the specified propertyId in the request**
+
     exports.delete = (req, res) => {
       Property.remove(req.params.propertyId, (err, data) => {
         if (err) {
@@ -551,7 +562,8 @@ Create a new object
       });
     };
 
-    // Delete all Properties from the database.
+**Delete All Property Objects from the database** - it's very risky execution to delete all records from Database so this operation doesn't require in most of the API implememtaion.
+    
     exports.deleteAll = (req, res) => {
       Property.removeAll((err, data) => {
         if (err)
@@ -577,37 +589,48 @@ Run our Node.js application with command:
 
 **Using Postman, we’re gonna test all the APIs above**.
 
-- Create a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- **Create** a new Property using **POST** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+[Create New Property Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-1.png)
 
   After creating some new property, we can check MySQL table:
+  
+ [Create New Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-2.png)
 
-- Retrieve all Properties using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- **Retrieve All Properties** using **GET** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+[Retrieve All Properties Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-3.png)
 
-- Retrieve Single Proerty by id using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+- **Retrieve Single Property by ID** using **GET** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+[Retrieve All Properties  - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-4.png)
 
-- Update Proerty by id using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+- **Update Property by ID** using **PUT** [http://localhost:3000/properties/27](http://localhost:3000/properties/27) endpoint
+[Update By PropertyId Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-5.png)
 
   Check `properties` table after a row was updated:
 
        SELECT * FROM properties  
+ [Update By PropertyId - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-6.png)      
  
 
 
-- Delete Proerty by id using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
+- **Delete Property by ID** using **DELETE** [http://localhost:3000/properties/27](http://localhost:3000/properties/) endpoint
+[Delete Single Property - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-7.png)
 
   Check `properties` table after a row was Deleted:
 
        SELECT * FROM properties
        
+[Delete Single Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-8.png)       
 
-- Delete All Proerties by id using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+- **Delete All Proerties using **DELETE** [http://localhost:3000/properties/](http://localhost:3000/properties/) endpoint
+[Delete All Properties - Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-9.png)
 
   Check `properties` table after all row was updated:
 
        SELECT * FROM properties
+ [Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-10.png)      
 
 
-## Conclusion
+## what did we learn so far?
 
 Today, we’ve learned how to create Node.js Rest Apis with an Express web server. We also know way to add configuration for MySQL database, create a model, write a controller and define routes for handling all CRUD operations.
 

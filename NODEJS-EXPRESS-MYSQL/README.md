@@ -166,7 +166,7 @@ Now, in the root folder, we create a new file named `server.js`:
 
 – Import express and body-parser modules. Express is for building the Rest apis, and body-parser helps to parse the request and create the req.body object that we will need to access in our routes.
 
-– Create an Express app, then add body-parser middlewares using app.use() method.
+– Create an Express app, then add body-parser middlewares using `app.use()` method.
 
 – Define a GET route which is simple for test.
 
@@ -594,6 +594,8 @@ Run our Node.js application with command:
 ![Create New Property Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-test-1.png)
 
   After creating some new property, we can check MySQL table:
+
+       SELECT * FROM properties
   
 ![Create New Property - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-2.png)
 
@@ -628,7 +630,9 @@ Run our Node.js application with command:
   Check `properties` table after all row was deleted:
 
        SELECT * FROM properties
- ![Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-10.png)      
+ ![Delete All Properties - DB Node JS](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJs-test-10.png)
+ 
+ Now there are no rows in properties table:
 
 
 ## what did we learn so far?

@@ -1,4 +1,4 @@
-## PYTHON DJANGO API - CURD with PYTHON, DJANGO, REST Framework
+## DJANGO REST API Tutorial  - CURD with DJANGO, REST Framework[2021]
 
 ![REST API DJANGO REST FRAMEWORK](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Django-REST-API.png)
 

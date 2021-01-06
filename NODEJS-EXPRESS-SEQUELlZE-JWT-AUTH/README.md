@@ -143,11 +143,11 @@ Don't be disappointed if you don't know NodeJS, If you know any programming lang
 
 **POST /api/auth/signin** - Login an account
 
-**GET	 /api/test/all** - Retrieve public content
+**GET /api/test/all** - Retrieve public content
 
-**GET	 /api/test/user** - Access User’s content
+**GET /api/test/user** - Access User’s content
 
-**GET	 /api/test/admin** - Access Admin’s content
+**GET /api/test/admin** - Access Admin’s content
 
 **POST /properties** - Create New Property
 
@@ -227,7 +227,8 @@ Then we initialize the Node.js App with a package.json file:
 
     Is this ok? (yes) yes
 
-We need to install necessary modules: express, cors, body-parser, sequelize, mysql2, jsonwebtoken and bcryptjs.
+**We need to install necessary modules:** `express, cors, body-parser, sequelize, mysql2, jsonwebtoken and bcryptjs`.
+
 Run the command:
 
     npm install express sequelize mysql2 body-parser cors jsonwebtoken bcryptjs --save
@@ -265,7 +266,7 @@ The package.json file now looks like this:
       }
     }
 
-Setup Express web server
+## Setup Express web server
 
 In the root folder, let’s create a new server.js file:
 
@@ -342,82 +343,82 @@ Now let’s run the app with command: nodemon server.js.
 Open your browser with url http://localhost:8080/, you will see below screen:
 
 
-Configure MySQL database & Sequelize
+## Configure MySQL database & Sequelize
 
 In the app folder, create config folder for configuration with db.config.js file like this:
 
-module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "",
-  DB: "nodejs",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-};
+        module.exports = {
+          HOST: "localhost",
+          USER: "root",
+          PASSWORD: "",
+          DB: "nodejs",
+          dialect: "mysql",
+          pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+          }
+        };
 
-First five parameters are for MySQL connection.
+**First five parameters are for MySQL connection.**
 pool is optional, it will be used for Sequelize connection pool configuration:
 - max: maximum number of connection in pool
 - min: minimum number of connection in pool
 - idle: maximum time, in milliseconds, that a connection can be idle before being released
 - acquire: maximum time, in milliseconds, that pool will try to get connection before throwing error
 
-For more details, please visit API Reference for the Sequelize constructor.
+For more details, [please visit API Reference for the Sequelize constructor](https://sequelize.org/master/class/lib/model.js~Model.html).
 
 ## Define the Sequelize Model
 
 In models folder, create User and Role data model as following code:
 
-models/user.model.js
+**models/user.model.js**
 
-module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define("users", {
-    username: {
-      type: Sequelize.STRING
-    },
-    email: {
-      type: Sequelize.STRING
-    },
-    password: {
-      type: Sequelize.STRING
-    }
-  });
+        module.exports = (sequelize, Sequelize) => {
+          const User = sequelize.define("users", {
+            username: {
+              type: Sequelize.STRING
+            },
+            email: {
+              type: Sequelize.STRING
+            },
+            password: {
+              type: Sequelize.STRING
+            }
+          });
 
-  return User;
-};
+          return User;
+        };
 
-models/role.model.js
+**models/role.model.js**
 
-module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define("users", {
-    username: {
-      type: Sequelize.STRING
-    },
-    email: {
-      type: Sequelize.STRING
-    },
-    password: {
-      type: Sequelize.STRING
-    }
-  });
+        module.exports = (sequelize, Sequelize) => {
+          const User = sequelize.define("users", {
+            username: {
+              type: Sequelize.STRING
+            },
+            email: {
+              type: Sequelize.STRING
+            },
+            password: {
+              type: Sequelize.STRING
+            }
+          });
 
-  return User;
-};
+          return User;
+        };
 
 These Sequelize Models represents users & roles table in MySQL database.
 
 After initializing Sequelize, we don’t need to write CRUD functions, Sequelize supports all of them:
 
-- Create a new User: create(object)
-- Find a User by id: findByPk(id)
-- Find a User by email: findOne({ where: { email: ... } })
-- Get all Users: findAll()
-- Find all Users by username: findAll({ where: { username: ... } })
+        - Create a new User: create(object)
+        - Find a User by id: findByPk(id)
+        - Find a User by email: findOne({ where: { email: ... } })
+        - Get all Users: findAll()
+        - Find all Users by username: findAll({ where: { username: ... } })
 
 These functions will be used in our Controllers and Middlewares.
 
@@ -425,56 +426,56 @@ These functions will be used in our Controllers and Middlewares.
 
 Now create app/models/index.js with content like this:
 
-const config = require("../config/db.config.js");
+        const config = require("../config/db.config.js");
 
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
-  config.DB,
-  config.USER,
-  config.PASSWORD,
-  {
-    host: config.HOST,
-    dialect: config.dialect,
-    operatorsAliases: false,
+        const Sequelize = require("sequelize");
+        const sequelize = new Sequelize(
+          config.DB,
+          config.USER,
+          config.PASSWORD,
+          {
+            host: config.HOST,
+            dialect: config.dialect,
+            operatorsAliases: false,
 
-    pool: {
-      max: config.pool.max,
-      min: config.pool.min,
-      acquire: config.pool.acquire,
-      idle: config.pool.idle
-    }
-  }
-);
+            pool: {
+              max: config.pool.max,
+              min: config.pool.min,
+              acquire: config.pool.acquire,
+              idle: config.pool.idle
+            }
+          }
+        );
 
-const db = {};
+        const db = {};
 
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-db.sequelize = sequelize;
-
-
-db.user = require("../models/user.model.js")(sequelize, Sequelize);
-db.role = require("../models/role.model.js")(sequelize, Sequelize);
-db.property = require("../models/property.model.js")(sequelize, Sequelize);
+        db.Sequelize = Sequelize;
+        db.sequelize = sequelize;
+        db.sequelize = sequelize;
 
 
-db.role.belongsToMany(db.user, {
-  through: "user_roles",
-  foreignKey: "roleId",
-  otherKey: "userId"
-});
-db.user.belongsToMany(db.role, {
-  through: "user_roles",
-  foreignKey: "userId",
-  otherKey: "roleId"
-});
-
-db.ROLES = ["user", "admin"];
-
-module.exports = db;
+        db.user = require("../models/user.model.js")(sequelize, Sequelize);
+        db.role = require("../models/role.model.js")(sequelize, Sequelize);
+        db.property = require("../models/property.model.js")(sequelize, Sequelize);
 
 
-The association between Users and Roles is Many-to-Many relationship:
+        db.role.belongsToMany(db.user, {
+          through: "user_roles",
+          foreignKey: "roleId",
+          otherKey: "userId"
+        });
+        db.user.belongsToMany(db.role, {
+          through: "user_roles",
+          foreignKey: "userId",
+          otherKey: "roleId"
+        });
+
+        db.ROLES = ["user", "admin"];
+
+        module.exports = db;
+
+
+**The association between Users and Roles is Many-to-Many relationship:**
 – One User can have several Roles.
 – One Role can be taken on by many Users.
 
@@ -482,46 +483,46 @@ We use User.belongsToMany(Role) to indicate that the user model can belong to ma
 
 With through, foreignKey, otherKey, we’re gonna have a new table user_roles as connection between users and roles table via their primary key as foreign keys.
 
-Don’t forget to call sync() method in server.js.
+Don’t forget to call sync() method in `server.js`.
 
-...
-const app = express();
-app.use(...);
+        ...
+        const app = express();
+        app.use(...);
 
-const db = require("./app/models");
-const Role = db.role;
+        const db = require("./app/models");
+        const Role = db.role;
 
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
-  initial();
-});
+        db.sequelize.sync({force: true}).then(() => {
+          console.log('Drop and Resync Db');
+          initial();
+        });
 
-...
-function initial() {
-  Role.create({
-    id: 1,
-    name: "user"
-  });
- 
-  Role.create({
-    id: 2,
-    name: "admin"
-  });  
-}
+        ...
+        function initial() {
+          Role.create({
+            id: 1,
+            name: "user"
+          });
+
+          Role.create({
+            id: 2,
+            name: "admin"
+          });  
+        }
 
 initial() function helps us to create 3 rows in database.
 In development, you may need to drop existing tables and re-sync database. So you can use force: true as code above.
 
 For production, just insert these rows manually and use sync() without parameters to avoid dropping data:
 
-...
-const app = express();
-app.use(...);
+        ...
+        const app = express();
+        app.use(...);
 
-const db = require("./app/models");
+        const db = require("./app/models");
 
-db.sequelize.sync();
-...
+        db.sequelize.sync();
+        ...
 
 ## Configure Auth Key
 
@@ -529,9 +530,9 @@ jsonwebtoken functions such as verify() or sign() use algorithm that needs a sec
 
 In the app/config folder, create auth.config.js file with following code:
 
-module.exports = {
-  secret: "Sapan-Mohanty-secret-key"
-};
+        module.exports = {
+          secret: "Sapan-Mohanty-secret-key"
+        };
 
 You can create your own secret String.
 
@@ -605,54 +606,54 @@ To process Authentication & Authorization, we have these functions:
 - check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
 - check if roles of the user contains required role or not.
 
-const jwt = require("jsonwebtoken");
-const config = require("../config/auth.config.js");
-const db = require("../models");
-const User = db.user;
+        const jwt = require("jsonwebtoken");
+        const config = require("../config/auth.config.js");
+        const db = require("../models");
+        const User = db.user;
 
-verifyToken = (req, res, next) => {
-  let token = req.headers["x-access-token"];
+        verifyToken = (req, res, next) => {
+          let token = req.headers["x-access-token"];
 
-  if (!token) {
-    return res.status(403).send({
-      message: "No token provided!"
-    });
-  }
+          if (!token) {
+            return res.status(403).send({
+              message: "No token provided!"
+            });
+          }
 
-  jwt.verify(token, config.secret, (err, decoded) => {
-    if (err) {
-      return res.status(401).send({
-        message: "Unauthorized!"
-      });
-    }
-    req.userId = decoded.id;
-    next();
-  });
-};
+          jwt.verify(token, config.secret, (err, decoded) => {
+            if (err) {
+              return res.status(401).send({
+                message: "Unauthorized!"
+              });
+            }
+            req.userId = decoded.id;
+            next();
+          });
+        };
 
-isAdmin = (req, res, next) => {
-  User.findByPk(req.userId).then(user => {
-    user.getRoles().then(roles => {
-      for (let i = 0; i < roles.length; i++) {
-        if (roles[i].name === "admin") {
-          next();
-          return;
-        }
-      }
-      res.status(403).send({
-        message: "Require Admin Role!"
-      });
-      return;
-    });
-  });
-};
-const authJwt = {
-  verifyToken: verifyToken,
-  isAdmin: isAdmin
-};
-module.exports = authJwt;
+        isAdmin = (req, res, next) => {
+          User.findByPk(req.userId).then(user => {
+            user.getRoles().then(roles => {
+              for (let i = 0; i < roles.length; i++) {
+                if (roles[i].name === "admin") {
+                  next();
+                  return;
+                }
+              }
+              res.status(403).send({
+                message: "Require Admin Role!"
+              });
+              return;
+            });
+          });
+        };
+        const authJwt = {
+          verifyToken: verifyToken,
+          isAdmin: isAdmin
+        };
+        module.exports = authJwt;
 
-middleware/index.js
+**middleware/index.js**
 
     const authJwt = require("./authJwt");
     const verifySignUp = require("./verifySignUp");
@@ -834,7 +835,7 @@ Authentication:
 - GET /api/test/user for loggedin users (user/admin)
 - GET /api/test/admin for admin
 
-    routes/user.routes.js
+**routes/user.routes.js**
 
     const { authJwt } = require("../middleware");
     const controller = require("../controllers/user.controller");

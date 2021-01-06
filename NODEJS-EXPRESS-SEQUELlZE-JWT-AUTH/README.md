@@ -1,6 +1,4 @@
-#Build Node.Js and Express REST API with Sequelize and JWT
-
-# Nodejs API Tutorial: Express, MYSQL - NodeJS REST API Examples
+# Nodejs Express API Tutorial: Sequelize and JWT - NodeJS Express REST API Examples
 ![Node JS REST API Using Express](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/NodeJS-Express-Mysql-REST-API.jpg)
 
 ## Why node.js for API development?
@@ -74,7 +72,7 @@ final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uY
 
 ## How to Build NodeJS API with Sequelize and JWT?
 
-To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll build an API that will manage for below listed services and that supports Token Based Authentication with JWT (JSONWebToken).
+To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll build an API that will manage for below listed services and that supports Token Based Authentication with JWT ( JSON Web Token ).
 - **Token Authentication** 
   - Signup
   - Signin for token and to below property services.
@@ -88,13 +86,13 @@ To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll b
 
 Signin process will be providing token and the same token will be used to excute all of properties services ( ex: create, update, read, delete ). Token need to pass through request header to call property services, this scurity layer is very much important to built secure API.
 
-The Client typically attaches JWT in Authorization header with Bearer prefix:
+**The Client typically attaches JWT in Authorization header with Bearer prefix:**
     
-Authorization: Bearer [header].[payload].[signature]
+        Authorization: Bearer [header].[payload].[signature]
 
-Or only in x-access-token header:
+**Or only in x-access-token header:**
 
-x-access-token: [header].[payload].[signature]
+        x-access-token: [header].[payload].[signature]
 
 
 This application will list the following about each Property:
@@ -266,9 +264,9 @@ The package.json file now looks like this:
       }
     }
 
-## Setup Express web server
+## Setup Express Web Server
 
-In the root folder, let’s create a new server.js file:
+**In the root folder, let’s create a new server.js file:**
 
     const express = require("express");
     const bodyParser = require("body-parser");
@@ -329,7 +327,7 @@ In the root folder, let’s create a new server.js file:
     
     
     
- Let me explain what we’ve just done:
+ **Let me explain what we’ve just done?**
 – import express, body-parser and cors modules:
 - Express is for building the Rest apis
 - body-parser helps to parse the request and create the req.body object
@@ -409,22 +407,62 @@ In models folder, create User and Role data model as following code:
 
           return User;
         };
+        
 
-These Sequelize Models represents users & roles table in MySQL database.
+**models/property.model.js** 
 
-After initializing Sequelize, we don’t need to write CRUD functions, Sequelize supports all of them:
+        module.exports = (sequelize, Sequelize) => {
+        const Property = sequelize.define("properties", {
+                property_name: {
+                type: Sequelize.STRING
+                },
+                address: {
+                type: Sequelize.STRING
+                },
+                city: {
+                type: Sequelize.STRING
+                },
+                country: {
+                type: Sequelize.STRING
+                },
+                minimum_price: {
+                type: Sequelize.DECIMAL
+                },
+                maximum_price: {
+                type: Sequelize.DECIMAL
+                },
+                ready_to_sell: {
+                type: Sequelize.INTEGER
+                }
+                }, {
+                timestamps: false
+                }); 
+
+        return Property;
+        };
+        
+
+These Sequelize Models represents users, roles, properties table in MySQL database.
+
+**After initializing Sequelize, we don’t need to write CRUD functions, Sequelize supports all of them:**
 
         - Create a new User: create(object)
         - Find a User by id: findByPk(id)
         - Find a User by email: findOne({ where: { email: ... } })
         - Get all Users: findAll()
-        - Find all Users by username: findAll({ where: { username: ... } })
+        - Find all Users by username: findAll({ where: { username: ... } 
+        - Create a new Property: create(object)
+        - Find a Property by id: findByPk(id)
+        - Find a Property by id: findOne({ where: { ... } })
+        - Get all Properties: findAll()
+        - Find all Property by property_name: findAll({ where: { property_name: ... } })
+
 
 These functions will be used in our Controllers and Middlewares.
 
 ## Initialize Sequelize
 
-Now create app/models/index.js with content like this:
+**Now create app/models/index.js with content like this:**
 
         const config = require("../config/db.config.js");
 
@@ -476,6 +514,7 @@ Now create app/models/index.js with content like this:
 
 
 **The association between Users and Roles is Many-to-Many relationship:**
+
 – One User can have several Roles.
 – One Role can be taken on by many Users.
 
@@ -602,7 +641,7 @@ To verify a Signup action, we need 2 functions:
 
     module.exports = verifySignUp;
 
-To process Authentication & Authorization, we have these functions:
+** To process Authentication & Authorization, we have these functions: **
 - check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
 - check if roles of the user contains required role or not.
 
@@ -764,6 +803,9 @@ There are 2 main functions for Authentication:
               res.status(500).send({ message: err.message });
             });
         };
+        
+## Controller for Properties
+
 
 ## Controller for testing Authorization
 
@@ -798,10 +840,10 @@ When a client sends request for an endpoint using HTTP request ( GET, POST, PUT,
 
 We can separate our routes into 2 part: for Authentication and for Authorization (accessing protected resources).
 
-Authentication:
+**Authentication:**
 
-    POST /api/auth/signup
-    POST /api/auth/signin
+- POST /api/auth/signup
+- POST /api/auth/signin
 
     routes/auth.routes.js
 

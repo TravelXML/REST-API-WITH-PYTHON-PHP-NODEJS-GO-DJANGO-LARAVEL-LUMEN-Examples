@@ -66,7 +66,7 @@ We will build REST APIs for **creating, retrieving, updating & deleting  for Pro
 
 **GET /properties**    - Get All Properties
 
-**GET /property/27** - Get Single Property with id=27
+**GET /properties/27** - Get Single Property with id=27
 
 **PUT /properties/27** - Update Single Property With id=27
 

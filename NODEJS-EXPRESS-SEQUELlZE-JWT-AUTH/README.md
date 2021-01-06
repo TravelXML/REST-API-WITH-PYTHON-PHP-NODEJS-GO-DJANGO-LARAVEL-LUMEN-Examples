@@ -137,27 +137,27 @@ Don't be disappointed if you don't know NodeJS, If you know any programming lang
 
 ## What All Endpoints are Available?
 
-**POST	/api/auth/signup** - Signup new account
+**POST** /api/auth/signup - Signup new account
 
-**POST /api/auth/signin** - Login an account
+**POST** /api/auth/signin - Login an account
 
-**GET /api/test/all** - Retrieve public content
+**GET** /api/test/all - Retrieve public content
 
-**GET /api/test/user** - Access User’s content
+**GET** /api/test/user - Access User’s content
 
-**GET /api/test/admin** - Access Admin’s content
+**GET** /api/test/admin - Access Admin’s content
 
-**POST /properties** - Create New Property
+**POST** /properties - Create New Property
 
-**GET /properties** - Get All Properties
+**GET** /properties - Get All Properties
 
-**GET /properties/27** - Get Single Property with id=27
+**GET** /properties/27 - Get Single Property with id=27
 
-**PUT /properties/27** - Update Single Property With id=27
+**PUT** /properties/27 - Update Single Property With id=27
 
-**DELETE /properties/27** - Remove Single Property with id=27
+**DELETE** /properties/27 - Remove Single Property with id=27
 
-**DELETE /properties** - Remove All Properties
+**DELETE** /properties - Remove All Properties
 
 
 ## Technology Stack
@@ -359,8 +359,8 @@ In the app folder, create config folder for configuration with db.config.js file
           }
         };
 
-**First five parameters are for MySQL connection.**
-pool is optional, it will be used for Sequelize connection pool configuration:
+## Parameters are for MySQL connection
+**Pool is optional, it will be used for Sequelize connection pool configuration:**
 - max: maximum number of connection in pool
 - min: minimum number of connection in pool
 - idle: maximum time, in milliseconds, that a connection can be idle before being released
@@ -550,6 +550,7 @@ Don’t forget to call sync() method in `server.js`.
         }
 
 initial() function helps us to create 3 rows in database.
+
 In development, you may need to drop existing tables and re-sync database. So you can use force: true as code above.
 
 For production, just insert these rows manually and use sync() without parameters to avoid dropping data:
@@ -565,9 +566,9 @@ For production, just insert these rows manually and use sync() without parameter
 
 ## Configure Auth Key
 
-jsonwebtoken functions such as verify() or sign() use algorithm that needs a secret key (as String) to encode and decode token.
+jsonwebtoken functions such as `verify()` or `sign()` use algorithm that needs a secret key (as String) to encode and decode token.
 
-In the app/config folder, create auth.config.js file with following code:
+In the `app/config` folder, create `auth.config.js` file with following code:
 
         module.exports = {
           secret: "Sapan-Mohanty-secret-key"
@@ -577,7 +578,8 @@ You can create your own secret String.
 
 ## Create Middleware functions
 
-To verify a Signup action, we need 2 functions:
+**To verify a Signup action, we need 2 functions:**
+
 – check if username or email is duplicate or not
 – check if roles in the request is existed or not
 
@@ -642,6 +644,7 @@ To verify a Signup action, we need 2 functions:
     module.exports = verifySignUp;
 
 ** To process Authentication & Authorization, we have these functions: **
+
 - check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
 - check if roles of the user contains required role or not.
 
@@ -805,6 +808,157 @@ There are 2 main functions for Authentication:
         };
         
 ## Controller for Properties
+        const db = require("../models");
+        const Property = db.property;
+        const Op = db.Sequelize.Op;
+
+        // Create and Save a new Property
+        exports.create = (req, res) => {
+          // Validate request
+          if (!req.body.property_name) {
+            res.status(400).send({
+              message: "Content can not be empty!"
+            });
+            return;
+          }
+
+          // Create a Property
+          const property = {
+            property_name: req.body.property_name,
+            address: req.body.address,
+            city: req.body.city,
+            country: req.body.country,
+            type: req.body.type,
+            minimum_price: req.body.minimum_price,
+            maximum_price: req.body.maximum_price,
+            ready_to_sell:req.body.ready_to_sell
+          };
+          // Save Property in the database
+          Property.create(property)
+            .then(data => {
+              res.send(data);
+            })
+            .catch(err => {
+              res.status(500).send({
+                message:
+                  err.message || "Some error occurred while creating the Property."
+              });
+            });
+        };
+
+        // Retrieve all Propertys from the database.
+        exports.findAll = (req, res) => {
+          const property_name = req.query.property_name;
+          var condition = property_name ? { title: { [Op.like]: `%${property_name}%` } } : null;
+
+          Property.findAll({ where: condition })
+            .then(data => {
+              res.send(data);
+            })
+            .catch(err => {
+              res.status(500).send({
+                message:
+                  err.message || "Some error occurred while retrieving properties."
+              });
+            });
+        };
+
+        // Find a single Property with an id
+        exports.findOne = (req, res) => {
+          const id = req.params.id;
+
+          Property.findByPk(id)
+            .then(data => {
+              res.send(data);
+            })
+            .catch(err => {
+              res.status(500).send({
+                message: "Error retrieving Property with id=" + id
+              });
+            });
+        };
+
+        // Update a Property by the id in the request
+        exports.update = (req, res) => {
+          const id = req.params.id;
+
+          Property.update(req.body, {
+            where: { id: id }
+          })
+            .then(num => {
+              if (num == 1) {
+                res.send({
+                  message: "Property was updated successfully."
+                });
+              } else {
+                res.send({
+                  message: `Cannot update Property with id=${id}. Maybe Property was not found or req.body is empty!`
+                });
+              }
+            })
+            .catch(err => {
+              res.status(500).send({
+                message: "Error updating Property with id=" + id
+              });
+            });
+        };
+
+        // Delete a Property with the specified id in the request
+        exports.delete = (req, res) => {
+          const id = req.params.id;
+
+          Property.destroy({
+            where: { id: id }
+          })
+            .then(num => {
+              if (num == 1) {
+                res.send({
+                  message: "Property was deleted successfully!"
+                });
+              } else {
+                res.send({
+                  message: `Cannot delete Property with id=${id}. Maybe Property was not found!`
+                });
+              }
+            })
+            .catch(err => {
+              res.status(500).send({
+                message: "Could not delete Property with id=" + id
+              });
+            });
+        };
+
+        // Delete all Propertys from the database.
+        exports.deleteAll = (req, res) => {
+          Property.destroy({
+            where: {},
+            truncate: false
+          })
+            .then(nums => {
+              res.send({ message: `${nums} Propertys were deleted successfully!` });
+            })
+            .catch(err => {
+              res.status(500).send({
+                message:
+                  err.message || "Some error occurred while removing all properties."
+              });
+            });
+        };
+
+        // find all published Property
+        exports.findAllPublished = (req, res) => {
+          Property.findAll({ where: { published: true } })
+            .then(data => {
+              res.send(data);
+            })
+            .catch(err => {
+              res.status(500).send({
+                message:
+                  err.message || "Some error occurred while retrieving properties."
+              });
+            });
+        };
+
 
 
 ## Controller for testing Authorization

@@ -220,7 +220,7 @@ Then we initialize the Node.js App with a package.json file:
     test command: 
     git repository: 
     keywords: node.js, express, jwt, authentication, mysql
-    author: bezkoder
+    author: Sapan Mohanty
     license: (ISC)
 
     Is this ok? (yes) yes
@@ -999,7 +999,7 @@ We can separate our routes into 2 part: for Authentication and for Authorization
 - POST /api/auth/signup
 - POST /api/auth/signin
 
-    routes/auth.routes.js
+    //routes/auth.routes.js
 
     const { verifySignUp } = require("../middleware");
     const controller = require("../controllers/auth.controller");

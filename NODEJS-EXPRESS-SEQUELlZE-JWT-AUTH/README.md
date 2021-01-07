@@ -95,7 +95,7 @@ Signin process will be providing token and the same token will be used to execut
         x-access-token: [header].[payload].[signature]
 
 
-This application will list the following about each Property:
+**This application will list the following about each Property:**
 
 - Property Name
 - Address
@@ -122,7 +122,7 @@ This application will list the following about each Property:
 - Knowledge of JWT and Sequelize
 - [Postman](https://www.postman.com/) or Similar Type of Application ( [REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo), [HTTPie](https://httpie.io/) ..) will be needed to test our endpoints
 
-Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL?
+**Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL?**
 
 
 ## Overview of Node.js Express API Implementation?
@@ -147,17 +147,17 @@ Don't be disappointed if you don't know NodeJS, If you know any programming lang
 
 **GET** /api/test/admin - Access Admin’s content
 
-**POST** /properties - Create New Property
+**POST** /api/properties - Create New Property
 
-**GET** /properties - Get All Properties
+**GET** /api/properties - Get All Properties
 
-**GET** /properties/27 - Get Single Property with id=27
+**GET** /api/properties/27 - Get Single Property with id=27
 
-**PUT** /properties/27 - Update Single Property With id=27
+**PUT** /api/properties/27 - Update Single Property With id=27
 
-**DELETE** /properties/27 - Remove Single Property with id=27
+**DELETE** /api/properties/27 - Remove Single Property with id=27
 
-**DELETE** /properties - Remove All Properties
+**DELETE** /api/properties - Remove All Properties
 
 
 ## Technology Stack
@@ -524,8 +524,8 @@ These functions will be used in our Controllers and Middlewares.
 
 **The association between Users and Roles is Many-to-Many relationship:**
 
-– One User can have several Roles.
-– One Role can be taken on by many Users.
+ – One User can have several Roles.
+ – One Role can be taken on by many Users.
 
 We use User.belongsToMany(Role) to indicate that the user model can belong to many Roles and vice versa.
 
@@ -558,11 +558,11 @@ Don’t forget to call sync() method in `server.js`.
           });  
         }
 
-initial() function helps us to create 3 rows in the database.
+`initial()` function helps us to create 3 rows in the database.
 
 In development, you may need to drop existing tables and re-sync databases. So you can use force: true as code above.
 
-For production, just insert these rows manually and use sync() without parameters to avoid dropping data:
+For production, just insert these rows manually and use `sync()` without parameters to avoid dropping data:
 
         ...
         const app = express();
@@ -654,7 +654,7 @@ You can create your own secret String.
 
 ## To process Authentication & Authorization, we have these functions:
 
-- check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
+- check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's `verify()` function.
 - check if roles of the user contain required roles or not.
 
         const jwt = require("jsonwebtoken");
@@ -974,8 +974,7 @@ There are 2 main functions for Authentication:
 
 There are 4 functions:
  – /api/test/all for public access
- – /api/test/user for logged in users (role: user/moderator/admin)
- – /api/test/mod for users having moderator role
+ – /api/test/user for logged in users (role: user/admin) 
  – /api/test/admin for users having admin role
 
     controllers/user.controller.js
@@ -995,6 +994,7 @@ There are 4 functions:
  
 
 Now, do you have any questions? Would you like to know how we can combine middlewares with controller functions?
+
 Let's do it in the next section.
 
 ## Define Routes
@@ -1024,9 +1024,8 @@ for Authentication and for Authorization (accessing protected resources).
         next();
       });
 
-      app.post(
-        "/api/auth/signup",
-        [
+      app.post("/api/auth/signup",
+      [
           verifySignUp.checkDuplicateUsernameOrEmail,
           verifySignUp.checkRolesExisted
         ],
@@ -1083,33 +1082,50 @@ Don't forget to add these routes in server.js:
 
 ## Run & Test with Results
 
-Run Node.js application with command: nodemon server.js
+Run Node.js application with command: 
+
+        nodemon server.js
 
 ![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)
 
 Tables that we define in the models package will be automatically generated in MySQL Database, You can check for the console itself.
 
-1. Signup
+1. Signup - **POST api/auth/signup**
+
 ![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-4.png)
 
-2. Sign In
+2. Sign In - **POST api/auth/signin**
+
 ![Node.JS REST API - Sigin](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-5.png)
 
-3. JWT Token
+3. JWT Token - **without Token service will throw an error**
+
+**Token is mandatory to excute all properties services**
+
 ![Node.JS REST API - JWT Token](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-6.png)
 
-4. Get All Properties
+4. Get All Properties - **POST api/properties/**
+
 ![Node.JS REST API - Get All Properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-7.png)
 
-5. Get Single Property Details By Id
+5. Get Single Property Details By Id - **POST api/properties/id**
+
 ![Node.JS REST API - Get Single Property Details By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-8.png)
-6. Create A property
+
+6. Create A property - **POST api/properties/**
+
 ![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-9.png)
-7. Update Property Details
+
+7. Update Property Details - **PUT api/properties/id**
+
 ![Node.JS REST API - Property Details](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-10.png)
-8. Delete a Property By Id
+
+8. Delete a Property By Id - **DELETE api/properties/id**
+
 ![Node.JS REST API - Delete a Property By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-11.png)
-9.Delete All Properties
+
+9.Delete All Properties- **DELETE api/properties/**
+
 ![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-12.png)
 
 

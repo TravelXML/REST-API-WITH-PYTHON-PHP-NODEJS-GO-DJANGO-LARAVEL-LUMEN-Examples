@@ -155,7 +155,7 @@ Signin process will be providing token and the same token will be used to execut
 
 ## Additional Services
 
-You can use them for test purposes but all ready these services has been implemented for properties services so ignore these below one.
+You can use them for test purposes but already these services have been implemented for properties services so ignore these below one.
 
 **GET** /api/test/all - Retrieve public content
 
@@ -982,7 +982,7 @@ There are 3 functions:
 
 These functions are implemented with properties services so you can ignore them but sack clarity just highlighting here.
  – /api/test/all  - for public access
- – /api/test/user - for logged in users (role: user/admin) 
+ – /api/test/user - for logged in users (role: user/admin)
  – /api/test/admin - for users having admin role
 
         //controllers/user.controller.js
@@ -1009,7 +1009,7 @@ Let's do it in the next section.
 
 When a client sends a request for an endpoint using HTTP request ( GET, POST, PUT, DELETE ), we need to determine how the server will respond by setting up the routes.
 
-We can separate our routes into 2 parts: 
+We can separate our routes into 2 parts:
 
 for Authentication and for Authorization (accessing protected resources).
 
@@ -1090,7 +1090,7 @@ Don't forget to add these routes in server.js:
 
 ## Run & Test with Results
 
-Run Node.js application with command: 
+Run Node.js application with command:
 
         nodemon server.js
 
@@ -1108,7 +1108,7 @@ Tables that we define in the models package will be automatically generated in M
 
 3. JWT Token - **without Token service will throw an error**
 
-**Token is mandatory to excute all properties services**
+**Token is mandatory to execute all properties services**
 
 ![Node.JS REST API - JWT Token](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-6.png)
 
@@ -1124,11 +1124,11 @@ Tables that we define in the models package will be automatically generated in M
 
 ![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-9.png)
 
-You can verify the data by runing below sql command and see record(S) are created or not?
+You can verify the data by running below sql command and see record(S) are created or not?
 
         SELECT * FROM `properties`
         
-You will find there are some records for `properties` table and new record has been created 
+You will find there are some records for `properties` table and new record has been created
 
 ![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-15.png)
 
@@ -1137,11 +1137,11 @@ You will find there are some records for `properties` table and new record has b
 
 ![Node.JS REST API - Property Details](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-10.png)
 
-You can verify the data by runing below sql command and see record(S) are updated or not?
+You can verify the data by running below sql command and see if the record(S) are updated or not?
 
         SELECT * FROM `properties`
         
-You will find there are some records for `properties` table and requested record has been updated successfully. 
+You will find there are some records for the `properties` table and the requested record has been updated successfully.
 
 ![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-16.png)
 
@@ -1154,7 +1154,7 @@ You will find there are some records for `properties` table and requested record
 
 ![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-12.png)
 
-After This You can verify by runing below sql command and see record(S) are deleted or not?
+After This You can verify by running below sql command and see if the records are deleted or not?
 
         SELECT * FROM `properties`
         
@@ -1167,7 +1167,7 @@ You will find there is no records for `properties` table
 **What Have We Learned So Far?**
 
 So Far we've learned so many interesting things about Node.js Token Based Authentication with JWT - JSONWebToken in just a Node.js Express REST API Example.
-Despite we wrote a lot of code, I hope you understood the overall architecture of the application and hope instructions are good to set up this project in your local and gives you a clarity what can be improved on for your existing project and what to implements on new ones.
+Despite having written a lot of code, I hope you understood the overall architecture of the application and hope instructions are good to set up this project in your local and give you clarity on what can be improved for your existing project and what to implement on new ones.
 
 Enjoy Coding :+1:
 

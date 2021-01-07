@@ -73,7 +73,7 @@ final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uY
 ## How to Build NodeJS API with Sequelize and JWT?
 
 To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll build an API that will manage for below listed services and that supports Token Based Authentication with JWT ( JSON Web Token ).
-- **Token Authentication** 
+- **Token Authentication Services** 
   - Signup
   - Signin for token and to below property services.
 - **Property Services**  
@@ -125,7 +125,7 @@ This application will list the following about each Property:
 Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL? 
 
 
-#### Overview of Node.js Express API Implementation?
+## Overview of Node.js Express API Implementation?
 
 - Start With an Express Web Server.
 - We Add Configuration for MySQL Database
@@ -643,7 +643,7 @@ You can create your own secret String.
 
     module.exports = verifySignUp;
 
-** To process Authentication & Authorization, we have these functions: **
+## To process Authentication & Authorization, we have these functions:
 
 - check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
 - check if roles of the user contains required role or not.
@@ -808,6 +808,7 @@ There are 2 main functions for Authentication:
         };
         
 ## Controller for Properties
+
         const db = require("../models");
         const Property = db.property;
         const Op = db.Sequelize.Op;
@@ -958,7 +959,6 @@ There are 2 main functions for Authentication:
               });
             });
         };
-
 
 
 ## Controller for testing Authorization

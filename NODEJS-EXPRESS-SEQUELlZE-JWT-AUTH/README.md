@@ -84,7 +84,7 @@ To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll b
   - Delete Property by Id
   - Delete All Properties
 
-Signin process will be providing token and the same token will be used to execute all of properties services ( ex: create, update, read, delete ). Token need to pass through request header to call property services, this security layer is very much important to build secure API.
+Signin process will be providing token and the same token will be used to execute all of properties services **( ex: create, update, read, delete )**. Token need to pass through a request header to call property services, this security layer to implement a secure API.
 
 **The Client typically attaches JWT in Authorization header with Bearer prefix:**
     
@@ -376,10 +376,10 @@ In the app folder, create config folder for configuration with db.config.js file
 ## Parameters are for MySQL connection
 
 **Pool is optional, it will be used for Sequelize connection pool configuration:**
-- max: maximum number of connection in pool
-- min: minimum number of connection in pool
-- idle: maximum time, in milliseconds, that a connection can be idle before being released
-- acquire: maximum time, in milliseconds, that pool will try to get connection before throwing error
+- **max:** maximum number of connection in pool
+- **min:** minimum number of connection in pool
+- **idle:** maximum time, in milliseconds, that a connection can be idle before being released
+- **acquire:** maximum time, in milliseconds, that pool will try to get connection before throwing error
 
 For more details, [please visit API Reference for the Sequelize constructor](https://sequelize.org/master/class/lib/model.js~Model.html).
 
@@ -531,7 +531,7 @@ These functions will be used in our Controllers and Middlewares.
 **The Association Between Users and Roles is Many-to-Many Relationship:**
 
  
- – One User can have several Roles. 
+ – One User can have several Roles.
  
  – One Role can be taken on by many Users.
 
@@ -1133,7 +1133,7 @@ Run Node.js application with command:
 
         nodemon server.js
 
-![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-13.png)
+![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-2.png)
 
 Tables that we define in the models package will be automatically generated in MySQL Database, You can check for the console itself.
 

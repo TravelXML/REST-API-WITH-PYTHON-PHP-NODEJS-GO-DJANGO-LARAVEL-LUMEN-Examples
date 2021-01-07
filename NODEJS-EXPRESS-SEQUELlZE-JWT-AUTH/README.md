@@ -141,12 +141,6 @@ Signin process will be providing token and the same token will be used to execut
 
 **POST** /api/auth/signin - Login an account
 
-**GET** /api/test/all - Retrieve public content
-
-**GET** /api/test/user - Access User’s content
-
-**GET** /api/test/admin - Access Admin’s content
-
 **POST** /api/properties - Create New Property
 
 **GET** /api/properties - Get All Properties
@@ -158,6 +152,17 @@ Signin process will be providing token and the same token will be used to execut
 **DELETE** /api/properties/27 - Remove Single Property with id=27
 
 **DELETE** /api/properties - Remove All Properties
+
+## Additional Services
+
+You can use them for test purposes but already these services have been implemented for properties services so ignore these below one.
+
+**GET** /api/test/all - Retrieve public content
+
+**GET** /api/test/user - Access User’s content
+
+**GET** /api/test/admin - Access Admin’s content
+
 
 
 ## Technology Stack
@@ -342,7 +347,7 @@ Now let’s run the app with command:
 
         nodemon server.js
         
-![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-2.png)        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-14.png)        
 
 Open your browser with url http://localhost:8080/, you will see below screen:
 
@@ -369,6 +374,7 @@ In the app folder, create config folder for configuration with db.config.js file
         };
 
 ## Parameters are for MySQL connection
+
 **Pool is optional, it will be used for Sequelize connection pool configuration:**
 - max: maximum number of connection in pool
 - min: minimum number of connection in pool
@@ -970,26 +976,28 @@ There are 2 main functions for Authentication:
         };
 
 
-## Controller for testing Authorization
+## Controller for Testing Authorization
 
-There are 4 functions:
- – /api/test/all for public access
- – /api/test/user for logged in users (role: user/admin) 
- – /api/test/admin for users having admin role
+There are 3 functions:
 
-    controllers/user.controller.js
+These functions are implemented with properties services so you can ignore them but sack clarity just highlighting here.
+ – /api/test/all  - for public access
+ – /api/test/user - for logged in users (role: user/admin)
+ – /api/test/admin - for users having admin role
 
-    exports.allAccess = (req, res) => {
-      res.status(200).send("Public Content.");
-    };
+        //controllers/user.controller.js
 
-    exports.userBoard = (req, res) => {
-      res.status(200).send("User Content.");
-    };
+        exports.allAccess = (req, res) => {
+        res.status(200).send("Public Content.");
+        };
 
-    exports.adminBoard = (req, res) => {
-      res.status(200).send("Admin Content.");
-    };
+        exports.userBoard = (req, res) => {
+        res.status(200).send("User Content.");
+        };
+
+        exports.adminBoard = (req, res) => {
+        res.status(200).send("Admin Content.");
+        };
 
  
 
@@ -1001,7 +1009,7 @@ Let's do it in the next section.
 
 When a client sends a request for an endpoint using HTTP request ( GET, POST, PUT, DELETE ), we need to determine how the server will respond by setting up the routes.
 
-We can separate our routes into 2 parts: 
+We can separate our routes into 2 parts:
 
 for Authentication and for Authorization (accessing protected resources).
 
@@ -1010,30 +1018,30 @@ for Authentication and for Authorization (accessing protected resources).
 - POST /api/auth/signup
 - POST /api/auth/signin
 
-    //routes/auth.routes.js
+        //routes/auth.routes.js
 
-    const { verifySignUp } = require("../middleware");
-    const controller = require("../controllers/auth.controller");
+        const { verifySignUp } = require("../middleware");
+        const controller = require("../controllers/auth.controller");
 
-    module.exports = function(app) {
-      app.use(function(req, res, next) {
-        res.header(
-          "Access-Control-Allow-Headers",
-          "x-access-token, Origin, Content-Type, Accept"
-        );
-        next();
-      });
+        module.exports = function(app) {
+                app.use(function(req, res, next) {
+                res.header(
+                  "Access-Control-Allow-Headers",
+                  "x-access-token, Origin, Content-Type, Accept"
+                );
+                next();
+                });
 
-      app.post("/api/auth/signup",
-      [
-          verifySignUp.checkDuplicateUsernameOrEmail,
-          verifySignUp.checkRolesExisted
-        ],
-        controller.signup
-      );
+                app.post("/api/auth/signup",
+                        [
+                          verifySignUp.checkDuplicateUsernameOrEmail,
+                          verifySignUp.checkRolesExisted
+                        ],
+                        controller.signup
+                        );
 
-      app.post("/api/auth/signin", controller.signin);
-    };
+                app.post("/api/auth/signin", controller.signin);
+                };
 
 ## Authorization:
 
@@ -1082,11 +1090,11 @@ Don't forget to add these routes in server.js:
 
 ## Run & Test with Results
 
-Run Node.js application with command: 
+Run Node.js application with command:
 
         nodemon server.js
 
-![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)
+![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-13.png)
 
 Tables that we define in the models package will be automatically generated in MySQL Database, You can check for the console itself.
 
@@ -1100,15 +1108,15 @@ Tables that we define in the models package will be automatically generated in M
 
 3. JWT Token - **without Token service will throw an error**
 
-**Token is mandatory to excute all properties services**
+**Token is mandatory to execute all properties services**
 
 ![Node.JS REST API - JWT Token](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-6.png)
 
-4. Get All Properties - **POST api/properties/**
+4. Get All Properties - **GET api/properties/**
 
 ![Node.JS REST API - Get All Properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-7.png)
 
-5. Get Single Property Details By Id - **POST api/properties/id**
+5. Get Single Property Details By Id - **GET api/properties/id**
 
 ![Node.JS REST API - Get Single Property Details By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-8.png)
 
@@ -1116,23 +1124,50 @@ Tables that we define in the models package will be automatically generated in M
 
 ![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-9.png)
 
+You can verify the data by running below sql command and see record(S) are created or not?
+
+        SELECT * FROM `properties`
+        
+You will find there are some records for `properties` table and new record has been created
+
+![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-15.png)
+
+
 7. Update Property Details - **PUT api/properties/id**
 
 ![Node.JS REST API - Property Details](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-10.png)
+
+You can verify the data by running below sql command and see if the record(S) are updated or not?
+
+        SELECT * FROM `properties`
+        
+You will find there are some records for the `properties` table and the requested record has been updated successfully.
+
+![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-16.png)
+
 
 8. Delete a Property By Id - **DELETE api/properties/id**
 
 ![Node.JS REST API - Delete a Property By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-11.png)
 
-9.Delete All Properties- **DELETE api/properties/**
+9. Delete All Properties- **DELETE api/properties/**
 
 ![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-12.png)
+
+After This You can verify by running below sql command and see if the records are deleted or not?
+
+        SELECT * FROM `properties`
+        
+You will find there is no records for `properties` table   
+
+![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-17.png)
+
 
 
 **What Have We Learned So Far?**
 
 So Far we've learned so many interesting things about Node.js Token Based Authentication with JWT - JSONWebToken in just a Node.js Express REST API Example.
-Despite we wrote a lot of code, I hope you understood the overall architecture of the application and hope instructions are good to set up this project in your local and gives you a clarity what can be improved on for your existing project and what to implements on new ones.
+Despite having written a lot of code, I hope you understood the overall architecture of the application and hope instructions are good to set up this project in your local and give you clarity on what can be improved for your existing project and what to implement on new ones.
 
 Enjoy Coding :+1:
 

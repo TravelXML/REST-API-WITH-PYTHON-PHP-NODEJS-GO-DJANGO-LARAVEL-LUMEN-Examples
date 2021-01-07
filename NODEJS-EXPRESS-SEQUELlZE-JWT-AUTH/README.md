@@ -145,11 +145,11 @@ Signin process will be providing token and the same token will be used to execut
 
 **GET** /api/properties - Get All Properties
 
-**GET** /api/properties/27 - Get Single Property with id=27
+**GET** /api/properties/58 - Get Single Property with id=58
 
-**PUT** /api/properties/27 - Update Single Property With id=27
+**PUT** /api/properties/58 - Update Single Property With id=58
 
-**DELETE** /api/properties/27 - Remove Single Property with id=27
+**DELETE** /api/properties/58 - Remove Single Property with id=58
 
 **DELETE** /api/properties - Remove All Properties
 

@@ -351,7 +351,7 @@ Now let’s run the app with command:
 
 Open your browser with url http://localhost:8080/, you will see below screen:
 
-![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-13.png)        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-14.png)        
 
 
 
@@ -1094,7 +1094,7 @@ Run Node.js application with command:
 
         nodemon server.js
 
-![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)
+![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-13.png)
 
 Tables that we define in the models package will be automatically generated in MySQL Database, You can check for the console itself.
 

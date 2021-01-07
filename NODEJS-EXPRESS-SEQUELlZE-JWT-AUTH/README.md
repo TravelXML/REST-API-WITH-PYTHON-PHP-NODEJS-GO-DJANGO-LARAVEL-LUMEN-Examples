@@ -347,11 +347,11 @@ Now let’s run the app with command:
 
         nodemon server.js
         
-![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-2.png)        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-14.png)        
 
 Open your browser with url http://localhost:8080/, you will see below screen:
 
-![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-14.png)        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)        
 
 
 

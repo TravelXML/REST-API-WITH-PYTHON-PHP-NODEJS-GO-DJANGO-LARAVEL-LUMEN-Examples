@@ -141,12 +141,6 @@ Signin process will be providing token and the same token will be used to execut
 
 **POST** /api/auth/signin - Login an account
 
-**GET** /api/test/all - Retrieve public content
-
-**GET** /api/test/user - Access User’s content
-
-**GET** /api/test/admin - Access Admin’s content
-
 **POST** /api/properties - Create New Property
 
 **GET** /api/properties - Get All Properties
@@ -158,6 +152,17 @@ Signin process will be providing token and the same token will be used to execut
 **DELETE** /api/properties/27 - Remove Single Property with id=27
 
 **DELETE** /api/properties - Remove All Properties
+
+## Additional Services
+
+You can use them for test purposes but all ready these services has been implemented for properties services so ignore these below one.
+
+**GET** /api/test/all - Retrieve public content
+
+**GET** /api/test/user - Access User’s content
+
+**GET** /api/test/admin - Access Admin’s content
+
 
 
 ## Technology Stack
@@ -369,6 +374,7 @@ In the app folder, create config folder for configuration with db.config.js file
         };
 
 ## Parameters are for MySQL connection
+
 **Pool is optional, it will be used for Sequelize connection pool configuration:**
 - max: maximum number of connection in pool
 - min: minimum number of connection in pool
@@ -970,26 +976,28 @@ There are 2 main functions for Authentication:
         };
 
 
-## Controller for testing Authorization
+## Controller for Testing Authorization
 
-There are 4 functions:
- – /api/test/all for public access
- – /api/test/user for logged in users (role: user/admin) 
- – /api/test/admin for users having admin role
+There are 3 functions:
 
-    controllers/user.controller.js
+These functions are implemented with properties services so you can ignore them but sack clarity just highlighting here.
+ – /api/test/all  - for public access
+ – /api/test/user - for logged in users (role: user/admin) 
+ – /api/test/admin - for users having admin role
 
-    exports.allAccess = (req, res) => {
-      res.status(200).send("Public Content.");
-    };
+        //controllers/user.controller.js
 
-    exports.userBoard = (req, res) => {
-      res.status(200).send("User Content.");
-    };
+        exports.allAccess = (req, res) => {
+        res.status(200).send("Public Content.");
+        };
 
-    exports.adminBoard = (req, res) => {
-      res.status(200).send("Admin Content.");
-    };
+        exports.userBoard = (req, res) => {
+        res.status(200).send("User Content.");
+        };
+
+        exports.adminBoard = (req, res) => {
+        res.status(200).send("Admin Content.");
+        };
 
  
 
@@ -1010,30 +1018,30 @@ for Authentication and for Authorization (accessing protected resources).
 - POST /api/auth/signup
 - POST /api/auth/signin
 
-    //routes/auth.routes.js
+        //routes/auth.routes.js
 
-    const { verifySignUp } = require("../middleware");
-    const controller = require("../controllers/auth.controller");
+        const { verifySignUp } = require("../middleware");
+        const controller = require("../controllers/auth.controller");
 
-    module.exports = function(app) {
-      app.use(function(req, res, next) {
-        res.header(
-          "Access-Control-Allow-Headers",
-          "x-access-token, Origin, Content-Type, Accept"
-        );
-        next();
-      });
+        module.exports = function(app) {
+                app.use(function(req, res, next) {
+                res.header(
+                  "Access-Control-Allow-Headers",
+                  "x-access-token, Origin, Content-Type, Accept"
+                );
+                next();
+                });
 
-      app.post("/api/auth/signup",
-      [
-          verifySignUp.checkDuplicateUsernameOrEmail,
-          verifySignUp.checkRolesExisted
-        ],
-        controller.signup
-      );
+                app.post("/api/auth/signup",
+                        [
+                          verifySignUp.checkDuplicateUsernameOrEmail,
+                          verifySignUp.checkRolesExisted
+                        ],
+                        controller.signup
+                        );
 
-      app.post("/api/auth/signin", controller.signin);
-    };
+                app.post("/api/auth/signin", controller.signin);
+                };
 
 ## Authorization:
 

@@ -60,8 +60,8 @@ SOAP requires less plumbing code meaning low-level, infrastructural code that co
   * [REST API with GO - MUX](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-MUX)  
   
   * [REST API with GO - GIN](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/GOLANG-GIN)
-  * [REST API with NodeJS - EXPRESS-Basic](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/NODEJS-EXPRESS-MYSQL)
-  * [REST API with NodeJS - EXPRESS-JWT-SEQUELlZE-Advance](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/NODEJS-EXPRESS-SEQUELlZE-JWT-AUTH)
+  * [REST API with NodeJS - EXPRESS - Basic](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/NODEJS-EXPRESS-MYSQL)
+  * [REST API with NodeJS - EXPRESS- JWT - SEQUELlZE - Advance](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/tree/main/NODEJS-EXPRESS-SEQUELlZE-JWT-AUTH)
 
 
 **Very easy to create REST API in couple of mins, you can choose any of the above codebase according to your language and framework preferences and follow instructions.**

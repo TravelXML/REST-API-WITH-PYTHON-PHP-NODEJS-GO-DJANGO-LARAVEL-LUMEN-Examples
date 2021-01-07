@@ -346,7 +346,7 @@ Now let’s run the app with command:
 
 Open your browser with url http://localhost:8080/, you will see below screen:
 
-![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-13.png)        
 
 
 
@@ -1116,17 +1116,44 @@ Tables that we define in the models package will be automatically generated in M
 
 ![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-9.png)
 
+You can verify the data by runing below sql command and see record(S) are created or not?
+
+        SELECT * FROM `properties`
+        
+You will find there are some records for `properties` table and new record has been created 
+
+![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-14.png)
+
+
 7. Update Property Details - **PUT api/properties/id**
 
 ![Node.JS REST API - Property Details](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-10.png)
+
+You can verify the data by runing below sql command and see record(S) are updated or not?
+
+        SELECT * FROM `properties`
+        
+You will find there are some records for `properties` table and requested record has been updated successfully. 
+
+![Node.JS REST API - Create Property DB](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-15.png)
+
 
 8. Delete a Property By Id - **DELETE api/properties/id**
 
 ![Node.JS REST API - Delete a Property By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-11.png)
 
-9.Delete All Properties- **DELETE api/properties/**
+9. Delete All Properties- **DELETE api/properties/**
 
 ![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-12.png)
+
+After This You can verify by runing below sql command and see record(S) are deleted or not?
+
+        SELECT * FROM `properties`
+        
+You will find there is no records for `properties` table   
+
+![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-16.png)
+
 
 
 **What Have We Learned So Far?**

@@ -29,7 +29,7 @@ Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite an
 
 ## What's JWT?
 
-JWT stand for JSON Web Tokens, are an open, industry standard RFC 7519 method for representing claims securely between two parties. For details [Click Here](https://en.wikipedia.org/wiki/JSON_Web_Token)
+JWT stands for JSON Web Tokens, are an open, industry standard RFC 7519 method for representing claims securely between two parties. For details [Click Here](https://en.wikipedia.org/wiki/JSON_Web_Token)
 
 If you want to play around with JWT token the here is your [play ground](https://jwt.io/)
 
@@ -37,11 +37,11 @@ If you want to play around with JWT token the here is your [play ground](https:/
 
 Comparing with Session-based Authentication that need to store Session on Cookie, the big advantage of Token-based Authentication is that we store the JSON Web Token (JWT) on Client side: Local Storage for Browser, Keychain for IOS and SharedPreferences for Android… So we don’t need to build another backend project that supports Native Apps or an additional Authentication module for Native App users.
 
-### HOW JWT Token look like?
+### HOW JWT Token looks like?
 
 ![JWT token with PHP REST API](https://raw.githubusercontent.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/main/images/Create-REST-API-with-php-oops-1.png)
 
-JWT Token has three parts these are 
+JWT Token has three parts these are
 
 - **1 header: ALGORITHM & TOKEN TYPE**, identifies which algorithm is used to generate the signature, HS256 indicates that this token is signed using HMAC-SHA256. Typical cryptographic algorithms used are HMAC with SHA-256 (HS256) and RSA signature with SHA-256 (RS256). JWA (JSON Web Algorithms)
         
@@ -55,7 +55,7 @@ JWT Token has three parts these are
                     "id": 1,
                     "user_name": "sapan",
                     "email": "ctoattraveltech@gmail.com"
-                  } 
+                  }
 - 3 **signature: VERIFY SIGNATURE**, securely validates the token. The signature is calculated by encoding the header and payload using Base64url Encoding and concatenating the two together with a period separator. That string is then run through the cryptographic algorithm specified in the header, in this case HMAC-SHA256. The Base64url Encoding is similar to base64, but uses different non-alphanumeric characters and omits padding.               
 
         signature = HMACSHA256(
@@ -72,8 +72,8 @@ final token value is `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcl9uY
 
 ## How to Build NodeJS API with Sequelize and JWT?
 
-To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll build an API that will manage for below listed services and that supports Token Based Authentication with JWT ( JSON Web Token ).
-- **Token Authentication Services** 
+To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll build an API that will manage the below listed services and that supports Token Based Authentication with JWT ( JSON Web Token ).
+- **Token Authentication Services**
   - Signup
   - Signin for token and to below property services.
 - **Property Services**  
@@ -84,7 +84,7 @@ To demonstrate how to build a NodeJS Express API with Sequelize and JWT, we'll b
   - Delete Property by Id
   - Delete All Properties
 
-Signin process will be providing token and the same token will be used to excute all of properties services ( ex: create, update, read, delete ). Token need to pass through request header to call property services, this scurity layer is very much important to built secure API.
+Signin process will be providing token and the same token will be used to execute all of properties services ( ex: create, update, read, delete ). Token need to pass through request header to call property services, this security layer is very much important to build secure API.
 
 **The Client typically attaches JWT in Authorization header with Bearer prefix:**
     
@@ -95,7 +95,7 @@ Signin process will be providing token and the same token will be used to excute
         x-access-token: [header].[payload].[signature]
 
 
-This application will list the following about each Property:
+**This application will list the following about each Property:**
 
 - Property Name
 - Address
@@ -109,7 +109,7 @@ This application will list the following about each Property:
 ## What We will Achieve?
 
  - Appropriate Flow for User Signup & User Login with JWT Authentication
- - Node.js Express Architecture with CORS, Authenticaton & Authorization middlewares & Sequelize
+ - Node.js Express Architecture with CORS, Authentication & Authorization middlewares & Sequelize
  - Apply JWT Authentication for Properties CURD services
  - How to configure Express routes to work with JWT
  - How to define Data Models and association for Authentication and Authorization
@@ -122,7 +122,7 @@ This application will list the following about each Property:
 - Knowledge of JWT and Sequelize
 - [Postman](https://www.postman.com/) or Similar Type of Application ( [REST Client](https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo), [HTTPie](https://httpie.io/) ..) will be needed to test our endpoints
 
-Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL? 
+**Don't be disappointed if you don't know NodeJS, If you know any programming language that should be fine as well, COOL?**
 
 
 ## Overview of Node.js Express API Implementation?
@@ -147,17 +147,17 @@ Don't be disappointed if you don't know NodeJS, If you know any programming lang
 
 **GET** /api/test/admin - Access Admin’s content
 
-**POST** /properties - Create New Property
+**POST** /api/properties - Create New Property
 
-**GET** /properties - Get All Properties
+**GET** /api/properties - Get All Properties
 
-**GET** /properties/27 - Get Single Property with id=27
+**GET** /api/properties/27 - Get Single Property with id=27
 
-**PUT** /properties/27 - Update Single Property With id=27
+**PUT** /api/properties/27 - Update Single Property With id=27
 
-**DELETE** /properties/27 - Remove Single Property with id=27
+**DELETE** /api/properties/27 - Remove Single Property with id=27
 
-**DELETE** /properties - Remove All Properties
+**DELETE** /api/properties - Remove All Properties
 
 
 ## Technology Stack
@@ -170,6 +170,8 @@ Don't be disappointed if you don't know NodeJS, If you know any programming lang
 ## Project Structure
 
 This is directory structure for our Node.js Express application:
+
+![Node.js Express REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-1.png)
 
 – config
 
@@ -199,7 +201,7 @@ This is directory structure for our Node.js Express application:
     - role.model.js
     - property.model.js
 
-– server.js: import and initialize neccesary modules and routes, listen for connections.
+– server.js: import and initialize necessary modules and routes, listen for connections.
 
 
 ## Create NodeJS REST API
@@ -213,12 +215,12 @@ Then we initialize the Node.js App with a package.json file:
 
     npm init
 
-    name: (NODEJS-JWT) 
-    version: (1.0.0) 
+    name: (NODEJS-JWT)
+    version: (1.0.0)
     description: Node.js and Express REST API with JWT Authentication
     entry point: (index.js) server.js
-    test command: 
-    git repository: 
+    test command:
+    git repository:
     keywords: node.js, express, jwt, authentication, mysql
     author: Sapan Mohanty
     license: (ISC)
@@ -333,12 +335,19 @@ The package.json file now looks like this:
 - body-parser helps to parse the request and create the req.body object
 - cors provides Express middleware to enable CORS
 – create an Express app, then add body-parser and cors middlewares using app.use() method. Notice that we set origin: http://localhost:8081.
-– define a GET route which is simple for test.
+– define a GET route which is simple for testing.
 – listen on port 8080 for incoming requests.
 
-Now let’s run the app with command: nodemon server.js.
+Now let’s run the app with command:
+
+        nodemon server.js
+        
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-2.png)        
 
 Open your browser with url http://localhost:8080/, you will see below screen:
+
+![Run Node.js REST API](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)        
+
 
 
 ## Configure MySQL database & Sequelize
@@ -409,7 +418,7 @@ In models folder, create User and Role data model as following code:
         };
         
 
-**models/property.model.js** 
+**models/property.model.js**
 
         module.exports = (sequelize, Sequelize) => {
         const Property = sequelize.define("properties", {
@@ -436,13 +445,13 @@ In models folder, create User and Role data model as following code:
                 }
                 }, {
                 timestamps: false
-                }); 
+                });
 
         return Property;
         };
         
 
-These Sequelize Models represents users, roles, properties table in MySQL database.
+These Sequelize Models represent users, roles, properties tables in MySQL database.
 
 **After initializing Sequelize, we don’t need to write CRUD functions, Sequelize supports all of them:**
 
@@ -450,7 +459,7 @@ These Sequelize Models represents users, roles, properties table in MySQL databa
         - Find a User by id: findByPk(id)
         - Find a User by email: findOne({ where: { email: ... } })
         - Get all Users: findAll()
-        - Find all Users by username: findAll({ where: { username: ... } 
+        - Find all Users by username: findAll({ where: { username: ... }
         - Create a new Property: create(object)
         - Find a Property by id: findByPk(id)
         - Find a Property by id: findOne({ where: { ... } })
@@ -515,8 +524,8 @@ These functions will be used in our Controllers and Middlewares.
 
 **The association between Users and Roles is Many-to-Many relationship:**
 
-– One User can have several Roles.
-– One Role can be taken on by many Users.
+ – One User can have several Roles.
+ – One Role can be taken on by many Users.
 
 We use User.belongsToMany(Role) to indicate that the user model can belong to many Roles and vice versa.
 
@@ -549,11 +558,11 @@ Don’t forget to call sync() method in `server.js`.
           });  
         }
 
-initial() function helps us to create 3 rows in database.
+`initial()` function helps us to create 3 rows in the database.
 
-In development, you may need to drop existing tables and re-sync database. So you can use force: true as code above.
+In development, you may need to drop existing tables and re-sync databases. So you can use force: true as code above.
 
-For production, just insert these rows manually and use sync() without parameters to avoid dropping data:
+For production, just insert these rows manually and use `sync()` without parameters to avoid dropping data:
 
         ...
         const app = express();
@@ -566,7 +575,7 @@ For production, just insert these rows manually and use sync() without parameter
 
 ## Configure Auth Key
 
-jsonwebtoken functions such as `verify()` or `sign()` use algorithm that needs a secret key (as String) to encode and decode token.
+jsonwebtoken functions such as `verify()` or `sign()` use algorithms that need a secret key (as String) to encode and decode a token.
 
 In the `app/config` folder, create `auth.config.js` file with following code:
 
@@ -645,8 +654,8 @@ You can create your own secret String.
 
 ## To process Authentication & Authorization, we have these functions:
 
-- check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's verify() function.
-- check if roles of the user contains required role or not.
+- check if token is provided, legal or not. We get token from x-access-token of HTTP headers, then use jsonwebtoken's `verify()` function.
+- check if roles of the user contain required roles or not.
 
         const jwt = require("jsonwebtoken");
         const config = require("../config/auth.config.js");
@@ -710,8 +719,8 @@ You can create your own secret String.
 **Controller for Authentication**
 
 There are 2 main functions for Authentication:
-- signup: create new User in database (role is user if not specifying role)
-- signin:
+- Signup: create new User in database (role is user if not specifying role)
+- Sign in:
   - Find username of the request in database, if it exists
   - Compare password with password in database using bcrypt, if it is correct
   - Generate a token using jsonwebtoken
@@ -847,7 +856,7 @@ There are 2 main functions for Authentication:
             });
         };
 
-        // Retrieve all Propertys from the database.
+        // Retrieve all Properties from the database.
         exports.findAll = (req, res) => {
           const property_name = req.query.property_name;
           var condition = property_name ? { title: { [Op.like]: `%${property_name}%` } } : null;
@@ -929,14 +938,14 @@ There are 2 main functions for Authentication:
             });
         };
 
-        // Delete all Propertys from the database.
+        // Delete all Properties from the database.
         exports.deleteAll = (req, res) => {
           Property.destroy({
             where: {},
             truncate: false
           })
             .then(nums => {
-              res.send({ message: `${nums} Propertys were deleted successfully!` });
+              res.send({ message: `${nums} Properties were deleted successfully!` });
             })
             .catch(err => {
               res.status(500).send({
@@ -965,8 +974,7 @@ There are 2 main functions for Authentication:
 
 There are 4 functions:
  – /api/test/all for public access
- – /api/test/user for loggedin users (role: user/moderator/admin)
- – /api/test/mod for users having moderator role
+ – /api/test/user for logged in users (role: user/admin) 
  – /api/test/admin for users having admin role
 
     controllers/user.controller.js
@@ -983,16 +991,19 @@ There are 4 functions:
       res.status(200).send("Admin Content.");
     };
 
-  
+ 
 
-Now, do you have any question? Would you like to know how we can combine middlewares with controller functions?
+Now, do you have any questions? Would you like to know how we can combine middlewares with controller functions?
+
 Let's do it in the next section.
 
 ## Define Routes
 
-When a client sends request for an endpoint using HTTP request ( GET, POST, PUT, DELETE ), we need to determine how the server will response by setting up the routes.
+When a client sends a request for an endpoint using HTTP request ( GET, POST, PUT, DELETE ), we need to determine how the server will respond by setting up the routes.
 
-We can separate our routes into 2 part: for Authentication and for Authorization (accessing protected resources).
+We can separate our routes into 2 parts: 
+
+for Authentication and for Authorization (accessing protected resources).
 
 **Authentication:**
 
@@ -1013,9 +1024,8 @@ We can separate our routes into 2 part: for Authentication and for Authorization
         next();
       });
 
-      app.post(
-        "/api/auth/signup",
-        [
+      app.post("/api/auth/signup",
+      [
           verifySignUp.checkDuplicateUsernameOrEmail,
           verifySignUp.checkRolesExisted
         ],
@@ -1028,7 +1038,7 @@ We can separate our routes into 2 part: for Authentication and for Authorization
 ## Authorization:
 
 - GET /api/test/all
-- GET /api/test/user for loggedin users (user/admin)
+- GET /api/test/user for logged in users (user/admin)
 - GET /api/test/admin for admin
 
 **routes/user.routes.js**
@@ -1070,11 +1080,53 @@ Don't forget to add these routes in server.js:
     // set port, listen for requests
     ...
 
-Run & Test with Results
+## Run & Test with Results
 
-Run Node.js application with command: nodemon server.js
+Run Node.js application with command: 
 
-Tables that we define in models package will be automatically generated in MySQL Database, You can check for console itself.
+        nodemon server.js
+
+![Run Node.js Express Sqlize](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-3.png)
+
+Tables that we define in the models package will be automatically generated in MySQL Database, You can check for the console itself.
+
+1. Signup - **POST api/auth/signup**
+
+![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-4.png)
+
+2. Sign In - **POST api/auth/signin**
+
+![Node.JS REST API - Sigin](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-5.png)
+
+3. JWT Token - **without Token service will throw an error**
+
+**Token is mandatory to excute all properties services**
+
+![Node.JS REST API - JWT Token](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-6.png)
+
+4. Get All Properties - **POST api/properties/**
+
+![Node.JS REST API - Get All Properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-7.png)
+
+5. Get Single Property Details By Id - **POST api/properties/id**
+
+![Node.JS REST API - Get Single Property Details By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-8.png)
+
+6. Create A property - **POST api/properties/**
+
+![Node.JS REST API - Signup](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-9.png)
+
+7. Update Property Details - **PUT api/properties/id**
+
+![Node.JS REST API - Property Details](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-10.png)
+
+8. Delete a Property By Id - **DELETE api/properties/id**
+
+![Node.JS REST API - Delete a Property By Id](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-11.png)
+
+9.Delete All Properties- **DELETE api/properties/**
+
+![Node.JS REST API - delete all properties](https://github.com/TravelXML/REST-API-WITH-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-Examples/blob/main/images/Nodejs-Jwt-12.png)
 
 
 **What Have We Learned So Far?**
@@ -1093,6 +1145,3 @@ Skype: sapan.mohannty
 Twitter: https://twitter.com/htngapi
 
 Linkedin: https://www.linkedin.com/in/travel-technology-cto/
-
-
-Happy coding

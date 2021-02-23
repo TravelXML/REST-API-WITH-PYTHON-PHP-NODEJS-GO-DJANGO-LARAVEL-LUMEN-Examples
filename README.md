@@ -1,6 +1,6 @@
 # REST API Tutorials: BUILD REST API and White-Label Services, Right Way to API Development, REST API EXAMPLES
 ![Build REST API Using Trending Technology](https://github.com/TravelXML/Create-API-PYTHON-PHP-NODEJS-GO-DJANGO-LARAVEL-LUMEN-REST-API/blob/main/images/Build%20REST%20api.png)
-### Create REST API with most trending technology - PHP, PYTHON, GO, NodeJS and Most trending frameworks - Django, Laravel, Lumen, GIN
+### Create REST API with Most Trending Technology - PHP, PYTHON, GO, NodeJS and Most trending frameworks - Django, Laravel, Lumen, GIN
 #### What's REST API or RESTFUL API?
 
 **REST is acronym for REpresentational State Transfer**. RESTful API is an architectural style for an **Application Program Interface (API)** that uses **HTTP requests** to access and alter data. That data can be used to **GET, PUT, POST and DELETE** data types, which refers to the **reading, updating, creating and deleting** of operations concerning resources. [For More Details](https://en.wikipedia.org/wiki/Representational_state_transfer)

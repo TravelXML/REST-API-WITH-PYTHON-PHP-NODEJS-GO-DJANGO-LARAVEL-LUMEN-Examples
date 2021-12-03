@@ -74,11 +74,11 @@ Example: Let’s say our customer wants to place an order for an auto part, and 
 
 #### 3- Provide Sufficient Network Speed
 
-A slow network will degrade the performance of even the most robustly-designed API. Unreliable networks can cause downtime, which could cause your organization to be in violation of SLAs, terms of service, and promises you may have made to your customers. It is important to invest in the proper network infrastructure, so that we can maintain the desired level of performance. This can be achieved by leveraging and purchasing sufficient cloud resources and infrastructure (example: in AWS, allocate the proper # of EC2 instances, use a Network Load Balancer). Also, if you have a large amount of background processes, run those on separate threads to avoid blocking requests. You can also use mirrors, and Content Delivery Networks (CDNs) such as CloudFront to serve requests faster around different parts of the globe.
+A slow network will degrade the performance of even the most robustly-designed API. Unreliable networks can cause downtime, which could cause your organization to be in violation of SLAs, terms of service, and promises you may have made to your customers. **It is important to invest in the proper network infrastructure, so that we can maintain the desired level of performance. This can be achieved by leveraging and purchasing sufficient cloud resources and infrastructure `(example: in AWS, allocate the proper # of EC2 instances, use a Network Load Balancer)`**. Also, if you have a large amount of background processes, run those on separate threads to avoid blocking requests. You can also use mirrors, and Content Delivery Networks (CDNs) such as CloudFront to serve requests faster around different parts of the globe.
 
 #### 4- Prevent Accidental Calls, Slowdowns, and Abuse
 
-You can have a situation where your API suffers a DDoS attack that can either be malicious and intentional, or unintenional when an engineer calls the API to execute on a loop from some local application. You can avoid this by measuring transactions, and monitoring the number of how many transactions occur per IP Address, or per SSO/JWT Token (if the customer/calling app is authorized before calling the API).
+You can have a situation where your API suffers a DDoS attack that can either be malicious and intentional, or unintenional when an engineer calls the API to execute on a loop from some local application. You can avoid this by measuring transactions, and **`monitoring the number of how many transactions occur per IP Address, or per SSO/JWT Token (if the customer/calling app is authorized before calling the API)`**.
 
 This method to rate-limiting helps reduce excessive requests that would slow the API down, helps deal with accidental calls/executions, and proactively monitor and identify possible malicious activity.
 
@@ -86,13 +86,16 @@ This method to rate-limiting helps reduce excessive requests that would slow the
 
 It is a common misconception among engineers that PUT and PATCH operations yield the same result.They are similar in updating resources, but they each perform the updates differently. PUT operations update resources by sending updates to the entire resource. PATCH operations apply partial updates to only the resources that need updating. Resulting inPATCH calls that produce smaller payloads, and improve performance at scale.
 
-        💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. So, you should carefully and deliberately consider your application for using PATCH requests, and make sure that they are idempotently implemented if needed. If not, use PUT requests.
+        💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. 
+        Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. 
+        So, you should carefully and deliberately consider your application for using PATCH requests, 
+        and make sure that they are idempotently implemented if needed. If not, use PUT requests.
 
 #### 6- Enable Logging, Monitoring, and Alerting
 
-This is perhaps one of the most important tips you will read here. If there is one thing you should learn from this article, it should be this! No negotiation on this one.
+This is perhaps one of the most important tips you will read here. If there is one thing you should learn from this Repo, it should be this! No negotiation on this one.
 
-Having logs, monitoring, and alerting help engineers diagnose and remediate issues before they become problems. Many APIs (Express/Node-based, Java, Go) have predefined endpoints for assessing things like:
+**Having logs, monitoring, and alerting help engineers diagnose and remediate issues before they become problems**. Many APIs (Express/Node-based, Java, Go) have predefined endpoints for assessing things like:
 
     `/health`
     `/metrics`
@@ -105,7 +108,7 @@ And… if you do not have alerting enabled, you will not know whether there is a
 
 #### 7- Enable Pagination
 
-Pagination helps create buckets of content from multiple responses. This sort of optimization helps improve responses while preserving the data that is transferred/displayed to a customer. You can standardize, segment, and limit the responses which help reduce complexity of results, and improve the overall customer experience by providing the response/results only for what a customer has asked for.
+**Pagination helps create buckets of content from multiple responses**. This sort of optimization helps improve responses while preserving the data that is transferred/displayed to a customer. You can standardize, segment, and limit the responses which help reduce complexity of results, and improve the overall customer experience by providing the response/results only for what a customer has asked for.
 
 #### Conclusions
 

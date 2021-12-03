@@ -13,7 +13,7 @@
 
 Your application must satisfy certain constraints or principles. Let's go into details about these principles.
 
-#### Principles of REST
+## Principles of REST
 
 There are six ground principles, below are the six guiding principles of REST:
 
@@ -41,7 +41,7 @@ The layered system architecture allows an application to be more stable by limit
 Now that you know what is a REST API and what all you need to mind in order to deliver an efficient application, let’s dive deeper and see the process of building REST API using all trending technologies and Frameowrks.
 
 
-#### How REST API Different from SOAP?
+## How REST API Different from SOAP?
 
 **REST and Simple Object Access Protocol (SOAP) offer different methods to invoke a web service. REST is an architectural style, while SOAP defines a standard communication protocol specification for XML-based message exchange. REST applications can use SOAP.**
 
@@ -86,7 +86,7 @@ This method to rate-limiting helps reduce excessive requests that would slow the
 
 It is a common misconception among engineers that PUT and PATCH operations yield the same result.They are similar in updating resources, but they each perform the updates differently. PUT operations update resources by sending updates to the entire resource. PATCH operations apply partial updates to only the resources that need updating. Resulting inPATCH calls that produce smaller payloads, and improve performance at scale.
 
-💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. So, you should carefully and deliberately consider your application for using PATCH requests, and make sure that they are idempotently implemented if needed. If not, use PUT requests.
+        💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. So, you should carefully and deliberately consider your application for using PATCH requests, and make sure that they are idempotently implemented if needed. If not, use PUT requests.
 
 #### 6- Enable Logging, Monitoring, and Alerting
 

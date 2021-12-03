@@ -64,13 +64,13 @@ These are some points you have to considering when developing REST API:
 
 Extremely large payloads of response data will slow down request completion, other service calls, and in affect degrade performance. As you know, now that we are returning all orders for the customer as opposed to just their current order, we will have to deal with some performance degredation.
 
-**We can use `GZip Compression` to reduce our payload size. This lessens the download size of our response on the web app (client side), as well as increase the upload speed, or creation of some entity (orders). We can use `Deflate compression` on a Web API. Or, we can update the Accept-Encodingrequest header to gzip **.
+**We can use `GZip Compression` to reduce our payload size. This lessens the download size of our response on the web app (client side), as well as increase the upload speed, or creation of some entity (orders). We can use `Deflate compression` on a Web API. Or, we can update the Accept-Encodingrequest header to gzip**.
 
 #### 2- Enable Caching
 
 Caching is one of the easiest methods to improve an API’s performance. If we have requests that frequently give back the same response, then a cached version of that response helps **avoid additional service calls/database queries**.You will want to make sure when using caching to periodically invalidate the data in the cache, especially when new data updates occur.
 
-****But it may be confusing for you when or where to use cache?
+#### But it may be confusing for you when or where to use cache?
 
 Let’s say our customer wants to place an order for an auto part, and our app calls out to some Auto Parts API to fetch the part price. Since the response (part price) only changes once every week (@ 1:00am), we can cache the response for the rest of the time until then. This saves us from making a new call everytime to return the same part price. Similar case you can use cache to avoid extra calls or requests.
 
@@ -88,7 +88,7 @@ This method to rate-limiting helps reduce excessive requests that would slow the
 
 It is a common misconception among engineers that PUT and PATCH operations yield the same result.They are similar in updating resources, but they each perform the updates differently. PUT operations update resources by sending updates to the entire resource. PATCH operations apply partial updates to only the resources that need updating. Resulting inPATCH calls that produce smaller payloads, and improve performance at scale.
 
-        💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. 
+       💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. 
         Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. 
         So, you should carefully and deliberately consider your application for using PATCH requests, 
         and make sure that they are idempotently implemented if needed. If not, use PUT requests.

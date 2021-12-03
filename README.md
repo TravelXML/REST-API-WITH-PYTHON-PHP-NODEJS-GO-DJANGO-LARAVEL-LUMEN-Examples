@@ -101,7 +101,7 @@ If you do not have logging enabled, and there is a potential issue going on, you
 
 If you do not have monitoring enabled, you will not know from an analytical perspective how often some problems or errors are occurring. Which will then prevent you from thinking of possible solutions.
 
-And… if you do not have alerting enabled, you will not know whether there is a problem, UNTIL a customer (or worse, customers) report it. SCARY!
+And… if you do not have alerting enabled, you will not know whether there is a problem, UNTIL a customer (or worse, customers) report it. 
 
 #### 7- Enable Pagination
 

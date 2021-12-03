@@ -49,7 +49,7 @@ RESTful web services are stateless. A REST-based implementation is simple compar
 
 SOAP requires less plumbing code meaning low-level, infrastructural code that connects main code modules together than REST services design. The Web Services Description Language describes a common set of rules to define the messages, bindings, operations and location of the service. SOAP web services are useful for asynchronous processing and invocation.
 
-## REST API Architecture — High Performance and Best Practices
+## How to Build a High Performance REST API? and Best Practices
 
 These are some points you have to considering when developing REST API:
 * Reduce and limit the Payload Size
@@ -66,17 +66,17 @@ Extremely large payloads of response data will slow down request completion, oth
 
 We can use `GZip Compression` to reduce our payload size. This lessens the download size of our response on the web app (client side), as well as increase the upload speed, or creation of some entity (orders). We can use `Deflate compression` on a Web API. Or, we can update the Accept-Encodingrequest header to gzip .
 
-#### 2- Enable caching
+#### 2- Enable Caching
 
 Caching is one of the easiest methods to improve an API’s performance. If we have requests that frequently give back the same response, then a cached version of that response helps avoid additional service calls/database queries.You will want to make sure when using caching to periodically invalidate the data in the cache, especially when new data updates occur.
 
 Example: Let’s say our customer wants to place an order for an auto part, and our app calls out to some Auto Parts API to fetch the part price. Since the response (part price) only changes once every week (@ 1:00am), we can cache the response for the rest of the time until then. This saves us from making a new call everytime to return the same part price.
 
-#### 3- Provide sufficient Network speed
+#### 3- Provide Sufficient Network Speed
 
 A slow network will degrade the performance of even the most robustly-designed API. Unreliable networks can cause downtime, which could cause your organization to be in violation of SLAs, terms of service, and promises you may have made to your customers. It is important to invest in the proper network infrastructure, so that we can maintain the desired level of performance. This can be achieved by leveraging and purchasing sufficient cloud resources and infrastructure (example: in AWS, allocate the proper # of EC2 instances, use a Network Load Balancer). Also, if you have a large amount of background processes, run those on separate threads to avoid blocking requests. You can also use mirrors, and Content Delivery Networks (CDNs) such as CloudFront to serve requests faster around different parts of the globe.
 
-#### 4- Prevent accidental calls, slowdowns, and abuse
+#### 4- Prevent Accidental Calls, Slowdowns, and Abuse
 
 You can have a situation where your API suffers a DDoS attack that can either be malicious and intentional, or unintenional when an engineer calls the API to execute on a loop from some local application. You can avoid this by measuring transactions, and monitoring the number of how many transactions occur per IP Address, or per SSO/JWT Token (if the customer/calling app is authorized before calling the API).
 

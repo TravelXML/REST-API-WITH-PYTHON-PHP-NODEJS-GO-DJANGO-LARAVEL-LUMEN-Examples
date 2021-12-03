@@ -49,6 +49,73 @@ RESTful web services are stateless. A REST-based implementation is simple compar
 
 SOAP requires less plumbing code meaning low-level, infrastructural code that connects main code modules together than REST services design. The Web Services Description Language describes a common set of rules to define the messages, bindings, operations and location of the service. SOAP web services are useful for asynchronous processing and invocation.
 
+## REST API Architecture — High Performance and Best Practices
+
+These are some points you have to considering when developing REST API:
+* Reduce and limit the Payload Size
+* Enable caching
+* Provide sufficient Network speed
+* Prevent accidental calls, slowdowns, and abuse
+* Try to use PATCH over PUT
+* Enable Logging, Monitoring, and Alerting
+* Enable Pagination
+
+#### 1- Reduce and limit the Payload Size
+
+Extremely large payloads of response data will slow down request completion, other service calls, and in affect degrade performance. As you know, now that we are returning all orders for the customer as opposed to just their current order, we will have to deal with some performance degredation.
+
+We can use `GZip Compression` to reduce our payload size. This lessens the download size of our response on the web app (client side), as well as increase the upload speed, or creation of some entity (orders). We can use `Deflate compression` on a Web API. Or, we can update the Accept-Encodingrequest header to gzip .
+
+#### 2- Enable caching
+
+Caching is one of the easiest methods to improve an API’s performance. If we have requests that frequently give back the same response, then a cached version of that response helps avoid additional service calls/database queries.You will want to make sure when using caching to periodically invalidate the data in the cache, especially when new data updates occur.
+
+Example: Let’s say our customer wants to place an order for an auto part, and our app calls out to some Auto Parts API to fetch the part price. Since the response (part price) only changes once every week (@ 1:00am), we can cache the response for the rest of the time until then. This saves us from making a new call everytime to return the same part price.
+
+#### 3- Provide sufficient Network speed
+
+A slow network will degrade the performance of even the most robustly-designed API. Unreliable networks can cause downtime, which could cause your organization to be in violation of SLAs, terms of service, and promises you may have made to your customers. It is important to invest in the proper network infrastructure, so that we can maintain the desired level of performance. This can be achieved by leveraging and purchasing sufficient cloud resources and infrastructure (example: in AWS, allocate the proper # of EC2 instances, use a Network Load Balancer). Also, if you have a large amount of background processes, run those on separate threads to avoid blocking requests. You can also use mirrors, and Content Delivery Networks (CDNs) such as CloudFront to serve requests faster around different parts of the globe.
+
+#### 4- Prevent accidental calls, slowdowns, and abuse
+
+You can have a situation where your API suffers a DDoS attack that can either be malicious and intentional, or unintenional when an engineer calls the API to execute on a loop from some local application. You can avoid this by measuring transactions, and monitoring the number of how many transactions occur per IP Address, or per SSO/JWT Token (if the customer/calling app is authorized before calling the API).
+
+This method to rate-limiting helps reduce excessive requests that would slow the API down, helps deal with accidental calls/executions, and proactively monitor and identify possible malicious activity.
+
+#### 5- Try to use PATCH over PUT
+
+It is a common misconception among engineers that PUT and PATCH operations yield the same result.They are similar in updating resources, but they each perform the updates differently. PUT operations update resources by sending updates to the entire resource. PATCH operations apply partial updates to only the resources that need updating. Resulting inPATCH calls that produce smaller payloads, and improve performance at scale.
+
+💡Pro-Tip: Even though PATCH calls can limit the request size, you should note that it is not Idempotent. Meaning, it is possible that a PATCHcan yield different results with a series of multiple calls. So, you should carefully and deliberately consider your application for using PATCH requests, and make sure that they are idempotently implemented if needed. If not, use PUT requests.
+
+#### 6- Enable Logging, Monitoring, and Alerting
+
+This is perhaps one of the most important tips you will read here. If there is one thing you should learn from this article, it should be this! No negotiation on this one.
+
+Having logs, monitoring, and alerting help engineers diagnose and remediate issues before they become problems. Many APIs (Express/Node-based, Java, Go) have predefined endpoints for assessing things like:
+
+    `/health`
+    `/metrics`
+
+If you do not have logging enabled, and there is a potential issue going on, you will not be able to track the origin, or where the problem is occurring in a particular request.
+
+If you do not have monitoring enabled, you will not know from an analytical perspective how often some problems or errors are occurring. Which will then prevent you from thinking of possible solutions.
+
+And… if you do not have alerting enabled, you will not know whether there is a problem, UNTIL a customer (or worse, customers) report it. SCARY!
+
+#### 7- Enable Pagination
+
+Pagination helps create buckets of content from multiple responses. This sort of optimization helps improve responses while preserving the data that is transferred/displayed to a customer. You can standardize, segment, and limit the responses which help reduce complexity of results, and improve the overall customer experience by providing the response/results only for what a customer has asked for.
+
+#### Conclusions
+
+We know that APIs are amazing, and can be extremely powerful in providing the business and customers a great experience, if properly optimized and enhanced for performance.
+Business requirements and customer expectations always evolve over time. And as responsible engineers, it is up to us in deciding how to build our APIs in a performant manner, that can help us achieve and exceed our goals.
+
+These tips are just the tip of the iceberg, and apply to all APIs in a general setting. Depending on your particular API and use case, what services it interacts with, how often it gets called, from where it gets called, etc. you might have to implement these tips in different ways.
+
+
+
 ## You are JUST 5 minutes away to create REST API, what YOU are waiting for? Lets START..
 
 #### How you would like to build? 

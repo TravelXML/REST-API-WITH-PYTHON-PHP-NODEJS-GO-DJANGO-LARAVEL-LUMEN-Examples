@@ -143,10 +143,10 @@ Happy Coding 👍
 #### For Help, you can reach
 -------------------------------
 
-Linkedin: https://www.linkedin.com/in/travel-technology-cto/
+[Linkedin: https://www.linkedin.com/in/the-startup-cto/](https://www.linkedin.com/in/the-startup-cto/)
 
-Medium: https://apige.medium.com/
+[Medium: https://apige.medium.com/](https://apige.medium.com/)
 
-Twitter: https://twitter.com/htngapi
+[Twitter: https://twitter.com/htngapi](https://twitter.com/htngapi)
 
 
